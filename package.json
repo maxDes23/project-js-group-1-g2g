@@ -1,12 +1,12 @@
 {
-  "name": "vanilla-app-template",
+  "name": "project-js-group-1-g2g",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "vite build --base=/vanilla-app-template/",
+    "build": "vite build --base=/project-js-group-1-g2g/",
     "preview": "vite preview"
   },
   "devDependencies": {
