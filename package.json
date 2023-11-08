@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "vite build --base=/vanilla-app-template/",
     "preview": "vite preview"
   },

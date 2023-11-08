@@ -1,0 +1,30 @@
+.container {
+  min-width: 320px;
+  max-width: 375px;
+  padding: 0 20px;
+  margin: 0 auto;
+  background: var(--dark-blue, #11131f);
+  /* outline: 1px dotted red; */
+}
+
+@media only screen and (max-width: 340px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+    max-width: 1280px;
+    padding: 0 32px;
+  }
+}
