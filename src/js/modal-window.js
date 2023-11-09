@@ -11,4 +11,6 @@
     function toggleModal() {
       refs.modal.classList.toggle("is-hidden");
     }
-  })();
+})();
+  
+import simpleLightbox from "simplelightbox";
