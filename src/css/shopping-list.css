@@ -1,0 +1,36 @@
+.shop_list {
+}
+.shop_container {
+}
+.shopping_title {
+}
+.shop_title_span {
+   color: var(--category-selected-color);
+}
+.shop_title_list {
+}
+
+/* Section Pagination */
+
+.pagination_arrow {
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    display: flex;
+}
+.arrow_container {
+}
+.arrow_container-back {
+}
+.arrow_btn {
+}
+.arrow_btn_back {
+}
+.arrow_icon {
+}
+.arrow_container_pages {
+}
+.arrow_container_end {
+}
+.arrow_btn_end {
+}
