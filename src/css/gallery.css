@@ -1,0 +1,85 @@
+.container-gallary {
+  background-color: #ffffff;
+}
+
+.category-title {
+  text-transform: capitalize;
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.category-title span {
+  color: #4f2ee8;
+}
+
+.category-container {
+  margin-bottom: 40px;
+}
+
+.category-descriotion {
+  text-transform: uppercase;
+  color: #b4afaf;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.books-container {
+  display: flex;
+  justify-content: center;
+}
+
+.books-container .book {
+  display: none;
+}
+
+.books-container .book:first-child {
+  display: flex;
+}
+
+/* вставити меді квері для таблета */
+@media screen and (min-width: 768px) {
+  .books-container .book:nth-child(-n + 3) {
+    display: flex;
+    margin: 0 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .books-container .book:nth-child(-n + 5) {
+    display: flex;
+    margin: 0 12px;
+  }
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-img {
+  max-width: 335px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  /* Звірити розмір з макетом */
+}
+
+.button-wrapper button {
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 15px 30px;
+  outline: none;
+  border: 2px solid #4f2ee8;
+}
+
+.book-title {
+  margin-top: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
