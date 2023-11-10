@@ -1,0 +1,87 @@
+header {
+    border-radius: 0px 0px 8px 8px;
+    border: 1.5px solid var(--header-border-color);
+}
+
+header {
+    display: inline-flex;
+    height: 64px;
+    width: 375px;
+    padding: 18px 20px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 143.999px;
+    flex-shrink: 0;
+    background-color: var(--secondary-background-color);
+}
+
+.logo {
+    display: flex;
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.toggler {
+    background: var(--toggler-gradient);
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+    flex-shrink: 0;
+    width: 40px;
+    height: 20px;
+    position: relative;
+}
+
+
+
+.switcher {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    transition: left .5s;
+}
+
+.logo-name {
+    fill: var(--logo-text-color);
+}
+
+.header-blocks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.switcher-block {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.burger-menu {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
+
+}
+
+/* Tablet */
+@media screen and (min-width:768px) {
+
+
+}
+
+
+/* Desctop */
+@media screen and (min-width:1440px) {
+
+
+}

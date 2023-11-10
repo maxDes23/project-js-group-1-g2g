@@ -16,7 +16,11 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "@splidejs/splide": "^4.1.4",
+=======
+    "axios": "^1.6.1",
+>>>>>>> 03956641e343e1a0e5bcd2df1c5d3d14511bd0a5
     "notiflix": "^3.2.6",
     "simplelightbox": "^2.14.2",
     "vite-plugin-full-reload": "^1.0.5",
