@@ -23,7 +23,7 @@ function onTriggerClick() {
         if (localStorage.getItem('theme') === 'theme-dark') {
             burgerBlack.classList.remove('display-none')
             burgerLight.classList.add('display-none')
-            switcher.style.left = 1 + "px";
+            switcher.style.left = 2 + "px";
             setTheme('theme-light');
         } else {
             switcher.style.left = 19 + "px";

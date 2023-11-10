@@ -20,6 +20,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
 }
 
 .toggler {
@@ -47,13 +48,6 @@ header {
 
 .logo-name {
     fill: var(--logo-text-color);
-}
-
-.switcher-point {
-    fill: white;
-    position: absolute;
-    top: 1.5px;
-    left: 0px;
 }
 
 .header-blocks {
