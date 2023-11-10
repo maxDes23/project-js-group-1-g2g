@@ -1,5 +1,5 @@
 .container-gallary {
-  background-color: #ffffff;
+  background-color: var(--secondary-background-color) ;
 }
 
 .category-title {
