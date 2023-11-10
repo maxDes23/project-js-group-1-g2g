@@ -12,11 +12,43 @@
 @import url('./back2top.css');
 @import url('./footer.css');
 
-:root {
+/* :root {
   --dark-blue: #11131f;
   --white: #f6f5ef;
   --light-green: #93abae;
   --light-blue: #91afba;
   --light-grey: #a6a9b2;
   --text-cart: rgba(246, 245, 239, 0.5);
+} */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.theme-light {
+  --primary-background-color: #F6F6F6;
+  --header-background-color: #ffffff;
+  --header-border-color: #111111;
+  --main-text-color: #111111;
+  --category-selected-color: #4F2EE8;
+  --toggler-gradient: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+  --logo-text-color: #000;
+}
+
+.theme-dark {
+  --primary-background-color: #202024;
+  --header-background-color: #111111;
+  --header-border-color: #ffffff;
+  --main-text-color: #ffffff;
+  --category-selected-color: #EAC645;
+  --toggler-gradient: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+  --logo-text-color: #F3F3F3;
+}
+
+.display-none {
+  display: none;
 }

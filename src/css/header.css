@@ -1,7 +1,6 @@
 header {
     border-radius: 0px 0px 8px 8px;
     border: 1.5px solid #111;
-    background: #FFF;
 }
 
 header {
@@ -12,7 +11,7 @@ header {
     align-items: flex-start;
     gap: 143.999px;
     flex-shrink: 0;
-    background-color: gold;
+    background-color: var(--header-background-color);
 }
 
 .logo {
@@ -23,16 +22,8 @@ header {
     gap: 8px;
 }
 
-
-.toggler-light {
-    background: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
-}
-
-.toggler-dark {
-    background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
-}
-
 .toggler {
+    background: var(--toggler-gradient);
     border-radius: 20px;
     box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
     flex-shrink: 0;
@@ -40,6 +31,8 @@ header {
     height: 20px;
     position: relative;
 }
+
+
 
 .switcher {
     width: 18px;
@@ -49,18 +42,11 @@ header {
     position: absolute;
     top: 1px;
     left: 2px;
+    transition: left .5s;
 }
-
-
-/* .burger-icon {
-    fill: white;
-} */
 
 .logo-name {
-    fill: #000;
-}
-.burger-icon-white {
-    display: none;
+    fill: var(--logo-text-color);
 }
 
 .switcher-point {
@@ -81,7 +67,9 @@ header {
     position: relative;
     width: 40px;
     height: 24px;
+    cursor: pointer;
 }
+
 
 /* Tablet */
 @media screen and (min-width:768px) {
