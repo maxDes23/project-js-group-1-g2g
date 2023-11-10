@@ -11,7 +11,9 @@
 @import url('./gallery.css');
 @import url('./back2top.css');
 @import url('./footer.css');
-@import url('./modal.css'); 
+@import url('./modal.css');
+@import url('./support.css');
+
 /* :root {
   --dark-blue: #11131f;
   --white: #f6f5ef;
