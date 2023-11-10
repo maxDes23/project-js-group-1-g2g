@@ -92,6 +92,7 @@ header {
         width: 768px;
         height: 72px;
     }
+
     .nav-list {
         display: inline-flex;
         align-items: center;
@@ -104,7 +105,7 @@ header {
         align-items: center;
         gap: 4px;
     }
-    
+
 }
 
 
@@ -113,14 +114,4 @@ header {
     header {
         width: 1440px;
     }
-
-        .nav-text {
-            color: var(--main-text-color);
-        }
-    
-        .basket-ico {
-            fill: var(--main-text-color);
-        }
-    
-    
 }
