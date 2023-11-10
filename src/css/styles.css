@@ -31,7 +31,7 @@ body {
 
 .theme-light {
   --primary-background-color: #F6F6F6;
-  --header-background-color: #ffffff;
+  --secondary-background-color: #ffffff;
   --header-border-color: #111111;
   --main-text-color: #111111;
   --category-selected-color: #4F2EE8;
@@ -41,7 +41,7 @@ body {
 
 .theme-dark {
   --primary-background-color: #202024;
-  --header-background-color: #111111;
+  --secondary-background-color: #111111;
   --header-border-color: #ffffff;
   --main-text-color: #ffffff;
   --category-selected-color: #EAC645;

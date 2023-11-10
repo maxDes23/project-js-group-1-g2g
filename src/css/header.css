@@ -11,7 +11,7 @@ header {
     align-items: flex-start;
     gap: 143.999px;
     flex-shrink: 0;
-    background-color: var(--header-background-color);
+    background-color: var(--secondary-background-color);
 }
 
 .logo {
@@ -64,8 +64,23 @@ header {
     cursor: pointer;
 }
 
+.burger-menu {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
+
+}
 
 /* Tablet */
 @media screen and (min-width:768px) {
-    
-    }
+
+
+}
+
+
+/* Desctop */
+@media screen and (min-width:1440px) {
+
+
+}
