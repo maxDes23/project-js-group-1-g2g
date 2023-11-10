@@ -34,7 +34,13 @@ header {
     position: relative;
 }
 
+.nav-text {
+    color: var(--main-text-color);
+}
 
+.basket-ico {
+    fill: var(--main-text-color);
+}
 
 .switcher {
     width: 18px;
