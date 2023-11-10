@@ -49,6 +49,10 @@ body {
   --logo-text-color: #F3F3F3;
 }
 
+body {
+  background-color: var(--primary-background-color);
+}
+
 .display-none {
   display: none;
 }
