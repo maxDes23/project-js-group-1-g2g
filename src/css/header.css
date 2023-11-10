@@ -6,6 +6,7 @@ header {
 header {
     display: inline-flex;
     height: 64px;
+    width: 375px;
     padding: 18px 20px;
     justify-content: center;
     align-items: flex-start;
