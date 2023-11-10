@@ -113,6 +113,14 @@ header {
     header {
         width: 1440px;
     }
+
+        .nav-text {
+            color: var(--main-text-color);
+        }
+    
+        .basket-ico {
+            fill: var(--main-text-color);
+        }
     
     
 }
