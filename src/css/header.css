@@ -1,0 +1,89 @@
+header {
+    border-radius: 0px 0px 8px 8px;
+    border: 1.5px solid #111;
+    background: #FFF;
+}
+
+header {
+    display: inline-flex;
+    height: 64px;
+    padding: 18px 20px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 143.999px;
+    flex-shrink: 0;
+    background-color: gold;
+}
+
+.logo {
+    display: flex;
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.toggler-light {
+    background: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+}
+
+.toggler-dark {
+    background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+}
+
+.toggler {
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+    flex-shrink: 0;
+    width: 40px;
+    height: 20px;
+    position: relative;
+}
+
+.switcher {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 2px;
+}
+
+
+/* .burger-icon {
+    fill: white;
+} */
+
+.logo-name {
+    fill: #000;
+}
+.burger-icon-white {
+    display: none;
+}
+
+.switcher-point {
+    fill: white;
+    position: absolute;
+    top: 1.5px;
+    left: 0px;
+}
+
+.header-blocks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.switcher-block {
+    position: relative;
+    width: 40px;
+    height: 24px;
+}
+
+/* Tablet */
+@media screen and (min-width:768px) {
+    
+    }
