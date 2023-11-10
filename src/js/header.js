@@ -7,7 +7,9 @@ const switcher = document.querySelector('.switcher')
 
 
 themeSwitcher.addEventListener('click', onTriggerClick)
+
 function onTriggerClick() {
+    console.log('object');
     toggleTheme();
     // switcher.style.top = switcher.offsetTop + 1 + "px";
 }
