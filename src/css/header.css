@@ -129,6 +129,7 @@ header {
     }
 
     .nav-item {
+        color: var(--main-text-color);
         display: flex;
         padding: 8px 16px;
         align-items: flex-start;
@@ -139,6 +140,7 @@ header {
         border-radius: 36px;
         background: #EAC645;
         color: #111;
+        fill: #111;
     }
 
     .basket {
