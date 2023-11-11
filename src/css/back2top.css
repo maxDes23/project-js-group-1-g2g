@@ -4,7 +4,12 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 10;    
+    z-index: 10; 
+    transition: opacity .3s ease-in,visibility .3s ease-in,scale 1s;   
+}
+
+.scroll-up:hover, .scroll-up:focus {
+    scale: 1.2;
 }
 
 @media screen and (min-width: 768px) {
