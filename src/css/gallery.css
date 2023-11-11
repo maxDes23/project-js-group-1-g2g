@@ -1,5 +1,5 @@
 .container-gallary {
-  background-color: var(--secondary-background-color) ;
+  background-color: var(--secondary-background-color);
 }
 
 .category-title {
@@ -27,10 +27,16 @@
 .books-container {
   display: flex;
   justify-content: center;
+  flex-flow: row wrap;
 }
 
 .books-container .book {
   display: none;
+  flex: 0 1 calc(20% - 8px);
+}
+
+.books-container.show-more .book {
+  display: block;
 }
 
 .books-container .book:first-child {
