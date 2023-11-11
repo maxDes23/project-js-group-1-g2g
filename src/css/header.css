@@ -1,18 +1,22 @@
 header {
     border-radius: 0px 0px 8px 8px;
     border: 1.5px solid var(--header-border-color);
+    position: fixed;
+    
 }
 
 header {
     display: inline-flex;
     height: 64px;
-    width: 375px;
+    min-width: 375px;
+    width: 100%;
     padding: 18px 20px;
     justify-content: center;
     align-items: center;
     gap: 143.999px;
     flex-shrink: 0;
     background-color: var(--secondary-background-color);
+    z-index: 999;
 }
 
 .logo {
@@ -165,4 +169,60 @@ header {
     header {
         width: 1440px;
     }
+}
+
+/* mobile menu */
+
+.menu__body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%) ;
+    padding: 0px;
+    transition: left 0.3s ease 0s;
+    overflow: auto;
+    z-index: 10;
+
+}
+.books-layer {
+
+    background-image:
+        url("../img/group-foto@1x.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+
+    /* background-image: url('../img/group-foto@1x.png');
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        */
+}
+
+.user-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 84px;
+    margin-left: 20px;
+}
+
+.user-photo {
+    width: 37px;
+    height: 37px;
+}
+
+.user-name {
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.44px;
 }

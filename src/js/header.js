@@ -4,6 +4,16 @@ const navList = document.querySelector('.nav-list')
 const basket = document.querySelector('.basket')
 const home = document.querySelector('.home')
 const basketIco = document.querySelector('.basket-ico')
+const mobileMenu = document.querySelector('.menu__body')
+const burgerBtn = document.querySelector('.burger-menu')
+
+burgerBtn.addEventListener('click', onBurgerClick)
+
+function onBurgerClick() {
+    mobileMenu.classList.toggle('display-none');
+}
+
+
 themeSwitcher.addEventListener('click', onTriggerClick)
 
 
