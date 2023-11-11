@@ -1,20 +1,29 @@
 import axios from 'axios';
 
-// Define bookId
-let bookId = 'your_book_id';
+axios.get('https://books-backend.p.goit.global/books')
+    .then(response => {
+        let books = response.data;
+        // Use the id of the first book as bookId
+        let bookId = books[0].id;
 
-axios.get('https://books-backend.p.goit.global/books/' + bookId)
+        return axios.get('https://books-backend.p.goit.global/books/' + bookId);
+    })
     .then(response => {
         let book = response.data;
-        // Do something with the book
+        // Add the book to the list of books
+        let books = loadBooks();
+        books.push(book);
+        localStorage.setItem('books', JSON.stringify(books));
+        // Display the books
+        displayBooks(books);
     })
     .catch(error => {
-        console.error('Error fetching book details:', error);
+        console.error('Error:', error);
     });
 
 // Load books from localStorage
 function loadBooks() {
-    localStorage.setItem('books', JSON.stringify(books));
+    let books = localStorage.getItem('books');
     if (books) {
         return JSON.parse(books);
     } else {
@@ -29,7 +38,7 @@ function displayBooks(books) {
         bookContainer.innerHTML = `
             <div class="no-wrapper">
                 <p class="no-info">This page is empty, add some books and proceed to order.</p>
-                <img class="no-picture" src="./img/shopping_list/shopping_book_mobile_2x.png" alt="Shop is Empty">
+                <img class="no-picture" src="./img/shopping/books-mob@1x.png" alt="Shop is Empty">
             </div>
         `;
     } else {
@@ -42,17 +51,16 @@ function displayBooks(books) {
 
 // Create a book card
 function createBookCard(book) {
-    let card = document.createElement('div');
+    let card = document.createElement('li');
     card.innerHTML = `
         <img src="${book.cover}" alt="${book.title}">
-        <h2>${book.title}</h2>
-        <p>${book.category}</p>
+        <h3>${book.title}</h3>
+        <p>Author: ${book.author}</p>
+        <p>Level: ${book.level}</p>
         <p>${book.description}</p>
-        <p>${book.author}</p>
         <ul>
-            ${book.links.map(link => `<li><a href="${link}">Buy</a></li>`).join('')}
+            ${book.tags.map(tag => `<li>${tag}</li>`).join('')}
         </ul>
-        <button class="remove" data-book-id="${book.id}">Remove from Shopping List</button>
     `;
     return card;
 }
