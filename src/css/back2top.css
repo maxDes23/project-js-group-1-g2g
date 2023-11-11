@@ -1,4 +1,4 @@
-.back2top {
+.scroll-up {
     border: none;
     background-color: transparent;
     position: fixed;
@@ -7,16 +7,36 @@
     z-index: 10;    
 }
 
-@media screen and (max-width: 767px) {
-    .arr-up-ico {
-        width: 44px;
-        height: 44px;
+@media screen and (min-width: 768px) {
+    .scroll-up {
+        bottom: 26px;
+        right: 26px;
     }
 }
 
-@media screen and (min-width: 768px) {
-    .back2top {
+@media screen and (min-width: 1280px) {
+    .scroll-up {
         bottom: 32px;
         right: 32px;
+    }
+}
+
+.scroll-up-img {
+    width: 44px;
+    height: 44px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .scroll-up-img {
+        width: 54px;
+        height: 54px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .scroll-up-img {
+        width: 64px;
+        height: 64px;
     }
 }
