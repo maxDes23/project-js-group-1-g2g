@@ -1,0 +1,48 @@
+.shop_list {
+}
+.shop_container {
+}
+.shopping_title {
+    letter-spacing: -.04em;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: var(--main-text-color);
+}
+
+@media screen and (min-width: 768px) {
+  .shopping_title {
+    font-size: 48px;
+    line-height: 1.08333;
+    }
+  }
+
+  .shop_title_span {
+   color: #4F2EE8;
+}
+.shop_title_list {
+}
+
+/* Section Pagination */
+
+.pagination_arrow {
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    display: flex;
+}
+.arrow_container {
+}
+.arrow_container-back {
+}
+.arrow_btn {
+}
+.arrow_btn_back {
+}
+.arrow_icon {
+}
+.arrow_container_pages {
+}
+.arrow_container_end {
+}
+.arrow_btn_end {
+}
