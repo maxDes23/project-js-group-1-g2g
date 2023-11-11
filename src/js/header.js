@@ -1,40 +1,14 @@
-
-const burgerBlack = document.querySelector('.burger-icon-black')
-const burgerLight = document.querySelector('.burger-icon-white')
 const themeSwitcher = document.querySelector('.switcher-block')
 const switcher = document.querySelector('.switcher')
 const navList = document.querySelector('.nav-list')
-const shoppingList = document.querySelector('.basket')
-
-// navList.addEventListener('click', onNavClick)
-
-// function onNavClick(event) {
-//     console.dir(event.target);
-//     if (event.target.innerText === "SHOPPING LIST" || event.target.classList.contai) {
-//         shoppingList.classList.add('active')
-//     }
-    
-    
-// }
-// let navItems = document.querySelectorAll('.nav-item');
-
-// function activate(element) {
-//       // Remove 'active' class from all nav items
-//       let navItems = document.querySelectorAll('.nav-item');
-//       navItems.forEach(item => item.classList.remove('active'));
-
-//       // Add 'active' class to the clicked nav item
-//       element.classList.add('active');
-//     }
-
-
-
+const basket = document.querySelector('.basket')
+const home = document.querySelector('.home')
+const basketIco = document.querySelector('.basket-ico')
 themeSwitcher.addEventListener('click', onTriggerClick)
 
 
 function onTriggerClick() {
     toggleTheme();
-    // switcher.style.top = switcher.offsetTop + 1 + "px";
 }
 
 // function to set a given theme/color-scheme
@@ -59,7 +33,6 @@ if (localStorage.getItem('theme') === 'theme-dark') {
     setTheme('theme-dark');
 }
 else {
-    burgerLight.classList.add('display-none')
     setTheme('theme-light');
     }
 
