@@ -33,7 +33,6 @@ themeSwitcher.addEventListener('click', onTriggerClick)
 
 
 function onTriggerClick() {
-    console.log('object');
     toggleTheme();
     // switcher.style.top = switcher.offsetTop + 1 + "px";
 }
@@ -47,21 +46,15 @@ function onTriggerClick() {
 // function to toggle between light and dark theme
     function toggleTheme() {
         if (localStorage.getItem('theme') === 'theme-dark') {
-            burgerBlack.classList.remove('display-none')
-            burgerLight.classList.add('display-none')
             switcher.style.left = 2 + "px";
             setTheme('theme-light');
         } else {
             switcher.style.left = 19 + "px";
-            burgerBlack.classList.add('display-none')
-            burgerLight.classList.remove('display-none')
-            
             setTheme('theme-dark');
         }
     }
 
 if (localStorage.getItem('theme') === 'theme-dark') {
-    burgerBlack.classList.add('display-none')
     switcher.style.left = 19 + "px";
     setTheme('theme-dark');
 }

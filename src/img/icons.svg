@@ -17,17 +17,7 @@
     <symbol id="toggler-point" viewBox="0 0 32 32">
       <path d="M14.769 24.615c6.118 0 11.077-4.959 11.077-11.077S20.887 2.461 14.769 2.461 3.692 7.42 3.692 13.538s4.959 11.077 11.077 11.077z"/>
     </symbol>
-    <symbol id="burger_black" viewBox="0 0 32 32">
-        <path d="M19.8333 11.6667H3.5" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24.5 7H3.5" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24.5 16.3333H3.5" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M19.8333 21H3.5" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="burger_white" viewBox="0 0 32 32">
-        <path d="M19.8333 11.6667H3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24.5 7H3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24.5 16.3333H3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M19.8333 21H3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <symbol id="burger" viewBox="0 0 32 32"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.286" d="M22.667 13.333H4M28 8H4M28 18.667H4M22.667 24H4"/>
     </symbol>
     <symbol id="uil_cart" viewBox="0 0 32 32">
         <path d="M25.333 9.333h-4v-1.333c0-1.415-0.562-2.771-1.562-3.771s-2.357-1.562-3.771-1.562c-1.414 0-2.771 0.562-3.771 1.562s-1.562 2.357-1.562 3.771v1.333h-4c-0.354 0-0.693 0.14-0.943 0.391s-0.391 0.589-0.391 0.943v14.667c0 1.061 0.421 2.078 1.172 2.828s1.768 1.172 2.828 1.172h13.333c1.061 0 2.078-0.421 2.828-1.172s1.172-1.768 1.172-2.828v-14.667c0-0.354-0.14-0.693-0.391-0.943s-0.589-0.391-0.943-0.391zM13.333 8c0-0.707 0.281-1.386 0.781-1.886s1.178-0.781 1.886-0.781c0.707 0 1.385 0.281 1.886 0.781s0.781 1.178 0.781 1.886v1.333h-5.333v-1.333zM24 25.333c0 0.354-0.14 0.693-0.391 0.943s-0.589 0.391-0.943 0.391h-13.333c-0.354 0-0.693-0.14-0.943-0.391s-0.391-0.589-0.391-0.943v-13.333h2.667v1.333c0 0.354 0.14 0.693 0.391 0.943s0.589 0.391 0.943 0.391c0.354 0 0.693-0.14 0.943-0.391s0.391-0.589 0.391-0.943v-1.333h5.333v1.333c0 0.354 0.14 0.693 0.39 0.943s0.589 0.391 0.943 0.391 0.693-0.14 0.943-0.391c0.25-0.25 0.391-0.589 0.391-0.943v-1.333h2.667v13.333z"></path>
