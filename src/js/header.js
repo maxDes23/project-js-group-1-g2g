@@ -3,6 +3,7 @@ const burgerBlack = document.querySelector('.burger-icon-black')
 const burgerLight = document.querySelector('.burger-icon-white')
 const themeSwitcher = document.querySelector('.switcher-block')
 const switcher = document.querySelector('.switcher')
+const navList = document.querySelector('.nav-list')
 
 
 
@@ -45,3 +46,5 @@ else {
     burgerLight.classList.add('display-none')
     setTheme('theme-light');
     }
+
+

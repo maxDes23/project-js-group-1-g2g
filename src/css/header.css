@@ -78,13 +78,6 @@ header {
     overflow: hidden;
 }
 
-.nav-text {
-    color: var(--main-text-color);
-}
-
-.basket-ico {
-    fill: var(--main-text-color);
-}
 
 /* Tablet */
 @media screen and (min-width:768px) {
@@ -105,6 +98,37 @@ header {
         align-items: center;
         gap: 4px;
     }
+
+    .nav-text {
+        color: var(--main-text-color);
+    }
+
+    .basket-ico {
+        fill: var(--main-text-color);
+    }
+
+    .nav-list-item {
+        display: flex;
+        padding: 8px 16px;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .active {
+        border-radius: 36px;
+        background: #EAC645;
+        color: #111;
+    }
+
+    .basket {
+        display: flex;
+        padding: 7px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+
 
 }
 
