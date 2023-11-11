@@ -1,0 +1,191 @@
+/* mob & white theme */
+.overlay {
+    /* Скрываем подложку  */
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 20;
+    transition: .3s all;
+}
+
+/* Стили для модальных окон */
+
+.js-open-modal {
+    color: #FFF;
+}
+
+.open-modal {
+    background-color: #4F2EE8;
+    width: 80px;
+    height: 40px;
+}
+.modal {
+    /* Скрываем окна  */
+    display: inline;
+    opacity: 0;
+    visibility: hidden;
+
+    /*  Установаем ширину окна  */
+    width: 335px;
+    height: 762px;
+
+    /*  Центрируем и задаем z-index */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    /* Должен быть выше чем у подложки*/
+
+    /*  Побочные стили   */
+    box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
+    text-align: center;
+    padding: 30px;
+
+    background-color: #fff;
+    transition: 0.3s all;
+
+    border-radius: 18px;
+    border-color: #111111;
+    border: 2px solid #111;
+}
+
+/* стили внутри модалки */
+
+.modal-img {
+    padding-bottom: 14px;
+}
+
+.modal__title {
+    text-align: left;
+    color: #111;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.64px;
+    margin-bottom: 4px;
+}
+
+.modal-title-name {
+    text-align: left;
+    color: #B4AFAF;
+    font-family: DM Sans;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.48px;
+    padding-bottom: 18px;
+}
+
+.modal-title-text {
+    text-align: left;
+    width: 287px;
+    height: 70px;
+    flex-shrink: 0;
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+    margin-bottom: 14px;
+}
+
+.modal-text-link {
+    padding-bottom: 44px;
+    display: flex;
+}
+.modal-icon-amazon {
+    text-align: left;
+    background-color: #FFF;
+ }
+.modal-button-add {
+    border-radius: 40px;
+    background: #FFF;
+    border: 2px solid #4F2EE8;
+    display: inline-flex;
+    padding: 14px 28px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.modal-button-remove {
+    border-radius: 40px;
+    background: #FFF;
+    border: 2px solid #4F2EE8;
+    display: inline-flex;
+    padding: 14px 28px;
+    align-items: flex-start;
+    gap: 10px;
+    box-sizing: inherit;
+}
+
+.modal-text-button-remove {
+    color: #111;
+    display: block;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    box-sizing: inherit;
+}
+
+.modal-text-under-button {
+
+}
+
+.modal-text-button-add {
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+}
+
+/* Стили для активных классов подложки и окна */
+
+.modal.active,
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Стили для кнопки закрытия */
+
+.modal__cross {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    fill: #111111;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+/* Стили для кнопок */
+
+/* a {
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    
+    margin: 10px;
+    color: #fff;
+    border-radius: 3px;
+} */
