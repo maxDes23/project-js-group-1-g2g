@@ -8,8 +8,8 @@ header {
     height: 64px;
     width: 375px;
     padding: 18px 20px;
-    justify-content: baseline;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 143.999px;
     flex-shrink: 0;
     background-color: var(--secondary-background-color);
@@ -72,17 +72,19 @@ header {
 .switcher-block {
     position: relative;
     width: 40px;
-    height: 24px;
+    height: 20px;
     cursor: pointer;
 }
 
 .burger-menu {
     cursor: pointer;
     width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 28px;
     overflow: hidden;
 }
-
 
 /* Tablet */
 @media screen and (min-width:768px) {
@@ -106,6 +108,9 @@ header {
 
     .switcher-block {
         margin-right: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .shopping-list {
