@@ -1,0 +1,37 @@
+.categories {
+    display: flex;
+    min-width: 307px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 112.5%;
+    letter-spacing: -0.32px;
+}
+.categories_item {
+    text-decoration: none;
+
+}
+
+.categories_item:active {
+    text-transform: uppercase;
+    color: var(--category-selected-color);
+}
+
+@media screen and (min-width: 768px) {
+    .categories {
+        min-width: 309px;
+        gap: 32px;
+        font-size: 18px;
+        line-height: 133,33%;
+        letter-spacing: -0.36px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .categories {
+        min-width: 328px;
+    }
+}
