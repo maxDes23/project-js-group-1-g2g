@@ -22,11 +22,10 @@
 
 .categories_item {
     text-decoration: none;
-    /* color: rgba(17, 17, 17, 0.60);
-    color: rgba(255, 255, 255, 0.60); */
+    color: var(--category-color);
 }
 
-.categories_item:active {
+.categories_item.active_category {
     text-transform: uppercase;
     font-weight: 700;
     color: var(--category-selected-color);
