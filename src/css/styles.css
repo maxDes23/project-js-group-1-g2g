@@ -42,6 +42,7 @@ body {
   --category-selected-color: #4f2ee8;
   --toggler-gradient: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
   --logo-text-color: #000;
+  --category-color: rgba(17, 17, 17, 0.6);
 }
 
 .theme-dark {
@@ -52,6 +53,7 @@ body {
   --category-selected-color: #eac645;
   --toggler-gradient: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
   --logo-text-color: #f3f3f3;
+  --category-color: rgba(255, 255, 255, 0.60);
 }
 
 body {
