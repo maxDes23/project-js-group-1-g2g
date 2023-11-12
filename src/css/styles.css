@@ -14,6 +14,7 @@
 @import url('./modal.css');
 @import url('./support.css');
 @import url('./shopping-list.css');
+@import url('./sign-up.css');
 
 /* :root {
   --dark-blue: #11131f;
@@ -33,12 +34,12 @@ body {
 }
 
 .theme-light {
-  --primary-background-color: #F6F6F6;
+  --primary-background-color: #f6f6f6;
   --secondary-background-color: #ffffff;
   --header-border-color: #111111;
   --main-text-color: #111111;
-  --category-selected-color: #4F2EE8;
-  --toggler-gradient: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+  --category-selected-color: #4f2ee8;
+  --toggler-gradient: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
   --logo-text-color: #000;
 }
 
@@ -47,9 +48,9 @@ body {
   --secondary-background-color: #111111;
   --header-border-color: #ffffff;
   --main-text-color: #ffffff;
-  --category-selected-color: #EAC645;
-  --toggler-gradient: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
-  --logo-text-color: #F3F3F3;
+  --category-selected-color: #eac645;
+  --toggler-gradient: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+  --logo-text-color: #f3f3f3;
 }
 
 body {
