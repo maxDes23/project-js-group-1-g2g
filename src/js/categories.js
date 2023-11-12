@@ -2,7 +2,6 @@ import { serviceAllCategory } from "./book-api";
 
 document.addEventListener('DOMContentLoaded', async function () {
     const getData = await serviceAllCategory();
-    console.log(getData);
     const { data } = getData;
     addList(data);
   });
@@ -16,4 +15,9 @@ function addList(categories) {
         `;
       }).join('');
     categoriesList.insertAdjacentHTML('beforeend', markup);
+    let categoriesArray = [...document.getElementsByClassName('categories_item')];
+    categoriesArray.forEach(e => e.addEventListener('click', () =>{
+        document.querySelector('.active_category').classList.remove('active_category');
+        e.classList.add('active_category');
+    }))
 }
