@@ -15,6 +15,7 @@
 @import url('./support.css');
 @import url('./shopping-list.css');
 @import url('./sign-up.css');
+@import url('./categories.css');
 
 /* :root {
   --dark-blue: #11131f;
@@ -59,4 +60,22 @@ body {
 
 .display-none {
   display: none;
+}
+
+.section {
+  padding-top: 104px;
+  padding-left: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding-top: 112px;
+    padding-left: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .section {
+    padding-left: 24px;
+  }
 }

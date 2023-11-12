@@ -1,3 +1,9 @@
+/**
+  |============================
+  | Section Shopping List
+  |============================
+*/
+
 .shop_list {
     display: flex;
     flex-direction: column;
@@ -65,7 +71,11 @@ text-align: center;
     line-height: 1.33333;
 }
 }
-/* Section Pagination */
+/**
+  |============================
+  | Section Pagination
+  |============================
+*/
 
 .pagination_arrow {
     justify-content: center;
