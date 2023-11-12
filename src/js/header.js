@@ -10,7 +10,7 @@ const burgerBtn = document.querySelector('.burger-menu')
 burgerBtn.addEventListener('click', onBurgerClick)
 
 function onBurgerClick() {
-    mobileMenu.classList.toggle('display-none');
+    mobileMenu.classList.toggle('menu-active');
 }
 
 

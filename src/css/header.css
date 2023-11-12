@@ -178,14 +178,20 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    transform: translate(-100%, 0px);
     height: 100%;
     background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%) ;
     padding: 0px;
-    transition: left 0.3s ease 0s;
+    transition: all 0.4s ease 0s;
     overflow: auto;
     z-index: 10;
-
 }
+
+.menu__body.menu-active {
+    transform: translate(0px, 0px);
+}
+
+
 .books-layer {
 
     background-image:
