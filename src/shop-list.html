@@ -16,11 +16,20 @@
   </head>
   <body>
     <!-- <load ="partials/header.html" /> -->
+    <div class="shoplist_header">
       <load ="partials/header.html" />
-    <main>
-      <load ="partials/shopping-list.html" />
-      <load ="partials/pagination.html" />
-    </main>
+    </div>
+  <main>
+     <div class="shop_content_container">
+        <div class="shop_support__aside" >
+          <load ="partials/support.html" />
+        </div>
+      <div class="shop__container"></div>
+         <load ="partials/shopping-list.html" />
+         <load ="partials/pagination.html" />
+      </div>
+    </div>
+  </main>
 
     <load ="partials/footer.html" />
     <script type="module" src="./js/shopping-list.js"></script>
