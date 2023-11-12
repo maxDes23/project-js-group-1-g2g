@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf</title>
+    <!-- Normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    />
+
+    <!-- Custom styles -->
+    
+    <script type="module" crossorigin src="/project-js-group-1-g2g/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-js-group-1-g2g/assets/vendor-7b9f1f0a.js">
+    <link rel="modulepreload" crossorigin href="/project-js-group-1-g2g/assets/support-56549343.js">
+    <link rel="stylesheet" href="/project-js-group-1-g2g/assets/support-12ba0293.css">
+    <link rel="stylesheet" href="/project-js-group-1-g2g/assets/vendor-6c527891.css">
+  </head>
+  <body>
+    <header>
+    <div class="header-container container">
+    <a href="./index.html"><div class="logo">
+        <svg class="logo-icon" width="24" height="24">
+            <use href="/project-js-group-1-g2g/assets/icons-1e267f48.svg#logo"></use>
+        </svg>
+        
+        <svg class="logo-name" width="77" height="14">
+            <use href="/project-js-group-1-g2g/assets/icons-1e267f48.svg#Bookshelf"></use>
+        </svg>
+    </div>
+    </a>
+    <nav class="nav-list">
+        <a href="./index.html"><div class="nav-item home">HOME</div></a>
+        <a href="./shop-list.html">
+        <div class="nav-item basket">SHOPPING LIST
+            <svg class="basket-ico" width="20" height="20">
+                <use href="/project-js-group-1-g2g/assets/icons-1e267f48.svg#uil_cart"></use>
+            </svg>
+        </div>
+         </a>
+    </nav>
+
+
+    <div class="header-blocks">
+        <div class="switcher-block">
+            <div class="toggler"></div>
+            <div class="switcher"></div>
+        </div>
+        <div class="burger-menu">
+            <svg class="burger-icon" width="28" height="28">
+              <use href="/project-js-group-1-g2g/assets/icons-1e267f48.svg#burger"></use>
+            </svg>
+        </div>
+         <button class="sign-up-button" type="button">
+      <span class="sign-up-btn-text">Sign up</span>
+      <svg class="sign-up-icon" width="20px" height="20px">
+        <use href="/project-js-group-1-g2g/assets/icons-1e267f48.svg#sign-up-icon"></use>
+      </svg>
+    </button>
+    </div>
+</div>
+</header>
+    <main>
+      <section class="container">
+      <div class="main-content">
+        <div class="left-container">
+          <div class="categories_container">
+    <ul class="categories">
+        <li><a class='categories_item active_category' href="#">All Categories</a></li>
+    </ul>
+</div>
+          <div id="sliderOne" class="splide" aria-label="">
+  <div class="sup-container">
+    <div class="sup-top">
+      <h3 class="sup-tittle">Support Ukraine</h3>
+      <svg class="trident">
+        <use href="../img/icons.svg#icon-trident"></use>
+      </svg>
+    </div>
+    <div class="splide__track">
+      <ol class="splide__list"></ol>
+    </div>
+    <div class="splide__arrows">
+      <button class="splide__arrow splide__arrow--prev">Prev</button>
+      <button class="splide__arrow splide__arrow--next">
+        <svg id="rotate-svg" class="icon-slider">
+          <use href="/project-js-group-1-g2g/assets/icons-1e267f48.svg#icon-arrow"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+        </div>
+        <div class="container-gallary">
+  <p class="category-title">Best Sellers <span>Books</span></p>
+  <div class="category-container"></div>
+</div>
+
+      </div>
+      <button class="open-modal" type="button">
+    <a href="#" class="js-open-modal" data-modal="1">Open modal</a>
+</button>
+
+<!-- <a href="#" class="js-open-modal" data-modal="2">Открыть окно 2</a> -->
+
+<div class="modal" data-modal="1">
+  <!--   Svg иконка для закрытия окна  -->
+  <svg
+    class="modal__cross js-modal-close"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
+    />
+  </svg>
+  <div class="modal-img">
+    <img src="/project-js-group-1-g2g/assets/Rectangle 13-3ac22459.png" alt="" />
+  </div>
+  <h3 class="modal__title">HELLO BEAUTIFUL</h3>
+  <p class="modal-title-name">Ann Napolitano</p>
+  <p class="modal-title-text">
+    In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark past
+    resurfaces as he gets to the know the family of his college sweetheart.
+  </p>
+  <span class="modal-text-link">
+    <a class="modal-icon-amazon" href="http://">
+      <img src="../img/modal/amazon.png" alt="" />
+
+    <a href="http://">
+        <img src="../img/modal/book.png" alt="">
+    </a>
+  </span>
+  <button class="modal-button-add js-open-modal" data-modal="2" type="button">
+    <p class="modal-text-button-add">add to shopping list</p>
+  </button>
+  <p class="modal-text-under-button"></p>
+</div>
+
+<div class="modal" data-modal="2">
+  <!--   Svg иконка для закрытия окна  -->
+  <svg
+    class="modal__cross js-modal-close"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
+    />
+  </svg>
+  <div class="modal-img">
+    <img src="/project-js-group-1-g2g/assets/Rectangle 13-3ac22459.png" alt="" />
+  </div>
+  <h3 class="modal__title">HELLO BEAUTIFUL</h3>
+  <p class="modal-title-name">Ann Napolitano</p>
+  <p class="modal-title-text">
+    In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark past
+    resurfaces as he gets to the know the family of his college sweetheart.
+  </p>
+  <span class="modal-text-link">
+    <a class="modal-icon-amazon" href="http://">
+      <img src="../img/modal/amazon.png" alt="" />
+
+    <a href="http://">
+        <img src="../img/modal/book.png" alt="">
+    </a>
+  </span>
+  <button class="modal-button-remove js-open-modal" data-modal="2" type="button">
+    <p class="modal-text-button-remove">remove from the shopping list</p>
+  </button>
+  <p class="modal-text-under-button">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
+</div>
+  <p class="modal__title"></p>
+</div>
+
+<!-- Подложка под модальным окном -->
+<div class="overlay js-overlay-modal"></div>
+
+      <div class="menu__body">
+    <div class="user-block">
+        <img class="user-photo" src="/project-js-group-1-g2g/assets/stephan-9e4ab9dd.png" alt="">
+        <h3 class="user-name">Stephan</h3>
+    </div>
+    <div class="mobile-nav">
+        <a href="./index.html"><div class="nav-item mobile-home">HOME</div></a>
+        <a href="./shop-list.html">
+        <div class="nav-item basket">SHOPPING LIST
+            <svg class="basket-ico" width="20" height="20">
+                <use href="/project-js-group-1-g2g/assets/icons-1e267f48.svg#uil_cart"></use>
+            </svg>
+        </div>
+         </a>
+    </div>
+    
+</div>
+      <!-- AUTHORIZATION -->
+<div class="backdrop-modal-sign-up display-none">
+  <div class="modal-sign-up">
+    <!-- <button class="modal-close-btn" type="btn">
+      <svg class="modal-close-btn-icon" width="20" height="20">
+        <use href="/src/img/icons.svg#x-close"></use>
+      </svg>
+    </button> -->
+
+    <form class="sign-up-form">
+      <input
+        type="name"
+        name="user_name"
+        class="sign-up-modal-input"
+        id="name"
+        placeholder="NAME"
+        required
+      />
+      <input
+        type="email"
+        name="user_email"
+        class="sign-up-modal-input"
+        id="email"
+        placeholder="EMAIL"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        class="sign-up-modal-input"
+        id="password"
+        placeholder="PASSWORD"
+        required
+      />
+      <button type="submit" class="sign-up-submit-btn sign-up-btn">
+        SIGN UP
+      </button>
+    </form>
+    <div class="sign-up-info">
+      <a class="sign-up-link" href="#">SIGN UP</a>
+      <button class="sign-in-btn" type="button">SIGN IN</button>
+    </div>
+  </div>
+</div>
+
+    </section>
+    </main>
+
+    <!-- skroll up -->
+<button type="button" class="scroll-up" id="scroll-up">
+  <img
+    class="scroll-up-img"
+    src="data:image/png;base64,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"
+    alt="up"
+    width="64"
+    height="64"
+  />
+</button>
+
+    <footer class="footer">
+  <div class="container">
+     <a href="./index.html"><div class="footer-logo">
+        <svg class="logo-icon" width="24" height="24">
+            <use href="/project-js-group-1-g2g/assets/icons-1e267f48.svg#logo"></use>
+        </svg>
+        
+        <svg class="logo-name" width="77" height="14">
+            <use href="/project-js-group-1-g2g/assets/icons-1e267f48.svg#Bookshelf"></use>
+        </svg>
+    </div>
+    <div class="footer-content">
+      <div class="footer-top">
+        <button class="footer-button" id="showGalleryButton">Contact us</button>
+      </div>
+      <div class="footer-bottom">
+        <ul class="footer-nav">
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#header">Home</a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="gallery">
+      <img src="" alt="foto 1" />
+      <img src="" alt="foto 2" />
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>
