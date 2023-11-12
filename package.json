@@ -18,6 +18,7 @@
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
     "axios": "^1.6.1",
+    "firebase": "^10.6.0",
     "notiflix": "^3.2.6",
     "simplelightbox": "^2.14.2",
     "vite-plugin-full-reload": "^1.0.5",
