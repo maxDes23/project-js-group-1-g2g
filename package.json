@@ -16,9 +16,7 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
-
     "@splidejs/splide": "^4.1.4",
-
     "axios": "^1.6.1",
     "notiflix": "^3.2.6",
     "simplelightbox": "^2.14.2",
