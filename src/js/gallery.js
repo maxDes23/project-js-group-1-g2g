@@ -90,22 +90,22 @@ async function renderСategoryList(categories) {
 
 // Функцію АПІ потрібно буде звідси прибрати та імпортувати
 // ТИМЧАСОВА Реалізація коду по розмітці де буде відмальовуватись всі категорії
-async function serviceAllCategory() {
-  return await axios.get('category-list');
-}
+// async function serviceAllCategory() {
+//   return await axios.get('category-list');
+// }
 
-document.addEventListener('DOMContentLoaded', async function () {
-  const getData = await serviceAllCategory();
-  const { data } = getData;
+// document.addEventListener('DOMContentLoaded', async function () {
+//   const getData = await serviceAllCategory();
+//   const { data } = getData;
 
-  console.log(data);
+//   console.log(data);
 
-  const list = data.map(item => item.list_name);
-  console.log(list);
-  console.log(data[0]);
-  console.log(data[0].list_name);
-  renderCategory(data);
-});
+//   const list = data.map(item => item.list_name);
+//   console.log(list);
+//   console.log(data[0]);
+//   console.log(data[0].list_name);
+//   renderCategory(data);
+// });
 
 function renderCategory(items) {
   const category = document.querySelector('.category-list');
