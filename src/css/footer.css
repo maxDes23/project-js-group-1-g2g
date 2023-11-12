@@ -1,13 +1,13 @@
 .footer {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-radius: 0px 0px 8px 8px;
   border: 2px solid #111;
 
   background: #fff;
 }
 .footer-top {
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@
 }
 .footer-slogan {
   width: 300px;
-
+  display: flex;
   font-weight: 500;
   font-size: 28px;
   line-height: 1.21;
@@ -69,7 +69,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 .gallery {
   display: flex;
