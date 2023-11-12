@@ -29,10 +29,12 @@
 .books-container .book {
   display: none;
   flex: 0 1 calc(20% - 24px);
+  margin: 0 12px;
 }
 
 .books-container.show-more .book {
   display: block;
+  flex: 0 1 calc(20% - 24px);
 }
 
 .books-container .book:first-child {
@@ -43,14 +45,12 @@
 @media screen and (min-width: 768px) {
   .books-container .book:nth-child(-n + 3) {
     display: flex;
-    margin: 0 12px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .books-container .book:nth-child(-n + 5) {
     display: flex;
-    margin: 0 12px;
   }
 }
 
