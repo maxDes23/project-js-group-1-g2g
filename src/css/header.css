@@ -1,23 +1,30 @@
-.header-container {
-    border-radius: 0px 0px 8px 8px;
-    border: 1.5px solid var(--header-border-color);
-    position: fixed;
-    
-}
+
 
 .header-container {
-    display: inline-flex;
-    height: 64px;
-    min-width: 375px;
-    width: 100%;
-    padding: 18px 20px;
-    justify-content: center;
-    align-items: center;
-    gap: 143.999px;
-    flex-shrink: 0;
     background-color: var(--secondary-background-color);
-    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    width: 375px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1.5px solid var(--header-border-color);
+    border-radius: 0px 0px 8px 8px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
+
+
+
+
+
+
 
 .logo {
     display: flex;
@@ -94,101 +101,6 @@
     overflow: hidden;
 }
 
-/* Tablet */
-@media screen and (min-width:768px) {
-    .header-container {
-        width: 768px;
-        height: 72px;
-        gap: 0px;
-    }
-    
-    .logo {
-        margin-right: 40px ;
-    }
-
-    .nav-list {
-        min-width: fit-content;
-        display: inline-flex;
-        align-items: center;
-        gap: 16px;
-        margin-right: 87px;
-    }
-
-    .switcher-block {
-        margin-right: 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .shopping-list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 4px;
-    }
-
-    .nav-text {
-        color: var(--main-text-color);
-    }
-
-    .basket-ico {
-        fill: var(--main-text-color);
-    }
-
-    .nav-item {
-        color: var(--main-text-color);
-        display: flex;
-        padding: 8px 16px;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .active {
-        border-radius: 36px;
-        background: #EAC645;
-        color: #111;
-        fill: #111;
-    }
-
-    .basket {
-        display: flex;
-        padding: 7px 16px;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-    }
-
-
-
-}
-
-
-/* Desctop */
-@media screen and (min-width:1440px) {
-    .header-container {
-        width: 1440px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* mobile menu */
 
@@ -244,4 +156,134 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: -0.44px;
+}
+
+.mobile-nav {
+    margin-top: 140px;
+    margin-left: 129px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 7px;
+}
+
+.nav-item {
+    padding: 8px 16px;
+    width: fit-content;
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.basket-ico {
+    fill: white;
+}
+
+.nav-active {
+    border-radius: 36px;
+    background: #EAC645;
+    color: #111;
+    fill: #111;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet */
+@media screen and (min-width:768px) {
+    .header-container {
+        width: 768px;
+        height: 72px;
+        gap: 0px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        margin-right: 40px;
+    }
+
+    .nav-list {
+        min-width: fit-content;
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        margin-right: 87px;
+    }
+
+    .switcher-block {
+        margin-right: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shopping-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .nav-text {
+        color: var(--main-text-color);
+    }
+
+    .basket-ico {
+        fill: var(--main-text-color);
+    }
+
+    .nav-item {
+        color: var(--main-text-color);
+        display: flex;
+        padding: 8px 16px;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .basket {
+        display: flex;
+        padding: 7px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+
+
+}
+
+
+/* Desctop */
+@media screen and (min-width:1440px) {
+    .header-container {
+        width: 1440px;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+
+
 }
