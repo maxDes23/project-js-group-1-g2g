@@ -5,7 +5,7 @@
 */
 
 .header {
-    padding-bottom: 104px;
+    padding-bottom: 112px;
 }
 
 @media screen and (min-width: 1280px) {
@@ -16,11 +16,11 @@
   }
 }
 
-@media screen and (min-width: 768px) {        
+/* @media screen and (min-width: 768px) {        
     .shop_content_container {
    
   }
-}
+} */
 
 .shop_content_container{
     padding-top: 104px;
@@ -76,7 +76,7 @@
     gap: 14px;
     width: 265px;
     height: 248px;
-    margin-top: 120px;
+    margin-top: 140px;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
@@ -90,10 +90,10 @@
     justify-content: center;
     align-items: center;
 }
-.no__info{
+.no__info {
 text-align: center;
     letter-spacing: -.02em;
-    color: #0009;
+    color: var(--shop-text-color);
     font-size: 14px;
     line-height: 1.28571;
 }

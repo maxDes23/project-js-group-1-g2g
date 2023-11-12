@@ -43,6 +43,7 @@ body {
   --toggler-gradient: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
   --logo-text-color: #000;
   --category-color: rgba(17, 17, 17, 0.6);
+  --shop-text-color: #0009;
 }
 
 .theme-dark {
@@ -54,6 +55,7 @@ body {
   --toggler-gradient: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
   --logo-text-color: #f3f3f3;
   --category-color: rgba(255, 255, 255, 0.60);
+  --shop-text-color: #fff9;
 }
 
 body {
