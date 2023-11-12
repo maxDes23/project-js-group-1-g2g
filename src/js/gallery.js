@@ -1,14 +1,5 @@
-import axios from 'axios';
-axios.defaults.baseURL = 'https://books-backend.p.goit.global/books/';
-
-// import { serviceSelectedCategory } from './book-api';
-
-// ПОКИ ТИМЧАСОВО СОБІ ДОБАВИВ ФУНКЦІЇ АПІ
-
-// Популярні книги, що належать до усіх категорій:
-async function serviceTopBooks() {
-  return await axios.get('top-books');
-}
+import { serviceSelectedCategory } from './book-api';
+import { serviceTopBooks } from './book-api';
 
 // ------------КОД ДЛЯ РЕНДЕРА СТОРІНКИ ХОУМ
 
@@ -27,13 +18,11 @@ function renderGallery(books) {
     .map(book => {
       const { _id, book_image, title, author } = book;
       return `
-      <div class="category-container">
-        <div class="book" id="${_id}">
+      <div class="book" id="${_id}">
           <img src="${book_image}" class="book-img" alt="test" />
           <p class="book-title">${title}</p>
           <p class="book-author">${author}</p>
         </div>
-      </div>
             `;
     })
     .join('');
@@ -49,95 +38,81 @@ async function renderСategoryList(categories) {
       const topBook = renderGallery(books);
       const nameCategory = category.list_name;
       return `
-       <div id="${nameCategory}">
+       <div class="${nameCategory.replaceAll(' ', '_')}">
           <p class="category-descriotion" id="category">
             ${nameCategory}
           </p>
           <div class="books-container"> ${topBook} </div>
           <div class="button-wrapper">
-            <button class="btn-load-more" type="button">SEE MORE</button>
+            <button class="btn-load-more" type="button" id="${nameCategory}">SEE MORE</button>
           </div>
          </div> 
       `;
     })
     .join('');
   categoryList.insertAdjacentHTML('beforeend', markup);
+  getCategoryOnLoadMore();
 }
 
 // BTN SEE MORE
-// Функцію АПІ потрібно буде звідси прибрати та імпортувати
-// async function serviceSelectedCategory(selectedCategory) {
-//   return await axios.get(`category?category=${selectedCategory}`);
-// }
 
-// // поки захаркодив щоб можна було вімалювати
+function getCategoryOnLoadMore() {
+  const loadMoreButtons = document.querySelectorAll('.btn-load-more');
 
-// const loadMoreBtn = document.querySelector('.btn-load-more');
+  loadMoreButtons.forEach(loadMoreBtn => {
+    loadMoreBtn.addEventListener('click', onLoadMoreBtn);
+  });
+}
 
-// loadMoreBtn.addEventListener('click', onLoadMoreBtn);
+async function onLoadMoreBtn(event) {
+  try {
+    document.querySelector('.books-container').classList.toggle('show-more');
 
-// async function onLoadMoreBtn() {
-//   try {
-//     document.querySelector('.books-container').classList.toggle('show-more');
-//     let selectedCategory = 'Combined Print and E-Book Fiction';
-//     const category = await serviceSelectedCategory(selectedCategory);
-//     console.log(category);
-//     renderGallery(category.data);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+    const categoryOriginalName = event.target.id;
+    const selectedCategory = event.target.id.replaceAll(' ', '_');
 
-// Функцію АПІ потрібно буде звідси прибрати та імпортувати
-// ТИМЧАСОВА Реалізація коду по розмітці де буде відмальовуватись всі категорії
-// async function serviceAllCategory() {
-//   return await axios.get('category-list');
-// }
+    const categoryContainer = document.querySelector(`.${selectedCategory}`);
 
-// document.addEventListener('DOMContentLoaded', async function () {
-//   const getData = await serviceAllCategory();
-//   const { data } = getData;
+    const category = await serviceSelectedCategory(categoryOriginalName);
+    const renderGalleryAfterBtnClick = renderGallery(category.data);
 
-//   console.log(data);
-
-//   const list = data.map(item => item.list_name);
-//   console.log(list);
-//   console.log(data[0]);
-//   console.log(data[0].list_name);
-//   renderCategory(data);
-// });
-
-function renderCategory(items) {
-  const category = document.querySelector('.category-list');
-
-  const markup = items
-    .map(item => {
-      const { list_name } = item;
-      return `
-        <li class="category-item">${list_name}</li>
+    const newCategory = `
+       <p class="category-descriotion" id="category">
+            ${categoryOriginalName}
+          </p>
+          <div class="books-container show-more"> ${renderGalleryAfterBtnClick} </div>
+          <div class="button-wrapper">
+            <button class="btn-load-more" type="button" id="${categoryOriginalName}">SEE MORE</button>
+          </div>
       `;
-    })
-    .join('');
-  category.insertAdjacentHTML('beforeend', markup);
+
+    categoryContainer.innerHTML = newCategory;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 //Функція по кліку на категоріям яка буде вібирати назву категорії
 
-const categoryName = document.querySelector('.category-list');
+// const categoryName = document.querySelector('.category-list');
 
-categoryName.addEventListener('click', getCategoryName);
+// categoryName.addEventListener('click', getCategoryName);
 
-async function getCategoryName(e) {
-  if (e.target.classList.contains('category-item')) {
-    const selectCategory = e.target.innerText;
-    console.log(selectCategory);
+// async function getCategoryName(e) {
+//   if (e.target.classList.contains('category-item')) {
+//     const selectCategory = e.target.innerText;
+//     console.log(selectCategory);
 
-    try {
-      const category = await serviceSelectedCategory(selectCategory);
-      console.log(category);
-      // renderСategoryList(category.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+//     try {
+//       const category = await serviceSelectedCategory(selectCategory);
+//       console.log(category);
+//       // renderСategoryList(category.data);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   }
+// }
+
+export function getBooks() {
+  return serviceTopBooks().then(response => response.data[0].books);
 }

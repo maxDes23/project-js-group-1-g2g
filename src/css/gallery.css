@@ -32,7 +32,7 @@
 
 .books-container .book {
   display: none;
-  flex: 0 1 calc(20% - 8px);
+  flex: 0 1 calc(20% - 24px);
 }
 
 .books-container.show-more .book {
@@ -51,7 +51,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1440px) {
   .books-container .book:nth-child(-n + 5) {
     display: flex;
     margin: 0 12px;
