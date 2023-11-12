@@ -1,5 +1,6 @@
 .sup-container {
-    max-width: 356px;
+    max-width: 280px;
+    width: 100%;
     height: 474px;
     border-radius: 16px;
     background: radial-gradient(189.32% 190.93% at 59.76% -23.42%,
@@ -7,6 +8,8 @@
             #fff 100%);
     box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
     position: relative;
+    margin: 0 auto;
+
 }
 
 .trident {
@@ -79,4 +82,16 @@
 
 .icon-slider :focus {
     rotate: 270deg;
+}
+
+@media screen and (min-width: 375px) {
+    .sup-container {
+        max-width: 335px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .sup-container {
+        max-width: 365px;
+    }
 }
