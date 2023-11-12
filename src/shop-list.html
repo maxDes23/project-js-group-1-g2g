@@ -14,13 +14,21 @@
     <!-- Custom styles -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
+  <body class="shopping_page">
     <!-- <load ="partials/header.html" /> -->
-      <load ="partials/header.html" />
+      <div class="shoplist_header">
+        <load ="partials/header.html" />
+      </div>
     <main>
-      <load ="partials/support.html" />
-      <load ="partials/shopping-list.html" />
-      <load ="partials/pagination.html" />
+       <div class="shop_content_container">
+          <div class="shop_support__aside">
+            <load ="partials/support.html" />
+          </div>
+        <div class="shop__container"></div>
+           <load ="partials/shopping-list.html" />
+           <load ="partials/pagination.html" />
+        </div>
+      </div>
     </main>
 
     <load ="partials/footer.html" />
