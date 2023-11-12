@@ -3,4 +3,4 @@ import{S as a}from"./vendor-7b9f1f0a.js";(function(){const t=document.createElem
       <img src="${e.img}" alt="${e.title}" class="org-logo">
     </a>
   </li>`;d.insertAdjacentHTML("beforeend",t)});const I=new a("#sliderOne",{perPage:6,gap:"20px",pagination:!1,direction:"ttb",height:"292px",dynamicSlides:!0,rewind:!0,label:"Support to Ukraine"});I.mount();
-//# sourceMappingURL=support-56549343.js.map
+//# sourceMappingURL=support-f7f94fd7.js.map
