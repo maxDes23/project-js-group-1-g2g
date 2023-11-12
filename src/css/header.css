@@ -1,11 +1,11 @@
-header {
+.header-container {
     border-radius: 0px 0px 8px 8px;
-    border: 1.5px solid var(--header-border-color);
+    border: 1.5px solid var(--.header-container-border-color);
     position: fixed;
     
 }
 
-header {
+.header-container {
     display: inline-flex;
     height: 64px;
     min-width: 375px;
@@ -96,7 +96,7 @@ header {
 
 /* Tablet */
 @media screen and (min-width:768px) {
-    header {
+    .header-container {
         width: 768px;
         height: 72px;
         gap: 0px;
@@ -166,10 +166,29 @@ header {
 
 /* Desctop */
 @media screen and (min-width:1440px) {
-    header {
+    .header-container {
         width: 1440px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* mobile menu */
 
