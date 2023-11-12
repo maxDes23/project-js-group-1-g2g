@@ -1,6 +1,6 @@
 .header-container {
     border-radius: 0px 0px 8px 8px;
-    border: 1.5px solid var(--.header-container-border-color);
+    border: 1.5px solid var(--header-border-color);
     position: fixed;
     
 }
