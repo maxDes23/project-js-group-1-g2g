@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   const { data } = getDataTopBooks;
 
   renderСategoryList(data);
+  getCategory();
 });
 
 //Рендеринг картки КНИГИ
@@ -94,25 +95,26 @@ async function onLoadMoreBtn(event) {
 
 //Функція по кліку на категоріям яка буде вібирати назву категорії
 
-// const categoryName = document.querySelector('.category-list');
+function getCategory() {
+  const categoryiesName = document.querySelectorAll('.categories_item');
+  console.log(categoryiesName);
+  categoryiesName.forEach(categoryName => {
+    categoryName.addEventListener('click', onClickCategory);
+    console.log(categoryName);
+  });
+}
 
-// categoryName.addEventListener('click', getCategoryName);
+function onClickCategory(event) {
+  if (event.target.classList.contains('categories_item')) {
+    const selectCategory = event.target.innerText;
+    console.log(selectCategory);
+    const newNameCategory = document.querySelector('.category-title');
+    console.log(newNameCategory);
+    newNameCategory.textContent = selectCategory;
+  }
+}
 
-// async function getCategoryName(e) {
-//   if (e.target.classList.contains('category-item')) {
-//     const selectCategory = e.target.innerText;
-//     console.log(selectCategory);
-
-//     try {
-//       const category = await serviceSelectedCategory(selectCategory);
-//       console.log(category);
-//       // renderСategoryList(category.data);
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-// }
-
+//Код для Юри
 export function getBooks() {
   return serviceTopBooks().then(response => response.data[0].books);
 }
