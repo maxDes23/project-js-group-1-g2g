@@ -5,5 +5,6 @@ import './js/footer';
 import './js/book-api';
 import './js/support';
 import './js/gallery';
+import './js/categories';
 import './js/shopping-list';
 import './js/sign-up';
