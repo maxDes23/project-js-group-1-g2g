@@ -72,9 +72,6 @@ async function onLoadMoreBtn(event) {
     const selectedCategory = event.target.id.replaceAll(' ', '_');
 
     const categoryContainer = document.querySelector(`.${selectedCategory}`);
-    const booksContainer = document.querySelector(
-      `.${selectedCategory} .books-container`
-    );
 
     const category = await serviceSelectedCategory(categoryOriginalName);
     const renderGalleryAfterBtnClick = renderGallery(category.data);
