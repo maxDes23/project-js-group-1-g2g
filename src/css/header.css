@@ -175,20 +175,20 @@ header {
 
 .menu__body {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: -100%;
     width: 100%;
-    transform: translate(-100%, 0px);
     height: 100%;
     background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%) ;
     padding: 0px;
-    transition: all 0.4s ease 0s;
+    transition: top 0.4s ease 0s;
     overflow: auto;
     z-index: 10;
 }
 
 .menu__body.menu-active {
-    transform: translate(0px, 0px);
+    /* transform: translate(0px, 0px); */
+
+    top:0;
 }
 
 
