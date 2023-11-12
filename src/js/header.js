@@ -11,6 +11,7 @@ burgerBtn.addEventListener('click', onBurgerClick)
 
 function onBurgerClick() {
     mobileMenu.classList.toggle('menu-active');
+    
 }
 
 
