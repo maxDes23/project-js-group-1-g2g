@@ -1,6 +1,8 @@
 .container-gallary {
   font-family: DM Sans;
   padding-top: 40px;
+ 
+
 }
 
 .category-title {
@@ -57,6 +59,12 @@
   gap: 40px;
 }
 
+.books-container.show-more {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
 @media screen and (min-width: 768px) {
   .books-container {
     /* flex-direction: row; */
@@ -84,11 +92,21 @@
   .books-container .book:nth-child(-n + 3) {
     display: flex;
   }
+  .books-container.show-more {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .books-container .book:nth-child(-n + 5) {
     display: flex;
+  }
+  .books-container.show-more {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 
