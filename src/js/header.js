@@ -14,6 +14,9 @@ function setActivePage(currentPage) {
     home.classList.remove('nav-active');
     basket.classList.add('nav-active');
   }
+  else {
+    home.classList.add('nav-active');
+    }
 }
 setActivePage(currentPage);
 
