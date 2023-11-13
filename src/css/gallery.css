@@ -10,6 +10,7 @@
   font-weight: 700;
   line-height: 38px;
   letter-spacing: -1.28px;
+  color: var(--main-text-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -45,8 +46,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .category-description {
-  }
+  .category-description {}
 }
 
 .books-container {
@@ -140,6 +140,8 @@
   padding: 14px 28px;
   outline: none;
   border: 2px solid #4f2ee8;
+  background-color: var(--secondary-background-color);
+  color: var(--main-text-color);
 }
 
 .book-title {
@@ -149,6 +151,7 @@
   font-weight: 700;
   line-height: 18px;
   letter-spacing: -0.64px;
+  color: var(--main-text-color);
 }
 
 .book-author {

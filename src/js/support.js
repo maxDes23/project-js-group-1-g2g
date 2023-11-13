@@ -91,7 +91,7 @@ arrow.addEventListener('click', () => {
   if (isClick) {
     rotateSvg.innerHTML = `
       <svg>
-          <use href="./img/icons.svg#icon-ar-up"></use>
+          <use href="./img/icons.svg#icon-ar-down"></use>
         </svg>
     `;
   } else {
