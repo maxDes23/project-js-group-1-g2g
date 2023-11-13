@@ -6,8 +6,17 @@ const home = document.querySelector('.home')
 const basketIco = document.querySelector('.basket-ico')
 const mobileMenu = document.querySelector('.menu__body')
 const burgerBtn = document.querySelector('.burger-menu')
+const currentPage = window.location.href;
 
-burgerBtn.addEventListener('click', onBurgerClick)
+
+function setActivePage(currentPage) {
+  if (currentPage.includes('shop-list')) {
+    home.classList.remove('nav-active');
+    basket.classList.add('nav-active');
+  }
+}
+setActivePage(currentPage);
+
 
 function onBurgerClick() {
     mobileMenu.classList.toggle('menu-active');
@@ -48,3 +57,10 @@ else {
     }
 
 
+
+
+    window.addEventListener('click', onPClick)
+function onPClick() {
+console.log(currentPage);
+}
+onPClick()

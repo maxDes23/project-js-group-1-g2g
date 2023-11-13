@@ -1,5 +1,3 @@
-
-
 .header-container {
     background-color: var(--secondary-background-color);
     position: fixed;
@@ -319,10 +317,5 @@
     .nav-list {
         gap: 6px;
     }
-
-
-
-    
-
 
 }
