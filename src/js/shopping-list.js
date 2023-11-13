@@ -16,7 +16,7 @@ function renderBooks() {
         let imagePath;
         if (window.location.href.includes('github.io')) {
             
-            imagePath = '/project-js-group-1-g2g/src/img/shopping/books-desk@1x.png';
+            imagePath = '/project-js-group-1-g2g/src/img/shopping/books-desk.png';
         } else {
             
             imagePath = './img/shopping/books-desk.png';
