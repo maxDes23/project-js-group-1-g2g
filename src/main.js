@@ -7,5 +7,5 @@ import './js/modal';
 import './js/pagination';
 import './js/shopping-list';
 import './js/sign-up';
-import './js/footer';
+// import './js/footer';
 import './js/scroll';
