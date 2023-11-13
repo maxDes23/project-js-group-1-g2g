@@ -4,29 +4,42 @@ const navList = document.querySelector('.nav-list')
 const basket = document.querySelector('.basket')
 const home = document.querySelector('.home')
 const basketIco = document.querySelector('.basket-ico')
+const mobBasketIco = document.querySelector('.mob-basket-ico')
 const mobileMenu = document.querySelector('.menu__body')
 const burgerBtn = document.querySelector('.burger-menu')
 const currentPage = window.location.href;
+const mobBasket = document.querySelector('.mob-basket')
+const mobHome = document.querySelector('.mob-home')
 
 
 function setActivePage(currentPage) {
   if (currentPage.includes('shop-list')) {
     home.classList.remove('nav-active');
+    mobHome.classList.remove('nav-active');
       basket.classList.add('nav-active');
+      mobBasket.classList.add('nav-active');
       basketIco.classList.add('nav-active')
+      mobBasketIco.classList.add('nav-active')
   }
   else {
     home.classList.add('nav-active');
+    mobHome.classList.add('nav-active');
     }
 }
 setActivePage(currentPage);
 
 
 function onBurgerClick() {
+    setActivePage(currentPage)
+
     mobileMenu.classList.toggle('menu-active');   
 }
 
 burgerBtn.addEventListener('click', onBurgerClick)
+
+
+
+
 
 
 themeSwitcher.addEventListener('click', onTriggerClick)
@@ -60,5 +73,9 @@ if (localStorage.getItem('theme') === 'theme-dark') {
 else {
     setTheme('theme-light');
     }
+
+
+
+
 
 
