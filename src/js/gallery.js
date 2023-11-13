@@ -106,15 +106,32 @@ function getCategory() {
   });
 }
 
-function onClickCategory(event) {
+async function onClickCategory(event) {
+  const removeBooks = document.querySelector('.category-container');
+  console.log(removeBooks);
+  removeBooks.innerHTML = '';
+
   if (event.target.classList.contains('categories_item')) {
     const selectCategory = event.target.innerText;
-
+    const categoryId = event.target.id;
     const newNameCategory = document.querySelector('.category-title');
-
     newNameCategory.textContent = selectCategory;
+
+    await renderСategory(categoryId);
   }
 }
+
+async function renderСategory(nameSelectedCategory) {
+  const categoryItem = document.querySelector('.category-container');
+  const category = await serviceSelectedCategory(nameSelectedCategory);
+  const renderGalleryAfterBtnClick = renderGallery(category.data);
+  const categoryMarkup = `
+      <div class="books-container show-more"> ${renderGalleryAfterBtnClick} </div>
+    `;
+  categoryItem.insertAdjacentHTML('beforeend', categoryMarkup);
+}
+
+// Рендеринг ОДНІЄЇ КАТЕГОРІЇ при натискані на категорію
 
 //Код для Юри
 export function getBooks() {
