@@ -87,9 +87,9 @@ async function onLoadMoreBtn(event) {
           </div>
       `;
 
-    categoryContainer.innerHTML = newCategory;
-  } catch (error) {
-    // console.log(error);
+  //   categoryContainer.innerHTML = newCategory;
+  // } catch (error) {
+  //   // console.log(error);
   }
 }
 
