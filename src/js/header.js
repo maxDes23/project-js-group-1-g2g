@@ -23,9 +23,10 @@ setActivePage(currentPage);
 
 
 function onBurgerClick() {
-    mobileMenu.classList.toggle('menu-active');
-    
+    mobileMenu.classList.toggle('menu-active');   
 }
+
+burgerBtn.addEventListener('click', onBurgerClick)
 
 
 themeSwitcher.addEventListener('click', onTriggerClick)
