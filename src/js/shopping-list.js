@@ -13,8 +13,9 @@ function renderBooks() {
         return;
     }
     if (books.length === 0) {
+        const imageSrc = './img/shopping/books-desk@1x.png';
         bookList.innerHTML = `<p class="no__info">This page is empty, add some books and proceed to order.</p>
-        <img class="no__picture" src="./img/shopping/books-desk@1x.png" alt="Shop is Empty" >`;
+        <img class="no__picture" src="${imageSrc}" alt="Shop is Empty" >`;
         return;
     }
     bookList.innerHTML = '';
