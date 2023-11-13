@@ -11,7 +11,7 @@ function addList(categories) {
     const markup = categories.map(category => {
         const { list_name } = category;
         return `
-        <li><a class='categories_item' href='#'>${list_name}</a></li>
+        <li><a class='categories_item' href='#' id='${list_name}'>${list_name}</a></li>
         `;
       }).join('');
     categoriesList.insertAdjacentHTML('beforeend', markup);
