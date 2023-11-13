@@ -1,119 +1,119 @@
-import { serviceSelectedCategory } from './book-api';
-import { serviceTopBooks } from './book-api';
+// import { serviceSelectedCategory } from './book-api';
+// import { serviceTopBooks } from './book-api';
 
-// ------------КОД ДЛЯ РЕНДЕРА СТОРІНКИ ХОУМ
+// // ------------КОД ДЛЯ РЕНДЕРА СТОРІНКИ ХОУМ
 
-document.addEventListener('DOMContentLoaded', async function () {
-  const getDataTopBooks = await serviceTopBooks();
-  const { data } = getDataTopBooks;
+// document.addEventListener('DOMContentLoaded', async function () {
+//   const getDataTopBooks = await serviceTopBooks();
+//   const { data } = getDataTopBooks;
 
-  renderСategoryList(data);
-  getCategory();
-});
+//   renderСategoryList(data);
+//   getCategory();
+// });
 
-//Рендеринг картки КНИГИ
+// //Рендеринг картки КНИГИ
 
-function renderGallery(books) {
-  const gallery = document.querySelector('.books-container');
-  const markup = books
-    .map(book => {
-      const { _id, book_image, title, author } = book;
-      return `
-      <div class="book" id="${_id}">
-          <img src="${book_image}" class="book-img" alt="${title}" />
-          <p class="book-title">${title}</p>
-          <p class="book-author">${author}</p>
-        </div>
-            `;
-    })
-    .join('');
-  return markup;
-}
+// function renderGallery(books) {
+//   const gallery = document.querySelector('.books-container');
+//   const markup = books
+//     .map(book => {
+//       const { _id, book_image, title, author } = book;
+//       return `
+//       <div class="book" id="${_id}">
+//           <img src="${book_image}" class="book-img" alt="${title}" />
+//           <p class="book-title">${title}</p>
+//           <p class="book-author">${author}</p>
+//         </div>
+//             `;
+//     })
+//     .join('');
+//   return markup;
+// }
 
-//Рендеринг КАТЕГОРІЇ
-async function renderСategoryList(categories) {
-  const categoryList = document.querySelector('.category-container');
-  const markup = categories
-    .map(category => {
-      const books = category.books;
-      const topBook = renderGallery(books);
-      const nameCategory = category.list_name;
-      return `
-       <div class="${nameCategory.replaceAll(' ', '_')} book-card">
-          <p class="category-description" id="category">
-            ${nameCategory}
-          </p>
-          <div class="books-container"> ${topBook} </div>
-          <div class="button-wrapper">
-            <button class="btn-load-more" type="button" id="${nameCategory}">SEE MORE</button>
-          </div>
-         </div> 
-      `;
-    })
-    .join('');
-  categoryList.insertAdjacentHTML('beforeend', markup);
-  getCategoryOnLoadMore();
-}
+// //Рендеринг КАТЕГОРІЇ
+// async function renderСategoryList(categories) {
+//   const categoryList = document.querySelector('.category-container');
+//   const markup = categories
+//     .map(category => {
+//       const books = category.books;
+//       const topBook = renderGallery(books);
+//       const nameCategory = category.list_name;
+//       return `
+//        <div class="${nameCategory.replaceAll(' ', '_')} book-card">
+//           <p class="category-description" id="category">
+//             ${nameCategory}
+//           </p>
+//           <div class="books-container"> ${topBook} </div>
+//           <div class="button-wrapper">
+//             <button class="btn-load-more" type="button" id="${nameCategory}">SEE MORE</button>
+//           </div>
+//          </div> 
+//       `;
+//     })
+//     .join('');
+//   categoryList.insertAdjacentHTML('beforeend', markup);
+//   getCategoryOnLoadMore();
+// }
 
-// BTN SEE MORE
+// // BTN SEE MORE
 
-function getCategoryOnLoadMore() {
-  const loadMoreButtons = document.querySelectorAll('.btn-load-more');
+// function getCategoryOnLoadMore() {
+//   const loadMoreButtons = document.querySelectorAll('.btn-load-more');
 
-  loadMoreButtons.forEach(loadMoreBtn => {
-    loadMoreBtn.addEventListener('click', onLoadMoreBtn);
-  });
-}
+//   loadMoreButtons.forEach(loadMoreBtn => {
+//     loadMoreBtn.addEventListener('click', onLoadMoreBtn);
+//   });
+// }
 
-async function onLoadMoreBtn(event) {
-  try {
-    document.querySelector('.books-container').classList.toggle('show-more');
+// async function onLoadMoreBtn(event) {
+//   try {
+//     document.querySelector('.books-container').classList.toggle('show-more');
 
-    const categoryOriginalName = event.target.id;
-    const selectedCategory = event.target.id.replaceAll(' ', '_');
+//     const categoryOriginalName = event.target.id;
+//     const selectedCategory = event.target.id.replaceAll(' ', '_');
 
-    const categoryContainer = document.querySelector(`.${selectedCategory}`);
+//     const categoryContainer = document.querySelector(`.${selectedCategory}`);
 
-    const category = await serviceSelectedCategory(categoryOriginalName);
-    const renderGalleryAfterBtnClick = renderGallery(category.data);
+//     const category = await serviceSelectedCategory(categoryOriginalName);
+//     const renderGalleryAfterBtnClick = renderGallery(category.data);
 
-    const newCategory = `
-       <p class="category-descriotion" id="category">
-            ${categoryOriginalName}
-          </p>
-          <div class="books-container show-more"> ${renderGalleryAfterBtnClick} </div>
-          <div class="button-wrapper">
-            <button class="btn-load-more" type="button" id="${categoryOriginalName}">SEE MORE</button>
-          </div>
-      `;
+//     const newCategory = `
+//        <p class="category-descriotion" id="category">
+//             ${categoryOriginalName}
+//           </p>
+//           <div class="books-container show-more"> ${renderGalleryAfterBtnClick} </div>
+//           <div class="button-wrapper">
+//             <button class="btn-load-more" type="button" id="${categoryOriginalName}">SEE MORE</button>
+//           </div>
+//       `;
 
-    categoryContainer.innerHTML = newCategory;
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     categoryContainer.innerHTML = newCategory;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-//Функція по кліку на категоріям яка буде вібирати назву категорії
+// //Функція по кліку на категоріям яка буде вібирати назву категорії
 
-function getCategory() {
-  const categoryiesName = document.querySelectorAll('.categories_item');
+// function getCategory() {
+//   const categoryiesName = document.querySelectorAll('.categories_item');
 
-  categoryiesName.forEach(categoryName => {
-    categoryName.addEventListener('click', onClickCategory);
-  });
-}
+//   categoryiesName.forEach(categoryName => {
+//     categoryName.addEventListener('click', onClickCategory);
+//   });
+// }
 
-function onClickCategory(event) {
-  if (event.target.classList.contains('categories_item')) {
-    const selectCategory = event.target.innerText;
+// function onClickCategory(event) {
+//   if (event.target.classList.contains('categories_item')) {
+//     const selectCategory = event.target.innerText;
 
-    const newNameCategory = document.querySelector('.category-title');
+//     const newNameCategory = document.querySelector('.category-title');
 
-    newNameCategory.textContent = selectCategory;
-  }
-}
+//     newNameCategory.textContent = selectCategory;
+//   }
+// }
 
-//Код для Юри
-export function getBooks() {
-  return serviceTopBooks().then(response => response.data[0].books);
-}
+// //Код для Юри
+// export function getBooks() {
+//   return serviceTopBooks().then(response => response.data[0].books);
+// }
