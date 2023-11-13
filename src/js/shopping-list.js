@@ -1,4 +1,3 @@
-import axios from "axios";
 
 // 1. Create a function to fetch the list of books from localStorage.
 function getBooks() {
@@ -10,6 +9,9 @@ function getBooks() {
 function renderBooks() {
     const books = getBooks();
     const bookList = document.querySelector('.shop_title_list');
+    if (!bookList) {
+        return;
+    }
     if (books.length === 0) {
         bookList.innerHTML = '<p class="no__info">This page is empty, add some books and proceed to order.</p><img class="no__picture" src="./img/shopping/books-mob@1x.png" alt="Shop is Empty" >';
         return;
@@ -73,25 +75,15 @@ function createBookCard(book) {
     return bookCard;
 }
 
-
+// 4. Create a function to delete a book from the list and from localStorage.
 function deleteBook(bookId) {
-    axios.delete(`https://example.com/books/${bookId}`)
-        .then(() => {
-            let books = getBooks();
-            books = books.filter((book) => book.id !== bookId);
-            localStorage.setItem('books', JSON.stringify(books));
-            renderBooks();
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+    let books = getBooks();
+    books = books.filter((book) => book.id !== bookId);
+    localStorage.setItem('books', JSON.stringify(books));
     renderBooks();
 }
 
 // 5. Call the functions to fetch and render the list of books when the page loads.
-window.addEventListener('load', () => {
-    renderBooks();
-});
 window.addEventListener('load', () => {
     renderBooks();
 });
