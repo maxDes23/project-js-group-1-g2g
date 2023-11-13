@@ -54,7 +54,7 @@ body {
   --category-selected-color: #eac645;
   --toggler-gradient: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
   --logo-text-color: #f3f3f3;
-  --category-color: rgba(255, 255, 255, 0.60);
+  --category-color: rgba(255, 255, 255, 0.6);
   --shop-text-color: #fff9;
 }
 
@@ -68,8 +68,8 @@ body {
 
 .left-container {
   display: flex;
- flex-direction: column;
- padding-top: 40px;
+  flex-direction: column;
+  padding-top: 40px;
 }
 
 .section {
@@ -83,14 +83,19 @@ body {
     padding-left: 32px;
   }
   .left-container {
-  display: flex;
- flex-direction: row;
- padding-top: 40px;
-}
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .section {
     padding-left: 24px;
+  }
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
   }
 }

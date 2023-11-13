@@ -19,7 +19,7 @@
 @media only screen and (min-width: 768px) {
   .container {
     width: 768px;
-    max-width: 768px;
+    max-width: 767px;
     padding: 0 32px;
   }
   .main-content {
@@ -38,6 +38,7 @@
   }
   .main-content {
     display: flex;
+    flex-direction: row;
     margin: 0 auto;
     padding-top: 40px;
   }
