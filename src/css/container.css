@@ -5,6 +5,11 @@
   margin: 0 auto;
 }
 
+.main-content {
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
 @media only screen and (max-width: 340px) {
   .container {
     padding: 0 20px;
@@ -19,7 +24,9 @@
   }
   .main-content {
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
+    padding-top: 40px;
   }
 }
 
@@ -32,5 +39,6 @@
   .main-content {
     display: flex;
     margin: 0 auto;
+    padding-top: 40px;
   }
 }

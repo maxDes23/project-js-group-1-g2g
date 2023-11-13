@@ -64,6 +64,12 @@ body {
   display: none;
 }
 
+.left-container {
+  display: flex;
+ flex-direction: column;
+ padding-top: 40px;
+}
+
 .section {
   padding-top: 104px;
   padding-left: 20px;
@@ -74,6 +80,11 @@ body {
     padding-top: 112px;
     padding-left: 32px;
   }
+  .left-container {
+  display: flex;
+ flex-direction: row;
+ padding-top: 40px;
+}
 }
 
 @media screen and (min-width: 1440px) {
