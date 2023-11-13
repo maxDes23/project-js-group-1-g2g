@@ -13,8 +13,17 @@ function renderBooks() {
         return;
     }
     if (books.length === 0) {
+        let imagePath;
+        if (window.location.href.includes('github.io')) {
+        
+            imagePath = '/project-js-group-1-g2g/img/books-desk@1x.png';
+        } else {
+            
+            imagePath = './img/books-desk@1x.png';
+        }
+
         bookList.innerHTML = `<p class="no__info">This page is empty, add some books and proceed to order.</p>
-        <img class="no__picture" src="img/books-desk@1x.png" alt="Shop is Empty" >`;
+        <img class="no__picture" src="${imagePath}" alt="Shop is Empty" >`;
         return;
     }
     bookList.innerHTML = '';
