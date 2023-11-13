@@ -72,16 +72,7 @@ body {
   padding-top: 40px;
 }
 
-.section {
-  padding-top: 104px;
-  padding-left: 20px;
-}
-
 @media screen and (min-width: 768px) {
-  .section {
-    padding-top: 112px;
-    padding-left: 32px;
-  }
   .left-container {
     display: flex;
     flex-direction: row;
@@ -90,9 +81,6 @@ body {
 }
 
 @media screen and (min-width: 1440px) {
-  .section {
-    padding-left: 24px;
-  }
   .left-container {
     display: flex;
     flex-direction: column;
