@@ -20,10 +20,13 @@ function renderGallery(books) {
       const { _id, book_image, title, author } = book;
       return `
       <div class="book" id="${_id}">
+        <div class="book-picture">
           <img src="${book_image}" class="book-img" alt="${title}" />
-          <p class="book-title">${title}</p>
-          <p class="book-author">${author}</p>
         </div>
+        <p class="book-title">${title}</p>
+        <p class="book-author">${author}</p>
+        
+      </div>
             `;
     })
     .join('');

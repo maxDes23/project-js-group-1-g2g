@@ -1,5 +1,4 @@
 .container-gallary {
-  margin-top: 40px;
   font-family: DM Sans;
   padding-top: 40px;
 }
@@ -95,10 +94,33 @@
   display: flex;
   flex-direction: column;
 }
+.book-picture {
+  position: relative;
+}
+
+.book-picture::after {
+  content: 'QUICK VIEW';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 70px;
+  border-radius: 0px 0px 8px 8px;
+  background: #ffd63f;
+  opacity: 0.95;
+
+  color: #111;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+}
 
 .book-img {
   max-width: 335px;
-  height: 485px;
+  max-height: 485px;
   border-radius: 10px;
 }
 
@@ -162,4 +184,4 @@
   font-weight: 400;
   line-height: 14px;
   letter-spacing: -0.48px;
-}
+
