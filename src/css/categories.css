@@ -2,11 +2,10 @@
     overflow: auto;
     min-width: 335px;
     height: 228px;
-    margin-top: 40px;
-    margin-left: 20px;
-    margin-right: 20px; 
-    margin-bottom: 40px;   
-} 
+    padding-top: 40px;
+    padding-right: 20px;
+    margin-right: 20px;
+}
 
 .categories {
     display: flex;
@@ -35,9 +34,10 @@
 @media screen and (min-width: 768px) {
     .categories_container {
         height: 472px;
-        margin-left: 32px;
+        padding-right: 17px;
         margin-right: 32px;
     }
+
     .categories {
         min-width: 309px;
         gap: 32px;
@@ -48,9 +48,10 @@
 
 @media screen and (min-width: 1440px) {
     .categories_container {
-        margin-left: 24px;
+        padding-right: 30px;
         margin-right: 40px;
     }
+
     .categories {
         min-width: 328px;
     }

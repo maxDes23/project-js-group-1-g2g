@@ -78,3 +78,23 @@ const slider = new Splide('#sliderOne', {
 });
 
 slider.mount();
+
+const arrow = document.querySelector('.splide__arrow.splide__arrow--next');
+const rotateSvg = document.getElementById('rotate-svg');
+const originalSvg = rotateSvg.innerHTML;
+
+let isClick = false;
+
+arrow.addEventListener('click', () => {
+  isClick = !isClick;
+
+  if (isClick) {
+    rotateSvg.innerHTML = `
+      <svg>
+          <use href="./img/icons.svg#icon-ar-up"></use>
+        </svg>
+    `;
+  } else {
+    rotateSvg.innerHTML = originalSvg;
+  }
+});
