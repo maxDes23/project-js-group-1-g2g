@@ -97,19 +97,18 @@ async function onLoadMoreBtn(event) {
 
 function getCategory() {
   const categoryiesName = document.querySelectorAll('.categories_item');
-  console.log(categoryiesName);
+
   categoryiesName.forEach(categoryName => {
     categoryName.addEventListener('click', onClickCategory);
-    console.log(categoryName);
   });
 }
 
 function onClickCategory(event) {
   if (event.target.classList.contains('categories_item')) {
     const selectCategory = event.target.innerText;
-    console.log(selectCategory);
+
     const newNameCategory = document.querySelector('.category-title');
-    console.log(newNameCategory);
+
     newNameCategory.textContent = selectCategory;
   }
 }
