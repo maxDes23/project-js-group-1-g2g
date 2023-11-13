@@ -89,7 +89,7 @@ async function onLoadMoreBtn(event) {
 
     categoryContainer.innerHTML = newCategory;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 }
 
