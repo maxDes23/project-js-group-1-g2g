@@ -69,14 +69,14 @@ body {
 .left-container {
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
+  margin-top: 40px;
 }
 
 @media screen and (min-width: 768px) {
   .left-container {
     display: flex;
     flex-direction: row;
-    padding-top: 40px;
+    margin-top: 40px;
   }
 }
 
@@ -84,6 +84,6 @@ body {
   .left-container {
     display: flex;
     flex-direction: column;
-    padding-top: 40px;
+    
   }
 }

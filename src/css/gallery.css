@@ -36,6 +36,7 @@
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0.42px;
+  margin-top: 40px;
 }
 
 @media screen and (min-width: 768px) {
@@ -45,7 +46,8 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .category-description {}
+  .category-description {
+  }
 }
 
 .books-container {

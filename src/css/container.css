@@ -41,5 +41,6 @@
     flex-direction: row;
     margin: 0 auto;
     padding-top: 40px;
+    align-items: baseline;
   }
 }
