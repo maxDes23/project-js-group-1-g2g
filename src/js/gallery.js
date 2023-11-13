@@ -20,7 +20,7 @@ function renderGallery(books) {
       const { _id, book_image, title, author } = book;
       return `
       <div class="book" id="${_id}">
-          <img src="${book_image}" class="book-img" alt="test" />
+          <img src="${book_image}" class="book-img" alt="${title}" />
           <p class="book-title">${title}</p>
           <p class="book-author">${author}</p>
         </div>
@@ -39,8 +39,8 @@ async function renderСategoryList(categories) {
       const topBook = renderGallery(books);
       const nameCategory = category.list_name;
       return `
-       <div class="${nameCategory.replaceAll(' ', '_')}">
-          <p class="category-descriotion" id="category">
+       <div class="${nameCategory.replaceAll(' ', '_')} book-card">
+          <p class="category-description" id="category">
             ${nameCategory}
           </p>
           <div class="books-container"> ${topBook} </div>
