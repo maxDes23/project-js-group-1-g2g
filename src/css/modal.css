@@ -26,11 +26,13 @@
 }
 .modal {
     /* Скрываем окна  */
+
     display: inline;
     opacity: 0;
     visibility: hidden;
 
     /*  Установаем ширину окна  */
+    
     width: 335px;
     height: 762px;
 
@@ -177,10 +179,10 @@
 .modal__cross {
     width: 12px;
     height: 12px;
-    position: absolute;
+    
     top: 12px;
     right: 12px;
-    fill: #111111;
+    fill: #c42d2d;
     cursor: pointer;
     margin-bottom: 4px;
 }
