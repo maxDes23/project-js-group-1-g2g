@@ -301,6 +301,15 @@
         color: #fff;
     }
 
+
+    .nav-active {
+        border-radius: 36px;
+        background: #EAC645;
+        color: #111;
+        fill: #111;
+}
+
+
 }
 
 
