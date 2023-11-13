@@ -12,7 +12,8 @@ const currentPage = window.location.href;
 function setActivePage(currentPage) {
   if (currentPage.includes('shop-list')) {
     home.classList.remove('nav-active');
-    basket.classList.add('nav-active');
+      basket.classList.add('nav-active');
+      basketIco.classList.add('nav-active')
   }
   else {
     home.classList.add('nav-active');
