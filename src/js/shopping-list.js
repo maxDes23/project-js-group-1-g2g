@@ -13,10 +13,8 @@ function renderBooks() {
         return;
     }
     if (books.length === 0) {
-        let imagePath = './src/img/shopping/books-desk.png';
-
         bookList.innerHTML = `<p class="no__info">This page is empty, add some books and proceed to order.</p>
-        <img class="no__picture" src="${imagePath}" alt="Shop is Empty" >`;
+        <img class="no__picture" src="./img/shopping/books-desk.png" alt="Shop is Empty" >`;
         return;
     }
     bookList.innerHTML = '';
