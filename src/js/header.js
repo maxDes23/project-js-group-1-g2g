@@ -61,10 +61,3 @@ else {
     }
 
 
-
-
-    window.addEventListener('click', onPClick)
-function onPClick() {
-console.log(currentPage);
-}
-onPClick()
