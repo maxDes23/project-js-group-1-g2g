@@ -1,14 +1,14 @@
-import"./assets/shopping-list-425655c1.js";import{a as l,i as g,g as p,c as f,s as v}from"./assets/vendor-8a3563eb.js";l.defaults.baseURL="https://books-backend.p.goit.global/books/";async function b(){return await l.get("category-list")}async function h(){return await l.get("top-books")}async function k(t){return await l.get(`category?category=${t}`)}document.addEventListener("DOMContentLoaded",async function(){const t=await b(),{data:e}=t;L(e)});function L(t){const e=document.querySelector(".categories"),n=t.map(o=>{const{list_name:s}=o;return`
+import"./assets/shopping-list-66972e4a.js";import{a as l,i as g,g as p,c as f,s as v}from"./assets/vendor-8a3563eb.js";l.defaults.baseURL="https://books-backend.p.goit.global/books/";async function b(){return await l.get("category-list")}async function h(){return await l.get("top-books")}async function k(t){return await l.get(`category?category=${t}`)}document.addEventListener("DOMContentLoaded",async function(){const t=await b(),{data:e}=t;L(e)});function L(t){const e=document.querySelector(".categories"),n=t.map(o=>{const{list_name:s}=o;return`
         <li><a class='categories_item' href='#'>${s}</a></li>
         `}).join("");e.insertAdjacentHTML("beforeend",n),[...document.getElementsByClassName("categories_item")].forEach(o=>o.addEventListener("click",()=>{document.querySelector(".active_category").classList.remove("active_category"),o.classList.add("active_category")}))}document.addEventListener("DOMContentLoaded",async function(){const t=await h(),{data:e}=t;S(e),q()});function u(t){return document.querySelector(".books-container"),t.map(n=>{const{_id:a,book_image:o,title:s,author:c}=n;return`
       <div class="book" id="${a}">
-          <img src="${o}" class="book-img" alt="test" />
+          <img src="${o}" class="book-img" alt="${s}" />
           <p class="book-title">${s}</p>
           <p class="book-author">${c}</p>
         </div>
             `}).join("")}async function S(t){const e=document.querySelector(".category-container"),n=t.map(a=>{const o=a.books,s=u(o),c=a.list_name;return`
-       <div class="${c.replaceAll(" ","_")}">
-          <p class="category-descriotion" id="category">
+       <div class="${c.replaceAll(" ","_")} book-card">
+          <p class="category-description" id="category">
             ${c}
           </p>
           <div class="books-container"> ${s} </div>
