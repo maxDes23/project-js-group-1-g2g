@@ -13,14 +13,7 @@ function renderBooks() {
         return;
     }
     if (books.length === 0) {
-        let imagePath;
-        if (window.location.href.includes('github.io')) {
-            
-            imagePath = '/project-js-group-1-g2g/src/img/shopping/books-desk@1x.png';
-        } else {
-            
-            imagePath = './img/shopping/books-desk.png';
-        }
+        let imagePath = './src/img/shopping/books-desk.png';
 
         bookList.innerHTML = `<p class="no__info">This page is empty, add some books and proceed to order.</p>
         <img class="no__picture" src="${imagePath}" alt="Shop is Empty" >`;
