@@ -5,11 +5,18 @@
 
 .category-title {
   text-transform: capitalize;
-  margin-bottom: 40px;
   font-size: 32px;
   font-weight: 700;
   line-height: 38px;
   letter-spacing: -1.28px;
+}
+
+@media screen and (min-width: 768px) {
+  .category-title {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -1.92px;
+  }
 }
 
 .category-title span {
@@ -17,7 +24,7 @@
 }
 
 .category-container {
-  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .category-description {
@@ -30,20 +37,35 @@
   letter-spacing: 0.42px;
 }
 
-.book-card {
-  margin-top: 40px;
+@media screen and (min-width: 768px) {
+  .category-description {
+    line-height: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .category-description {
+  }
 }
 
 .books-container {
   display: flex;
   justify-content: center;
-  flex-flow: row wrap;
+  /* flex-flow: row wrap; */
+  gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .books-container {
+    /* flex-direction: row; */
+    gap: 25px;
+  }
 }
 
 .books-container .book {
   display: none;
   flex: 0 1 calc(20% - 24px);
-  margin: 0 12px;
+  /* margin: 0 12px; */
 }
 
 .books-container.show-more .book {
@@ -79,11 +101,32 @@
   border-radius: 10px;
 }
 
+@media screen and (min-width: 768px) {
+  .book-img {
+    width: 218px;
+    height: 316px;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .book-img {
+    width: 180px;
+    height: 256px;
+  }
+}
+
 .button-wrapper {
   display: flex;
   justify-content: flex-end;
   margin-top: 8px;
   /* Звірити розмір з макетом */
+}
+
+@media screen and (min-width: 768px) {
+  .button-wrapper {
+    margin-top: 20px;
+  }
 }
 
 .btn-load-more {
