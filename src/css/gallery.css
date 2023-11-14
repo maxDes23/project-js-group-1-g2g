@@ -121,7 +121,7 @@
   background: #ffd63f;
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateY(100%);
+  transform: translateY(10%);
   transform-origin: bottom;
 
   color: #111;
