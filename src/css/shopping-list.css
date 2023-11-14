@@ -23,6 +23,10 @@
     display: none;
 }
 
+.splide {
+    padding-top: 0;
+}
+
 @media screen and (min-width: 1280px) {
     .shop_support__aside {
         display: inherit;
