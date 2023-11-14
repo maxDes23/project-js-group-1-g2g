@@ -32,21 +32,6 @@ function setActivePage(currentPage) {
 }
 setActivePage(currentPage);
 
-
-// function burgerIconSwithcer() {
-//     const currentIcon = burgerIcon.getAttribute('href')
-//     const parts = currentIcon.split('#');
-//     const path = parts[0];
-//     const currentFragment = parts[1];
-    
-//     if (currentFragment === 'burger') {
-//         burgerIcon.setAttribute('href', path + '#icon-x-close');
-//     } else {
-//         burgerIcon.setAttribute('href', path + '#burger');
-//     }
-// }
-
-
 function burgerIconSwithcer() {
     const currentIcon = burgerIcon.getAttribute('href')
     currentIcon.endsWith('burger')
