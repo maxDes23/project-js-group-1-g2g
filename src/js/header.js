@@ -10,6 +10,10 @@ const burgerBtn = document.querySelector('.burger-menu')
 const currentPage = window.location.href;
 const mobBasket = document.querySelector('.mob-basket')
 const mobHome = document.querySelector('.mob-home')
+const burgerIcon = document.querySelector('.mob-ico')
+
+
+
 
 
 function setActivePage(currentPage) {
@@ -29,8 +33,16 @@ function setActivePage(currentPage) {
 setActivePage(currentPage);
 
 
+function burgerIconSwithcer() {
+    const currentIcon = burgerIcon.getAttribute('href')
+    currentIcon == '/img/icons.svg#burger'
+        ? burgerIcon.setAttribute('href', '/img/icons.svg#icon-x-close')
+        : burgerIcon.setAttribute('href', '/img/icons.svg#burger')        
+}
+
 function onBurgerClick() {
     setActivePage(currentPage)
+    burgerIconSwithcer()
 
     mobileMenu.classList.toggle('menu-active');   
 }
