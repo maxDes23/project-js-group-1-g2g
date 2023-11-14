@@ -3,4 +3,4 @@ import{S as h}from"./vendor-8a3563eb.js";(function(){const c=document.createElem
       <img src="${t.img}" alt="${t.title}" class="org-logo">
     </a>
   </li>`;K.insertAdjacentHTML("beforeend",c)});const j=new h("#sliderOne",{perPage:6,gap:"20px",pagination:!1,direction:"ttb",height:"292px",dynamicSlides:!0,rewind:!0,label:"Support to Ukraine"});j.mount();const E=document.querySelector(".splide__arrow.splide__arrow--next"),J=document.getElementById("rotate-svg");J.innerHTML;const s=document.querySelector(".support-arrow-ico");E.addEventListener("click",N);function N(){const c=s.getAttribute("href").split("#"),r=c[0];c[1]==="icon-ar-up"?s.setAttribute("href",r+"#icon-ar-down"):s.setAttribute("href",r+"#icon-ar-up")}
-//# sourceMappingURL=support-8c554fa4.js.map
+//# sourceMappingURL=support-6624c9ff.js.map
