@@ -39,18 +39,10 @@ function burgerIconSwithcer() {
     const path = parts[0];
     const currentFragment = parts[1];
     
-    // currentIcon.endsWith('#burger')    
-        // currentFragment === 'burger'
-        // ? burgerIcon.setAttribute('href', './img/icons.svg#icon-x-close')
-        // : burgerIcon.setAttribute('href', './img/icons.svg#burger')      
-    
-      // Check if the fragment identifier is 'burger'
     if (currentFragment === 'burger') {
         burgerIcon.setAttribute('href', path + '#icon-x-close');
-        console.log(path + '#icon-x-close');
     } else {
         burgerIcon.setAttribute('href', path + '#burger');
-        console.log(path + '#burger');
     }
 }
 

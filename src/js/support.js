@@ -82,19 +82,21 @@ slider.mount();
 const arrow = document.querySelector('.splide__arrow.splide__arrow--next');
 const rotateSvg = document.getElementById('rotate-svg');
 const originalSvg = rotateSvg.innerHTML;
+const supportArrow = document.querySelector('.support-arrow-ico')
 
-let isClick = false;
 
-arrow.addEventListener('click', () => {
-  isClick = !isClick;
+arrow.addEventListener('click', onArrowClick)
+  
+function onArrowClick() {
 
-  if (isClick) {
-    rotateSvg.innerHTML = `
-      <svg>
-          <use href="./img/icons.svg#icon-ar-down"></use>
-        </svg>
-    `;
-  } else {
-    rotateSvg.innerHTML = originalSvg;
+    const currentIcon = supportArrow.getAttribute('href')
+    const parts = currentIcon.split('#');
+    const path = parts[0];
+    const currentFragment = parts[1];
+    
+    if (currentFragment === 'icon-ar-up') {
+        supportArrow.setAttribute('href', path + '#icon-ar-down');
+    } else {
+        supportArrow.setAttribute('href', path + '#icon-ar-up');
+    }
   }
-});
