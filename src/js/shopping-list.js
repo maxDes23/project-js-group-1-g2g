@@ -104,11 +104,11 @@ divEl.addEventListener('click', event => {
             return;
         } else if (!sliceArrayBooks().length) {
             previousButton.click();
-            destroyChildElement(paginationContainerPages);
+            destroyChildElement(paginationPagesStart);
         } else {
             divEl.innerHTML = renderMarkUp(sliceArrayBooks());
             console.log(sliceArrayBooks());
-            destroyChildElement(paginationContainerPages);
+            destroyChildElement(paginationPagesStart);
         }
         checkingArrayBooks();
     }
