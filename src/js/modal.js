@@ -18,7 +18,7 @@ async function showBookInfo(bookInfo) {
      
         
      const modal = document.querySelector('.modal');
-     console.log('modal Constan', modal);
+   //   console.log('modal Constant', modal);
 
       modal.innerHTML = '';
 
