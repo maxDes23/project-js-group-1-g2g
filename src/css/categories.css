@@ -2,11 +2,6 @@
     overflow: auto;
     min-width: 335px;
     height: 228px;
-    /* padding-top: 40px; */
-    /* padding-right: 20px;
-    margin-right: 20px; */
-    /* margin-bottom: 40px; */
-
 }
 
 .categories {
@@ -36,9 +31,6 @@
 @media screen and (min-width: 768px) {
     .categories_container {
         height: 472px;
-        /* padding-right: 17px;
-        margin-right: 32px; */
-        /* margin-bottom: 0; */
     }
 
     .categories {
@@ -50,11 +42,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .categories_container {
-        /* padding-right: 30px; */
-        /* margin-right: 40px; */
-    }
-
     .categories {
         min-width: 328px;
     }
