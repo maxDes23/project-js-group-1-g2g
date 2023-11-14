@@ -1,3 +1,6 @@
+import icons from "../img/icons.svg"
+
+
 const themeSwitcher = document.querySelector('.switcher-block')
 const switcher = document.querySelector('.switcher')
 const navList = document.querySelector('.nav-list')
@@ -11,9 +14,6 @@ const currentPage = window.location.href;
 const mobBasket = document.querySelector('.mob-basket')
 const mobHome = document.querySelector('.mob-home')
 const burgerIcon = document.querySelector('.mob-ico')
-
-
-
 
 
 function setActivePage(currentPage) {
@@ -33,17 +33,25 @@ function setActivePage(currentPage) {
 setActivePage(currentPage);
 
 
+// function burgerIconSwithcer() {
+//     const currentIcon = burgerIcon.getAttribute('href')
+//     const parts = currentIcon.split('#');
+//     const path = parts[0];
+//     const currentFragment = parts[1];
+    
+//     if (currentFragment === 'burger') {
+//         burgerIcon.setAttribute('href', path + '#icon-x-close');
+//     } else {
+//         burgerIcon.setAttribute('href', path + '#burger');
+//     }
+// }
+
+
 function burgerIconSwithcer() {
     const currentIcon = burgerIcon.getAttribute('href')
-    const parts = currentIcon.split('#');
-    const path = parts[0];
-    const currentFragment = parts[1];
-    
-    if (currentFragment === 'burger') {
-        burgerIcon.setAttribute('href', path + '#icon-x-close');
-    } else {
-        burgerIcon.setAttribute('href', path + '#burger');
-    }
+    currentIcon.endsWith('burger')
+        ? burgerIcon.setAttribute('href', `${icons}#icon-x-close`)
+        : burgerIcon.setAttribute('href', `${icons}#burger`)
 }
 
 function onBurgerClick() {
@@ -54,8 +62,6 @@ function onBurgerClick() {
 }
 
 burgerBtn.addEventListener('click', onBurgerClick)
-
-
 
 
 
