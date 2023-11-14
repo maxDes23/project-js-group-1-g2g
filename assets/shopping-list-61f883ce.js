@@ -48,7 +48,7 @@ import{S as L}from"./vendor-8a3563eb.js";(function(){const n=document.createElem
                 `).join("")}function R(){if(!A.length){l.innerHTML=`
         <p class="no__info">This page is empty, add some books and proceed to order.</p>
         <img class="no__picture"
-        src="/img/shopping/books-desk.png"
+        src="./img/shopping/books-desk.png"
         alt="Shop is Empty"
         />`;return}l.insertAdjacentHTML("beforeend",b(P))}R();l.addEventListener("click",t=>{if(t.target.closest(".shop_card-btn")){const n=t.target.getAttribute("data-book-id"),i=A.findIndex(s=>s._id===n);if(A.splice(i,1),localStorage.setItem(v,JSON.stringify(A)),A.length)sliceArrayBooks().length?(l.innerHTML=b(sliceArrayBooks()),console.log(sliceArrayBooks()),destroyChildElement(paginationContainerPages)):(previousButton.click(),destroyChildElement(paginationContainerPages));else{R();return}checkingArrayBooks()}});
-//# sourceMappingURL=shopping-list-256f7aa1.js.map
+//# sourceMappingURL=shopping-list-61f883ce.js.map
