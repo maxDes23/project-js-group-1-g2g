@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   /////////////////////// modal code ////////////////////////
   
-  const modalGallery = document.querySelector('.books-container');
+  const modalGallery = document.querySelector('.category-container');
   //  console.log(modalGallery);
   modalGallery.addEventListener('click', onBookClick)
   
