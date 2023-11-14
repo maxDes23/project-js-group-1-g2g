@@ -1,5 +1,8 @@
 import { serviceSelectedCategory } from './book-api';
 import { serviceTopBooks } from './book-api';
+import { serviceSelectedBook } from './book-api';
+import { showBookInfo } from './modal';
+
 
 // ------------КОД ДЛЯ РЕНДЕРА СТОРІНКИ ХОУМ
 
@@ -9,7 +12,35 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   renderСategoryList(data);
   getCategory();
+
+  /////////////////////// modal code ////////////////////////
+  
+  const modalGallery = document.querySelector('.books-container');
+  //  console.log(modalGallery);
+  modalGallery.addEventListener('click', onBookClick)
+  
+  async function onBookClick(event) {
+    const clickedBook = event.target.closest('.book');
+    if (!clickedBook) {
+      return; 
+    }
+    const bookId = clickedBook.id;
+    // console.log(clickedBook.id);
+
+    const bookData = await serviceSelectedBook(bookId)
+    // console.log(bookData.data);
+    showBookInfo(bookData.data);
+};
+
+/////////////////////// modal code ////////////////////////
+
 });
+
+
+
+
+
+
 
 //Рендеринг картки КНИГИ
 
@@ -108,7 +139,7 @@ function getCategory() {
 
 async function onClickCategory(event) {
   const removeBooks = document.querySelector('.category-container');
-  console.log(removeBooks);
+  // console.log(removeBooks);
   removeBooks.innerHTML = '';
 
   if (event.target.classList.contains('categories_item')) {
@@ -129,11 +160,4 @@ async function renderСategory(nameSelectedCategory) {
       <div class="books-container show-more"> ${renderGalleryAfterBtnClick} </div>
     `;
   categoryItem.insertAdjacentHTML('beforeend', categoryMarkup);
-}
-
-// Рендеринг ОДНІЄЇ КАТЕГОРІЇ при натискані на категорію
-
-//Код для Юри
-export function getBooks() {
-  return serviceTopBooks().then(response => response.data[0].books);
 }

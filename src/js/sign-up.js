@@ -82,7 +82,7 @@ async function userSignIn(evt) {
   signInButton.textContent = 'SIGN UP';
 
   const form = evt.target;
-  console.dir(form.elements);
+  // console.dir(form.elements);
   const signInEmail = form.elements.email.value;
   const signInPassword = form.elements.password.value;
 

@@ -54,7 +54,7 @@ supOrgs.sort((a, b) =>
 );
 
 const supportList = document.querySelector('.splide__list');
-console.log(supportList);
+// console.log(supportList);
 
 supOrgs.forEach(supOrg => {
   const li = `<li class="splide__slide">
