@@ -1,8 +1,6 @@
 .container-gallary {
   font-family: DM Sans;
   padding-top: 40px;
- 
-
 }
 
 .category-title {
@@ -47,7 +45,6 @@
   }
 }
 
-
 .books-container {
   display: flex;
   justify-content: center;
@@ -56,10 +53,10 @@
 }
 
 .books-container.show-more {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 
 @media screen and (min-width: 768px) {
   .books-container {
@@ -128,8 +125,8 @@
   background: #ffd63f;
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateY(100%); 
-  transform-origin: bottom; 
+  transform: translateY(100%);
+  transform-origin: bottom;
 
   color: #111;
 
@@ -141,10 +138,8 @@
 
 .book-picture:hover::after {
   opacity: 0.95;
-  transform: translateY(0); 
+  transform: translateY(0);
 }
-
-
 
 .book-img {
   max-width: 335px;
