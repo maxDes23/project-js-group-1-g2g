@@ -27,14 +27,13 @@ function renderGallery(books) {
     .map(book => {
       const { _id, book_image, title, author } = book;
       return `
-      <div class="book" id="${_id}">
+      <li class="book" id="${_id}">
         <div class="book-picture">
           <img src="${book_image}" class="book-img" alt="${title}" />
         </div>
         <p class="book-title">${title}</p>
-        <p class="book-author">${author}</p>
-        
-      </div>
+        <p class="book-author">${author}</p> 
+      </li>
             `;
     })
     .join('');
@@ -54,7 +53,7 @@ async function renderСategoryList(categories) {
           <p class="category-description" id="category">
             ${nameCategory}
           </p>
-          <div class="books-container"> ${topBook} </div>
+          <ul class="books-container"> ${topBook} </ul>
           <div class="button-wrapper">
             <button class="btn-load-more" type="button" id="${nameCategory}">SEE MORE</button>
           </div>
@@ -115,7 +114,7 @@ async function renderСategory(nameSelectedCategory) {
   const category = await serviceSelectedCategory(nameSelectedCategory);
   const renderGalleryAfterBtnClick = renderGallery(category.data);
   const categoryMarkup = `
-      <div class="books-container show-more"> ${renderGalleryAfterBtnClick} </div>
+      <ul class="books-container show-more"> ${renderGalleryAfterBtnClick} </ul>
     `;
   categoryItem.insertAdjacentHTML('beforeend', categoryMarkup);
 }
