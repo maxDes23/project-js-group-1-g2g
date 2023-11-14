@@ -5,6 +5,7 @@ const divEl = document.querySelector('.shop_title_list');
 const amazonIconPath = './img/modal/amazon.png';
 const bookShopIconPath = './img/shopping/book.png';
 const svgTrashIcon = './img/icons.svg';
+const blankBasket = document.querySelector('.blank-basket')
 
 
 const pageSize = 3;
@@ -76,7 +77,8 @@ function isEmpty() {
     if (!shoppingList.length) {
         return;
     }
-    
+    blankBasket.classList.add('display-none')
+
     divEl.insertAdjacentHTML('beforeend', renderMarkUp(itemsOnPage));
 }
 
