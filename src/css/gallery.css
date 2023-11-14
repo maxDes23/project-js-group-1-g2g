@@ -47,10 +47,6 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
-  .category-description {
-  }
-}
 
 .books-container {
   display: flex;
