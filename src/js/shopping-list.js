@@ -77,7 +77,7 @@ function isEmpty() {
         divEl.innerHTML = `
         <p class="no__info">This page is empty, add some books and proceed to order.</p>
         <img class="no__picture"
-        src="/img/shopping/books-desk.png"
+        src="./img/shopping/books-desk.png"
         alt="Shop is Empty"
         />`;
         return;
