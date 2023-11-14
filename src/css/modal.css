@@ -1,190 +1,182 @@
 /* mob & white theme */
 .overlay {
-    /* Скрываем подложку  */
-    opacity: 0;
-    visibility: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .5);
-    z-index: 20;
-    transition: .3s all;
+  /* Скрываем подложку  */
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  transition: 0.3s all;
 }
 
 /* Стили для модальных окон */
 
 .js-open-modal {
-    color: #FFF;
+  color: #fff;
 }
 
 .open-modal {
-    background-color: #4F2EE8;
-    width: 80px;
-    height: 40px;
+  background-color: #4f2ee8;
+  width: 80px;
+  height: 40px;
 }
 .modal {
-    /* Скрываем окна  */
+  /* Скрываем окна  */
 
-    display: inline;
-    opacity: 0;
-    visibility: hidden;
+  display: inline;
+  opacity: 0;
+  visibility: hidden;
 
-    /*  Установаем ширину окна  */
-    
-    width: 335px;
-    height: 762px;
+  /*  Установаем ширину окна  */
 
-    /*  Центрируем и задаем z-index */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 30;
-    /* Должен быть выше чем у подложки*/
+  width: 579px;
+  height: 465px;
 
-    /*  Побочные стили   */
-    box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
-    text-align: center;
-    padding: 30px;
+  /*  Центрируем и задаем z-index */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  /* Должен быть выше чем у подложки*/
 
-    background-color: #fff;
-    transition: 0.3s all;
+  /*  Побочные стили   */
+  box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 30px;
 
-    border-radius: 18px;
-    border-color: #111111;
-    border: 2px solid #111;
+  background-color: #fff;
+  transition: 0.3s all;
+
+  border-radius: 18px;
+  border-color: #111111;
+  border: 2px solid #111;
 }
 
 /* стили внутри модалки */
 
-.modal-img {
-    padding-bottom: 14px;
+.modal-image {
+  width: 192px;
+  height: 281px;
+
+  border-radius: 8px;
+ 
 }
 
 .modal__title {
-    text-align: left;
-    color: #111;
-    font-family: DM Sans;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 18px;
-    letter-spacing: -0.64px;
-    margin-bottom: 4px;
+  text-align: left;
+  color: #111;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+  margin-bottom: 4px;
 }
 
 .modal-title-name {
-    text-align: left;
-    color: #B4AFAF;
-    font-family: DM Sans;
-    font-size: 12px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: -0.48px;
-    padding-bottom: 18px;
+  text-align: left;
+  color: #b4afaf;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.48px;
+  padding-bottom: 18px;
 }
 
 .modal-title-text {
-    text-align: left;
-    width: 287px;
-    height: 70px;
-    flex-shrink: 0;
-    color: #111;
-    font-family: DM Sans;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: -0.56px;
-    margin-bottom: 14px;
+  text-align: left;
+  width: 287px;
+  height: 70px;
+  flex-shrink: 0;
+  color: #111;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  margin-bottom: 14px;
 }
 
 .modal-text-link {
-    padding-bottom: 44px;
-    display: flex;
+  padding-bottom: 44px;
+  display: flex;
+  
 }
 .modal-icon-amazon {
-    text-align: left;
-    background-color: #FFF;
- }
+  text-align: left;
+  background-color: #fff;
+}
 .modal-button-add {
-    border-radius: 40px;
-    background: #FFF;
-    border: 2px solid #4F2EE8;
-    display: inline-flex;
-    padding: 14px 28px;
-    align-items: flex-start;
-    gap: 10px;
+  display: flex;
+  width: 499px;
+  padding: 20px 145px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+  color: #111;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
 }
 
 .modal-button-remove {
-    border-radius: 40px;
-    background: #FFF;
-    border: 2px solid #4F2EE8;
-    display: inline-flex;
-    padding: 14px 28px;
-    align-items: flex-start;
-    gap: 10px;
-    box-sizing: inherit;
+  border-radius: 40px;
+  background: #fff;
+  border: 2px solid #4f2ee8;
+  display: inline-flex;
+  padding: 14px 28px;
+  align-items: flex-start;
+  gap: 10px;
+  box-sizing: inherit;
 }
 
 .modal-text-button-remove {
-    color: #111;
-    display: block;
-    font-family: DM Sans;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 18px;
-    letter-spacing: -0.14px;
-    text-transform: uppercase;
-    box-sizing: inherit;
-}
-
-.modal-text-under-button {
-    color: rgba(17, 17, 17, 0.50);
-    text-align: center;
-    font-family: DM Sans;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 12px;
-    letter-spacing: -0.4px;
-}
-
-.modal-text-button-add {
-    color: #111;
-    font-family: DM Sans;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 18px;
-    letter-spacing: -0.14px;
-    text-transform: uppercase;
+  color: #111;
+  display: block;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  box-sizing: inherit;
 }
 
 /* Стили для активных классов подложки и окна */
 
 .modal.active,
 .overlay.active {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Стили для кнопки закрытия */
 
 .modal__cross {
-    width: 12px;
-    height: 12px;
-    
-    top: 12px;
-    right: 12px;
-    fill: #c42d2d;
-    cursor: pointer;
-    margin-bottom: 4px;
+  width: 12px;
+  height: 12px;
+
+  top: 12px;
+  right: 12px;
+  fill: #c42d2d;
+  cursor: pointer;
+  margin-bottom: 4px;
 }
 
 /* Стили для кнопок */

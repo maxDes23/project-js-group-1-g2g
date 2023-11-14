@@ -27,7 +27,7 @@ async function showBookInfo(bookInfo) {
       `<p class="modal-title-name">Author: ${author}</p>`,
       `<p class="modal-title-text">List Name: ${list_name}</p>`,
       `<a href="${amazon_product_url}" class="modal-link">Amazon Link</a>`,
-      `<button class="modal-button-add">ADD</button>`,
+      `<button class="modal-button-add">Add to shopping list</button>`,
     ];
 
     // Append elements to the modal
