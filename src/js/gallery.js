@@ -1,46 +1,23 @@
 import { serviceSelectedCategory } from './book-api';
 import { serviceTopBooks } from './book-api';
-import { serviceSelectedBook } from './book-api';
-import { showBookInfo } from './modal';
-
+import { connectModal } from './modal';
 
 // ------------КОД ДЛЯ РЕНДЕРА СТОРІНКИ ХОУМ
 
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', renderHomePage);
+
+async function renderHomePage() {
   const getDataTopBooks = await serviceTopBooks();
   const { data } = getDataTopBooks;
 
-  renderСategoryList(data);
+  await renderСategoryList(data);
   getCategory();
+  connectModal();
+}
 
-  /////////////////////// modal code ////////////////////////
-  
-  const modalGallery = document.querySelector('.category-container');
-  //  console.log(modalGallery);
-  modalGallery.addEventListener('click', onBookClick)
-  
-  async function onBookClick(event) {
-    const clickedBook = event.target.closest('.book');
-    if (!clickedBook) {
-      return; 
-    }
-    const bookId = clickedBook.id;
-    // console.log(clickedBook.id);
+//Modal Code//
 
-    const bookData = await serviceSelectedBook(bookId)
-    // console.log(bookData.data);
-    showBookInfo(bookData.data);
-};
-
-/////////////////////// modal code ////////////////////////
-
-});
-
-
-
-
-
-
+//Modal Code//
 
 //Рендеринг картки КНИГИ
 
@@ -95,36 +72,8 @@ function getCategoryOnLoadMore() {
   const loadMoreButtons = document.querySelectorAll('.btn-load-more');
 
   loadMoreButtons.forEach(loadMoreBtn => {
-    loadMoreBtn.addEventListener('click', onLoadMoreBtn);
+    loadMoreBtn.addEventListener('click', onClickCategory);
   });
-}
-
-async function onLoadMoreBtn(event) {
-  try {
-    document.querySelector('.books-container').classList.toggle('show-more');
-
-    const categoryOriginalName = event.target.id;
-    const selectedCategory = event.target.id.replaceAll(' ', '_');
-
-    const categoryContainer = document.querySelector(`.${selectedCategory}`);
-
-    const category = await serviceSelectedCategory(categoryOriginalName);
-    const renderGalleryAfterBtnClick = renderGallery(category.data);
-
-    const newCategory = `
-       <p class="category-descriotion" id="category">
-            ${categoryOriginalName}
-          </p>
-          <div class="books-container show-more"> ${renderGalleryAfterBtnClick} </div>
-          <div class="button-wrapper">
-            <button class="btn-load-more" type="button" id="${categoryOriginalName}">SEE MORE</button>
-          </div>
-      `;
-
-    categoryContainer.innerHTML = newCategory;
-  } catch (error) {
-    console.log(error);
-  }
 }
 
 //Функція по кліку на категоріям яка буде вібирати назву категорії
@@ -138,21 +87,30 @@ function getCategory() {
 }
 
 async function onClickCategory(event) {
+  event.preventDefault();
+  console.log(1);
   const removeBooks = document.querySelector('.category-container');
   // console.log(removeBooks);
   removeBooks.innerHTML = '';
 
-  if (event.target.classList.contains('categories_item')) {
-    const selectCategory = event.target.innerText;
-    const categoryId = event.target.id;
-    const newNameCategory = document.querySelector('.category-title');
-    newNameCategory.textContent = selectCategory;
-
-    await renderСategory(categoryId);
+  const selectCategory = event.target.innerText;
+  const categoryId = event.target.id;
+  const newNameCategory = document.querySelector('.category-title');
+  newNameCategory.textContent = selectCategory;
+  console.log(categoryId);
+  try {
+    if (categoryId === '') {
+      await renderHomePage();
+    } else {
+      await renderСategory(categoryId);
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 
 async function renderСategory(nameSelectedCategory) {
+  console.log(2);
   const categoryItem = document.querySelector('.category-container');
   const category = await serviceSelectedCategory(nameSelectedCategory);
   const renderGalleryAfterBtnClick = renderGallery(category.data);
