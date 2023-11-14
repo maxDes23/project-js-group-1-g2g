@@ -1,4 +1,4 @@
-import"./assets/support-7c1313c8.js";import"./assets/vendor-8a3563eb.js";const l="storage-of-books",o=JSON.parse(localStorage.getItem(l))||[],i=document.querySelector(".shop_title_list"),b="./img/modal/amazon.png",u="./img/shopping/book.png",_="./img/icons.svg",f=document.querySelector(".blank-basket"),n=3;Math.ceil(o.length/n);let v=1,r=(v-1)*n,y=r+n,S=o.slice(r,y);function c(s){return s.map(({_id:e,title:a,author:t,description:d,list_name:g,book_image:h,amazon_product_url:k,buy_links:[m]})=>`
+import"./assets/support-e4efd7fb.js";import"./assets/vendor-8a3563eb.js";const l="storage-of-books",o=JSON.parse(localStorage.getItem(l))||[],i=document.querySelector(".shop_title_list"),b="./img/modal/amazon.png",u="./img/shopping/book.png",_="./img/icons.svg",f=document.querySelector(".blank-basket"),n=3;Math.ceil(o.length/n);let v=1,r=(v-1)*n,y=r+n,S=o.slice(r,y);function c(s){return s.map(({_id:e,title:a,author:t,description:d,list_name:g,book_image:h,amazon_product_url:k,buy_links:[m]})=>`
                 <article class="shop_card">
                     <div class="card-img">
                         <img class="shop__card-img" src="${h}" alt="${a}" />
