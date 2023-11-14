@@ -35,7 +35,7 @@ setActivePage(currentPage);
 
 function burgerIconSwithcer() {
     const currentIcon = burgerIcon.getAttribute('href')
-    currentIcon == './img/icons.svg#burger'
+    currentIcon.endsWith('#burger')
         ? burgerIcon.setAttribute('href', './img/icons.svg#icon-x-close')
         : burgerIcon.setAttribute('href', './img/icons.svg#burger')      
     console.log(currentIcon);
