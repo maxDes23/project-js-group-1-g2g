@@ -16,6 +16,7 @@
 @media screen and (min-width: 1280px) {
     .shop_content_container {
         display: flex;
+        gap: 40px;
     }
 }
 
@@ -35,12 +36,11 @@
     }
 }
 
-@media screen and (min-width: 1280px) {
+/* @media screen and (min-width: 1280px) {
     .shop_container {
         display: flex;
-        margin-left: 40px;
-    }
-}
+        }
+} */
 
 .shopping_title {
     color: var(--main-text-color);
@@ -83,10 +83,11 @@
 
 @media screen and (min-width: 1280px) {
     .shop_title_list {
+        display: flex;
         gap: 20px;
         width: 349px;
         height: 309px;
-        margin-top: 180px;
+        /* margin-top: 180px; */
     }
 }
 
