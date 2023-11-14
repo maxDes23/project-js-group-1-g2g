@@ -1,6 +1,6 @@
-.splide {
+/* .splide {
     padding-top: 40px;
-}
+} */
 
 .sup-container {
     min-width: 280px;
@@ -95,10 +95,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .splide {
-        padding-top: 86px;
-    }
-
     .sup-container {
         max-width: 356px;
     }
