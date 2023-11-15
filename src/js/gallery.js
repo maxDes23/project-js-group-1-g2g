@@ -86,6 +86,7 @@ function getCategory() {
 }
 
 async function onClickCategory(event) {
+  console.log(event);
   event.preventDefault();
   // console.log(1);
   const removeBooks = document.querySelector('.category-container');
@@ -95,10 +96,14 @@ async function onClickCategory(event) {
   // const selectCategory = event.target.innerText;
   const categoryId = event.target.id;
   const newNameCategory = document.querySelector('.category-title');
-  newNameCategory.textContent = categoryId;
+  event.target.innerHTML == "All Categories"
+    ? newNameCategory.innerHTML = 'Best Sellers <span>Books</span>'
+    : newNameCategory.textContent = categoryId;
+    
   // console.log(categoryId);
   try {
     if (categoryId === '') {
+      console.log('homepage');
       await renderHomePage();
     } else {
       await renderСategory(categoryId);
