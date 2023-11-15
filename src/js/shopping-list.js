@@ -4,6 +4,15 @@ import getShopIconsPaths from '.shop-icons-path';
 const SHOPPING_LIST_STORAGE_KEY = 'storage-of-books';
 const shoppingList = JSON.parse(localStorage.getItem(SHOPPING_LIST_STORAGE_KEY)) || [];
 
+
+const obj1 = { _id: 1, title: 'obj1'};
+const obj2 = { _id: 2, list_name: 'obj3'};
+const obj3 = { _id: 3, author: 'obj 3'};
+const obj4 = { _id: 4, description: 'obj 4'};
+const obj5 = { _id: 5, book_image: 'obj 5'};
+
+renderMarkUp([obj1, obj2, obj3, obj4, obj5]);
+
 const { divEl, 
     previousButton, 
     paginationPagesStart,  
