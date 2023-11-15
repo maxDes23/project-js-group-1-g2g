@@ -2,19 +2,16 @@ import { getBookById } from './book-api';
 
 // Функция при клике
 
+const backdrop = document.querySelector('.backdrop')
+      
+
 async function showBookInfo(bookInfo) {
   try {
     const { book_image, title, author, list_name, amazon_product_url } =
       bookInfo;
 
-    //   console.log('book Image: ', book_image,);
-    //   console.log('book title: ', title,);
-    //   console.log('book author: ', author,);
-    //   console.log('list Name: ', list_name,);
-    //   console.log('Amazon Url: ', amazon_product_url,);
-
     const modal = document.querySelector('.modal');
-    //   console.log('modal Constant', modal);
+    backdrop.style.display = 'inline'
 
     modal.innerHTML = '';
 
@@ -44,10 +41,14 @@ async function showBookInfo(bookInfo) {
     // Add event listener to the close button
     const closeButton = document.querySelector('.modal-close-button');
     closeButton.addEventListener('click', () => {
+
       modal.classList.remove('active');
+      backdrop.style.display = 'none'
+
     });
 
     modal.classList.add('active');
+
   } catch (error) {
     console.log(error);
   }
