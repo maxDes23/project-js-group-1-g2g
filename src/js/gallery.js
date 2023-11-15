@@ -15,10 +15,6 @@ async function renderHomePage() {
   connectModal();
 }
 
-//Modal Code//
-
-//Modal Code//
-
 //Рендеринг картки КНИГИ
 
 function renderGallery(books) {
@@ -86,7 +82,6 @@ function getCategory() {
 }
 
 async function onClickCategory(event) {
-  console.log(event);
   event.preventDefault();
   // console.log(1);
   const removeBooks = document.querySelector('.category-container');
@@ -100,10 +95,8 @@ async function onClickCategory(event) {
     ? newNameCategory.innerHTML = 'Best Sellers <span>Books</span>'
     : newNameCategory.textContent = categoryId;
     
-  // console.log(categoryId);
   try {
     if (categoryId === '') {
-      console.log('homepage');
       await renderHomePage();
     } else {
       await renderСategory(categoryId);
@@ -114,7 +107,7 @@ async function onClickCategory(event) {
 }
 
 async function renderСategory(nameSelectedCategory) {
-  console.log(2);
+  // console.log(2);
   const categoryItem = document.querySelector('.category-container');
   const category = await serviceSelectedCategory(nameSelectedCategory);
   const renderGalleryAfterBtnClick = renderGallery(category.data);
