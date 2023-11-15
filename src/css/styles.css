@@ -10,7 +10,7 @@
 @import url('./header.css');
 @import url('./gallery.css');
 @import url('./back2top.css');
-/* @import url('./footer.css'); */
+
 @import url('./modal.css');
 @import url('./support.css');
 @import url('./shopping-list.css');
@@ -62,13 +62,12 @@ body {
 .theme-dark body,
 .theme-light .container,
 .theme-dark .container {
-  transition: all 0.7s ease; 
+  transition: all 0.7s ease;
 }
 
 body {
   background-color: var(--primary-background-color);
 }
-
 
 .display-none {
   display: none;
@@ -93,6 +92,5 @@ body {
     display: flex;
     flex-direction: column;
     gap: 86px;
-    
   }
 }

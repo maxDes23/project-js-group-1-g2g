@@ -1,3 +1,64 @@
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(18, 40, 167);
+  left: 50%;
+  top: 50%;
+  z-index: 0;
+  animation: rotate 1s ease-in infinite;
+}
+.loader::after {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 208, 0);
+  animation: rotate 2s ease-in infinite, moveY 2s ease-in infinite;
+}
+@keyframes moveY {
+  0%,
+  100% {
+    top: 10%;
+  }
+  45%,
+  55% {
+    top: 59%;
+  }
+  60% {
+    top: 40%;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -100%) rotate(0deg) scale(1, 1);
+  }
+  25% {
+    transform: translate(-50%, 0%) rotate(180deg) scale(1, 1);
+  }
+  45%,
+  55% {
+    transform: translate(-50%, 100%) rotate(180deg) scale(3, 0.5);
+  }
+  60% {
+    transform: translate(-50%, 100%) rotate(180deg) scale(1, 1);
+  }
+  75% {
+    transform: translate(-50%, 0%) rotate(270deg) scale(1, 1);
+  }
+  100% {
+    transform: translate(-50%, -100%) rotate(360deg) scale(1, 1);
+  }
+}
+
 .container-gallary {
   font-family: DM Sans;
   padding-top: 40px;
@@ -154,8 +215,6 @@
 .book-img:hover {
   cursor: pointer;
 }
-
-
 
 @media screen and (min-width: 768px) {
   .book-img {
