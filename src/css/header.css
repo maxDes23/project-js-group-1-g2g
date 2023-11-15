@@ -105,7 +105,12 @@
                 #4F2EE8 18.03%, #FFF 100%);
     padding: 0px;
     transition: top 0.4s ease 0s;    
-    z-index: 10;
+    z-index: 4;
+}
+
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
 }
 
 .menu__body::before {
