@@ -1,7 +1,7 @@
 /* mob & white theme */
 .overlay {
   /* Скрываем подложку  */
-  opacity: 0;
+  /* opacity: 0;
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -10,7 +10,21 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 20;
-  transition: 0.3s all;
+  transition: 0.3s all; */
+}
+
+.backdrop {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 9;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in 0s;
 }
 
 /* Стили для модальных окон */
@@ -54,7 +68,7 @@
   /*  Установаем ширину окна  */
 
   width: 579px;
-  height: 465px;
+  
 
   /*  Центрируем и задаем z-index */
   position: fixed;
