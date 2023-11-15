@@ -1,15 +1,25 @@
+import getRefs from '.shop-refs.js';
+import getShopIconsPaths from '.shop-icons-path';
+
 const SHOPPING_LIST_STORAGE_KEY = 'storage-of-books';
 const shoppingList = JSON.parse(localStorage.getItem(SHOPPING_LIST_STORAGE_KEY)) || [];
 
-const divEl = document.querySelector('.shop_title_list');
-const amazonIconPath = './img/modal/amazon.png';
-const bookShopIconPath = './img/shopping/book.png';
-const svgTrashIcon = './img/icons.svg';
-const blankBasket = document.querySelector('.blank-basket')
+const { divEl, 
+    previousButton, 
+    paginationPagesStart,  
+  } = getRefs(); {
+
+}
+const {
+    bookShopIconPath,
+    amazonIconPath,
+    svgTrashIcon,
+  } = getShopIconsPaths();
+
+  const blankBasket = document.querySelector('.blank-basket')
 
 
 const pageSize = 3;
-let totalPages = Math.ceil(shoppingList.length / pageSize);
 let currentPage = 1;
 let startIndex = (currentPage - 1) * pageSize;
 let endIndex = startIndex + pageSize;
