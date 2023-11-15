@@ -13,6 +13,7 @@ const currentPage = window.location.href;
 const mobBasket = document.querySelector('.mob-basket')
 const mobHome = document.querySelector('.mob-home')
 const burgerIcon = document.querySelector('.mob-ico')
+const bodyEl = document.querySelector('body')
 
 
 function setActivePage(currentPage) {
@@ -33,16 +34,21 @@ setActivePage(currentPage);
 
 function burgerIconSwithcer() {
     const currentIcon = burgerIcon.getAttribute('href')
-    currentIcon.endsWith('burger')
-        ? burgerIcon.setAttribute('href', `${icons}#icon-x-close`)
-        : burgerIcon.setAttribute('href', `${icons}#burger`)
+
+    if (currentIcon.endsWith('burger')) {
+        burgerIcon.setAttribute('href', `${icons}#icon-x-close`)
+         bodyEl.classList.add('modal-open')
+        return
+    }
+    burgerIcon.setAttribute('href', `${icons}#burger`)
+    bodyEl.classList.remove('modal-open')
 }
 
 function onBurgerClick() {
     setActivePage(currentPage)
     burgerIconSwithcer()
 
-    mobileMenu.classList.toggle('menu-active');   
+    mobileMenu.classList.toggle('menu-active');
 }
 
 burgerBtn.addEventListener('click', onBurgerClick)
