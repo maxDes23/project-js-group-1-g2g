@@ -15,6 +15,26 @@
 
 /* Стили для модальных окон */
 
+/* кнопка закрытия */
+.modal-close-button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* иконка внутри кнопки закрытия */
+.modal__cross {
+  fill: black;
+  cursor: pointer;
+}
+
 .js-open-modal {
   color: #fff;
 }
@@ -168,16 +188,6 @@
 
 /* Стили для кнопки закрытия */
 
-.modal__cross {
-  width: 12px;
-  height: 12px;
-
-  top: 12px;
-  right: 12px;
-  fill: #c42d2d;
-  cursor: pointer;
-  margin-bottom: 4px;
-}
 
 /* Стили для кнопок */
 

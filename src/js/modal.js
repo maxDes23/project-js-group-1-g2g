@@ -21,7 +21,15 @@ async function showBookInfo(bookInfo) {
     // разметка
 
     const elements = [
-      `<button class="modal-close-button">Close</button>`,
+      `<button class="modal-close-button"><svg
+    class="modal__cross"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
+    />
+  </svg></button>`,
       `<img src="${book_image}" class="modal-image">`,
       `<h2 class="modal__title">${title}</h2>`,
       `<p class="modal-title-name">Author: ${author}</p>`,
