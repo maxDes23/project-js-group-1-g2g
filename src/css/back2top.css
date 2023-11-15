@@ -4,7 +4,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 10; 
+    z-index: 3; 
     transition: opacity .3s ease-in,visibility .3s ease-in,scale 1s;   
 }
 
