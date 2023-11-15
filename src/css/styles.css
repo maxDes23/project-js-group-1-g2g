@@ -58,7 +58,9 @@ body {
   --shop-text-color: #fff9;
 }
 
-body {
+.theme-light body,
+.theme-dark body {
+  transition: all 0.7s ease; 
   background-color: var(--primary-background-color);
 }
 
