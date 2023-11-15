@@ -89,17 +89,20 @@ async function onClickCategory(event) {
   removeBooks.innerHTML = '';
 
   // const selectCategory = event.target.innerText;
-  const categoryId = event.target.id;
+  let categoryId = event.target.id;
+  if (categoryId[0] === '_') {
+    categoryId = categoryId.substring(1);
+  }
   const newNameCategory = document.querySelector('.category-title');
   event.target.innerHTML == 'All Categories'
     ? (newNameCategory.innerHTML = 'Best Sellers <span>Books</span>')
-    : (newNameCategory.textContent = categoryId.substring(1));
+    : (newNameCategory.textContent = categoryId);
 
   try {
     if (categoryId === '') {
       await renderHomePage();
     } else {
-      await renderСategory(categoryId.substring(1));
+      await renderСategory(categoryId);
     }
   } catch (error) {
     console.log(error);
