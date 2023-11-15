@@ -1,13 +1,13 @@
 import { getBookById } from './book-api';
 
 // Функция при клике
-
 const backdrop = document.querySelector('.backdrop')
-      
+
+const bodyEl = document.querySelector('body')
 
 async function showBookInfo(bookInfo) {
   try {
-    const { book_image, title, author, list_name, amazon_product_url } =
+    const { book_image, title, author, list_name, amazon_product_url, buy_links: [bookshop] } =
       bookInfo;
 
     const modal = document.querySelector('.modal');
@@ -16,7 +16,6 @@ async function showBookInfo(bookInfo) {
     modal.innerHTML = '';
 
     // разметка
-
     const elements = [
       `<button class="modal-close-button"><svg
     class="modal__cross"
@@ -31,7 +30,8 @@ async function showBookInfo(bookInfo) {
       `<h2 class="modal__title">${title}</h2>`,
       `<p class="modal-title-name">Author: ${author}</p>`,
       `<p class="modal-title-text">List Name: ${list_name}</p>`,
-      `<a href="${amazon_product_url}" class="modal-link">Amazon Link</a>`,
+      `<a href="${amazon_product_url}" class="modal-link">Amazon</a>  `,
+      `<a href="${bookshop}" class="modal-link">BOOK</a>`,
       `<button class="modal-button-add">Add to shopping list</button>`,
     ];
 
@@ -44,6 +44,13 @@ async function showBookInfo(bookInfo) {
 
       modal.classList.remove('active');
       backdrop.style.display = 'none'
+      bodyEl.classList.remove('modal-open')
+
+      // new button
+      const modalButtonAdd = document.querySelector('.modal-button-add')
+      modalButtonAdd.addEventListener('click', () => {
+      console.log("modalButtonAdd");
+})
 
     });
 
@@ -53,6 +60,7 @@ async function showBookInfo(bookInfo) {
     console.log(error);
   }
 }
+
 
 function connectModal() {
   const modalGallery = document.querySelector('.category-container');
@@ -66,11 +74,12 @@ async function onBookClick(event) {
     return;
   }
   const bookId = clickedBook.id;
-  // console.log(clickedBook.id);
+  bodyEl.classList.add('modal-open');
 
   const bookData = await getBookById(bookId);
-  // console.log(bookData.data);
+  
   showBookInfo(bookData.data);
 }
 
 export { showBookInfo, connectModal };
+
