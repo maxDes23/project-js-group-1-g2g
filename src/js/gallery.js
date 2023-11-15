@@ -2,7 +2,6 @@ import { getBooksByCategory } from './book-api';
 import { getTopBooks } from './book-api';
 import { connectModal } from './modal';
 
-
 // ------------КОД ДЛЯ РЕНДЕРА СТОРІНКИ ХОУМ
 
 document.addEventListener('DOMContentLoaded', renderHomePage);
@@ -92,15 +91,15 @@ async function onClickCategory(event) {
   // const selectCategory = event.target.innerText;
   const categoryId = event.target.id;
   const newNameCategory = document.querySelector('.category-title');
-  event.target.innerHTML == "All Categories"
-    ? newNameCategory.innerHTML = 'Best Sellers <span>Books</span>'
-    : newNameCategory.textContent = categoryId;
-    
+  event.target.innerHTML == 'All Categories'
+    ? (newNameCategory.innerHTML = 'Best Sellers <span>Books</span>')
+    : (newNameCategory.textContent = categoryId.substring(1));
+
   try {
     if (categoryId === '') {
       await renderHomePage();
     } else {
-      await renderСategory(categoryId);
+      await renderСategory(categoryId.substring(1));
     }
   } catch (error) {
     console.log(error);
