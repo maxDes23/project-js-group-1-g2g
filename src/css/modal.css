@@ -61,6 +61,7 @@
 /* стили внутри модалки */
 
 .modal-close-button {
+<<<<<<< Updated upstream
     width: 20px;
     height: 20px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -68,6 +69,13 @@
     position: absolute;
     top: 12px;
     right: 12px;
+=======
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    position: absolute;
+        top: 12px;
+        right: 12px;
+>>>>>>> Stashed changes
 }
 
 .modal-img {
