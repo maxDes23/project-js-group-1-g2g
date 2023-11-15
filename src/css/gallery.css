@@ -1,5 +1,6 @@
 .container-gallary {
   font-family: DM Sans;
+  padding-top: 40px;
 }
 
 .category-title {
@@ -41,6 +42,9 @@
 @media screen and (min-width: 768px) {
   .category-description {
     line-height: 24px;
+  }
+  .container-gallary {
+    padding-top: 100px;
   }
 }
 
@@ -96,6 +100,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+  }
+  .container-gallary {
+    padding-top: 0;
   }
 }
 
