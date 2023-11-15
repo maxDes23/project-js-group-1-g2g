@@ -24,6 +24,7 @@
     width: 80px;
     height: 40px;
 }
+
 .modal {
     /* Скрываем окна  */
 
@@ -32,7 +33,7 @@
     visibility: hidden;
 
     /*  Установаем ширину окна  */
-    
+
     width: 335px;
     height: 762px;
 
@@ -46,7 +47,7 @@
 
     /*  Побочные стили   */
     box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
-    text-align: center;
+
     padding: 30px;
 
     background-color: #fff;
@@ -58,6 +59,16 @@
 }
 
 /* стили внутри модалки */
+
+.modal-close-button {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
 
 .modal-img {
     padding-bottom: 14px;
@@ -106,10 +117,12 @@
     padding-bottom: 44px;
     display: flex;
 }
+
 .modal-icon-amazon {
     text-align: left;
     background-color: #FFF;
- }
+}
+
 .modal-button-add {
     border-radius: 40px;
     background: #FFF;
@@ -179,12 +192,11 @@
 .modal__cross {
     width: 12px;
     height: 12px;
-    
+
     top: 12px;
     right: 12px;
-    fill: #c42d2d;
+    fill: black;
     cursor: pointer;
-    margin-bottom: 4px;
 }
 
 /* Стили для кнопок */
