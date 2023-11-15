@@ -35,20 +35,42 @@ async function showBookInfo(bookInfo) {
     buttonAdd.setAttribute('id', '1')
     
     // кнопка добавить в корзину
-    buttonAdd.addEventListener('click', () => {
-      const bookObj = {
-        book_image, title, author, list_name, amazon_product_url, buy_links: [bookshop]
-      };
-      
-      // localStorage.setItem('bookData', JSON.stringify(bookObj));
-      const existingBooks = JSON.parse(localStorage.getItem('books')) || [];
-      existingBooks.push(bookObj);
-      localStorage.setItem('books', JSON.stringify(existingBooks));
-      
-      buttonAdd.setAttribute('id', '2');
-      buttonAdd.textContent = 'remove from the shoppinglist'
+buttonAdd.addEventListener('click', () => {
+  const bookObj = {
+    book_image,
+    title,
+    author,
+    list_name,
+    amazon_product_url,
+    buy_links: [bookshop]
+  };
+  
+  if (buttonAdd.getAttribute('id') === '1') {
+    // Добавить книгу в localStorage
+    const existingBooks = JSON.parse(localStorage.getItem('books')) || [];
+    existingBooks.push(bookObj);
+    localStorage.setItem('books', JSON.stringify(existingBooks));
 
-    })
+    // Обновить кнопку
+    buttonAdd.setAttribute('id', '2');
+    buttonAdd.textContent = 'Remove from the shopping list';
+  } else if (buttonAdd.getAttribute('id') === '2') {
+
+    // Удаляем книгу из localStorage
+      const clickedBookId = bookObj.title; 
+      const existingBooks = JSON.parse(localStorage.getItem('books')) || [];
+      const updatedBooks = existingBooks.filter(existingBook => {
+      const bookId = existingBook.title; 
+      return bookId !== clickedBookId;
+
+    });
+    localStorage.setItem('books', JSON.stringify(updatedBooks));
+
+    // Обновить кнопку
+    buttonAdd.setAttribute('id', '1');
+    buttonAdd.textContent = 'Add to the shopping list';
+  }
+});
     
     // close button
     const closeButton = document.querySelector('.modal-close-button');
