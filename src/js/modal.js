@@ -1,18 +1,13 @@
 import { getBookById } from './book-api';
-
-// Функция при клике
 const backdrop = document.querySelector('.backdrop')
-
 const bodyEl = document.querySelector('body')
 
 async function showBookInfo(bookInfo) {
   try {
     const { book_image, title, author, list_name, amazon_product_url, buy_links: [bookshop] } =
       bookInfo;
-
     const modal = document.querySelector('.modal');
     backdrop.style.display = 'inline'
-
     modal.innerHTML = '';
 
     // разметка
@@ -34,24 +29,31 @@ async function showBookInfo(bookInfo) {
       `<a href="${bookshop}" class="modal-link">BOOK</a>`,
       `<button class="modal-button-add">Add to shopping list</button>`,
     ];
-
-    // Append elements to the modal
     modal.innerHTML = elements.join('');
+    
+    const buttonAdd = document.querySelector('.modal-button-add');
+    buttonAdd.setAttribute('id', '1')
+    
+    // кнопка добавить в корзину
+    buttonAdd.addEventListener('click', () => {
+      const bookObj = {
+        book_image, title, author, list_name, amazon_product_url, buy_links: [bookshop]
+      }
+      
+      localStorage.setItem('bookData', JSON.stringify(bookObj));
+      
+      buttonAdd.setAttribute('id', '2');
+      buttonAdd.textContent = 'remove from the shoppinglist'
 
-    // Add event listener to the close button
+    })
+    
+    // close button
     const closeButton = document.querySelector('.modal-close-button');
     closeButton.addEventListener('click', () => {
 
       modal.classList.remove('active');
       backdrop.style.display = 'none'
       bodyEl.classList.remove('modal-open')
-
-      // new button
-      const modalButtonAdd = document.querySelector('.modal-button-add')
-      modalButtonAdd.addEventListener('click', () => {
-      console.log("modalButtonAdd");
-})
-
     });
 
     modal.classList.add('active');
@@ -61,10 +63,8 @@ async function showBookInfo(bookInfo) {
   }
 }
 
-
 function connectModal() {
   const modalGallery = document.querySelector('.category-container');
-  //  console.log(modalGallery);
   modalGallery.addEventListener('click', onBookClick);
 }
 
@@ -75,9 +75,7 @@ async function onBookClick(event) {
   }
   const bookId = clickedBook.id;
   bodyEl.classList.add('modal-open');
-
   const bookData = await getBookById(bookId);
-  
   showBookInfo(bookData.data);
 }
 
