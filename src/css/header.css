@@ -4,7 +4,7 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1000;
+    z-index: 5;
     display: flex;
     width: 375px;
     height: 64px;
