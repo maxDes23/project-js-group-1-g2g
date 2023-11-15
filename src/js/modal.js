@@ -38,9 +38,12 @@ async function showBookInfo(bookInfo) {
     buttonAdd.addEventListener('click', () => {
       const bookObj = {
         book_image, title, author, list_name, amazon_product_url, buy_links: [bookshop]
-      }
+      };
       
-      localStorage.setItem('bookData', JSON.stringify(bookObj));
+      // localStorage.setItem('bookData', JSON.stringify(bookObj));
+      const existingBooks = JSON.parse(localStorage.getItem('books')) || [];
+      existingBooks.push(bookObj);
+      localStorage.setItem('books', JSON.stringify(existingBooks));
       
       buttonAdd.setAttribute('id', '2');
       buttonAdd.textContent = 'remove from the shoppinglist'
