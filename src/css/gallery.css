@@ -142,6 +142,7 @@
 .book-picture:hover::after {
   opacity: 0.95;
   transform: translateY(0);
+  cursor: pointer;
 }
 
 .book-img {
@@ -149,6 +150,12 @@
   max-height: 485px;
   border-radius: 10px;
 }
+
+.book-img:hover {
+  cursor: pointer;
+}
+
+
 
 @media screen and (min-width: 768px) {
   .book-img {
