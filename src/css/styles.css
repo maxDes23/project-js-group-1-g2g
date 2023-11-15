@@ -59,10 +59,16 @@ body {
 }
 
 .theme-light body,
-.theme-dark body {
+.theme-dark body,
+.theme-light .container,
+.theme-dark .container {
   transition: all 0.7s ease; 
+}
+
+body {
   background-color: var(--primary-background-color);
 }
+
 
 .display-none {
   display: none;
