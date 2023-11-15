@@ -1,4 +1,4 @@
-import { serviceSelectedBook } from './book-api';
+import { getBookById } from './book-api';
 
 // Функция при клике
 
@@ -67,7 +67,7 @@ async function onBookClick(event) {
   const bookId = clickedBook.id;
   // console.log(clickedBook.id);
 
-  const bookData = await serviceSelectedBook(bookId);
+  const bookData = await getBookById(bookId);
   // console.log(bookData.data);
   showBookInfo(bookData.data);
 }

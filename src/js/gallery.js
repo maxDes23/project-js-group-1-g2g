@@ -1,13 +1,14 @@
-import { serviceSelectedCategory } from './book-api';
-import { serviceTopBooks } from './book-api';
+import { getBooksByCategory } from './book-api';
+import { getTopBooks } from './book-api';
 import { connectModal } from './modal';
+
 
 // ------------КОД ДЛЯ РЕНДЕРА СТОРІНКИ ХОУМ
 
 document.addEventListener('DOMContentLoaded', renderHomePage);
 
 async function renderHomePage() {
-  const getDataTopBooks = await serviceTopBooks();
+  const getDataTopBooks = await getTopBooks();
   const { data } = getDataTopBooks;
 
   await renderСategoryList(data);
@@ -109,7 +110,7 @@ async function onClickCategory(event) {
 async function renderСategory(nameSelectedCategory) {
   // console.log(2);
   const categoryItem = document.querySelector('.category-container');
-  const category = await serviceSelectedCategory(nameSelectedCategory);
+  const category = await getBooksByCategory(nameSelectedCategory);
   const renderGalleryAfterBtnClick = renderGallery(category.data);
   const categoryMarkup = `
       <ul class="books-container show-more"> ${renderGalleryAfterBtnClick} </ul>

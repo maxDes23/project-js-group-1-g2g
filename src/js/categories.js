@@ -1,7 +1,7 @@
-import { serviceAllCategory } from "./book-api";
+import { getAllCategory } from "./book-api"; 
 
 document.addEventListener('DOMContentLoaded', async function () {
-    const getData = await serviceAllCategory();
+    const getData = await getAllCategory();
     const { data } = getData;
     addList(data);
   });
