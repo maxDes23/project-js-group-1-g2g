@@ -3,7 +3,6 @@ import icons from "../img/icons.svg"
 
 const themeSwitcher = document.querySelector('.switcher-block')
 const switcher = document.querySelector('.switcher')
-const navList = document.querySelector('.nav-list')
 const basket = document.querySelector('.basket')
 const home = document.querySelector('.home')
 const basketIco = document.querySelector('.basket-ico')
