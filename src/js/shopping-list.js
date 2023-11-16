@@ -3,7 +3,7 @@ import getRefs from './shop-refs.js';
 import getShopIconsPaths from './shop-icons-path.js';
 
 const SHOPPING_LIST_STORAGE_KEY = 'books';
-const shoppingList = JSON.parse(localStorage.getItem(SHOPPING_LIST_STORAGE_KEY)) || [];
+let shoppingList = Array.from(new Set(JSON.parse(localStorage.getItem(SHOPPING_LIST_STORAGE_KEY)) || []));
 const blankBasket = document.querySelector('.blank-basket')
 
 const { divEl, 
@@ -17,9 +17,6 @@ const {
     amazonIconPath,
     // svgTrashIcon,
   } = getShopIconsPaths();
-
-  /* const blankBasket = document.querySelector('.blank-basket') */
-
 
 const pageSize = 6;
 let currentPage = 1;
@@ -138,4 +135,19 @@ divEl.addEventListener('click', event => {
 
     }
 });
+
+// Add a function to check if the book is already in the shopping list
+function isBookInShoppingList(bookId) {
+    return shoppingList.some(book => book._id === bookId);
+}
+
+// Add an event listener to the document to listen for the 'add-to-cart' event
+document.addEventListener('add-to-cart', event => {
+    const book = event.detail.book;
+    if (!isBookInShoppingList(book._id)) {
+        shoppingList.push(book);
+        localStorage.setItem(SHOPPING_LIST_STORAGE_KEY, JSON.stringify(shoppingList));
+    }
+});
+
 
