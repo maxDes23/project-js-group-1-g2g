@@ -114,6 +114,10 @@
   margin-bottom: 14px;
 }
 
+.book-links {
+  display: flex;
+}
+
 .modal-text-link {
   padding-bottom: 44px;
   display: flex;
