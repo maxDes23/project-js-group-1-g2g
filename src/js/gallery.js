@@ -2,16 +2,24 @@ import { getBooksByCategory } from './book-api';
 import { getTopBooks } from './book-api';
 import { connectModal } from './modal';
 
-   document.addEventListener('DOMContentLoaded', function () {
-     const loader = document.querySelector('.loader');
-    
-     loader.style.display = 'block';
 
-     window.addEventListener('load', function () {
+
+
+// /////////////////  loader ////////////////
+  //  document.addEventListener('DOMContentLoaded', function () {
+  //    const loader = document.querySelector('.loader');
+    
+  //    loader.style.display = 'block';
+
+  //    window.addEventListener('load', function () {
       
-       loader.style.display = 'none';
-     });
-   });
+  //      loader.style.display = 'none';
+  //    });
+  //  });
+
+
+
+
 // ------------КОД ДЛЯ РЕНДЕРА СТОРІНКИ ХОУМ
 
 document.addEventListener('DOMContentLoaded', renderHomePage);
