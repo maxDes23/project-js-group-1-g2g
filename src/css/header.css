@@ -171,6 +171,17 @@ body.modal-open {
     letter-spacing: -0.44px;
 }
 
+.sign-up-btn-text {
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+    margin-right: auto;
+    color: #fff;
+}
+
 .mobile-nav {
     margin-top: 140px;
     margin-left: auto;
@@ -211,6 +222,27 @@ body.modal-open {
 .sign-up-button {
     display: none;
 }
+
+.sign-up-mobile {
+    position: relative;
+    top: 100px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    width: 184px;
+    height: 48px;
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background-color: #4f2ee8;
+    padding: 12px 14px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+
 
 .log-out-btn {
     position: absolute;
