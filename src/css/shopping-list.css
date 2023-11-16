@@ -7,6 +7,34 @@
     padding-top: 104px;
 }
 
+<<<<<<< Updated upstream
+=======
+
+ .shop_card-btn {
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: none;
+    
+    
+
+ }
+ 
+ .trash-icon {
+    stroke: white;
+    fill: blue;
+    width: 25px;
+    height: 25px;
+
+ }
+
+
+
+
+
+>>>>>>> Stashed changes
 @media screen and (min-width: 780px) {
     .shop_content_container {
         padding-top: 112px;

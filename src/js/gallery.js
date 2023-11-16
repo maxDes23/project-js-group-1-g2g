@@ -103,10 +103,21 @@ async function onClickCategory(event) {
   if (categoryId[0] === '_') {
     categoryId = categoryId.substring(1);
   }
+
+  let arrString = categoryId.split(' ');
+  let lastWord = ''
+  let headString = ''
+   
+  if (arrString.length > 1) {
+    lastWord = arrString.pop()
+    headString = arrString.join(' ');
+  }
+  else headString = categoryId;
+
   const newNameCategory = document.querySelector('.category-title');
   event.target.innerHTML == 'All Categories'
     ? (newNameCategory.innerHTML = 'Best Sellers <span>Books</span>')
-    : (newNameCategory.textContent = categoryId);
+    : (newNameCategory.innerHTML = `${headString} <span>${lastWord}</span>`);
 
   try {
     if (categoryId === '') {
