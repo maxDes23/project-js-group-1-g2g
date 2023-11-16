@@ -16,8 +16,25 @@ const burgerIcon = document.querySelector('.mob-ico')
 const bodyEl = document.querySelector('body')
 
 
+const booksQtyElement = document.querySelector('.books-quantity')
+
+
+
+function getSelectedBooksQty() {
+    const qty = JSON.parse(localStorage.getItem('books')).length || 0
+    if (!qty) {
+        return booksQtyElement.classList.add('display-none')
+    }
+    console.log(localStorage.getItem('books'));
+    booksQtyElement.classList.remove('display-none')
+    booksQtyElement.innerHTML = qty
+}
+
+getSelectedBooksQty();
+
 function setActivePage(currentPage) {
-  if (currentPage.includes('shop-list')) {
+    if (currentPage.includes('shop-list')) {
+    booksQtyElement.classList.add('display-none')
     home.classList.remove('nav-active');
     mobHome.classList.remove('nav-active');
       basket.classList.add('nav-active');
@@ -92,4 +109,4 @@ else {
 
 
 
-
+export {booksQtyElement, getSelectedBooksQty}
