@@ -21,6 +21,7 @@
   right: 12px;
   width: 24px;
   height: 24px;
+  padding-bottom: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +49,8 @@
   opacity: 0;
   visibility: hidden;
   /*  Установаем ширину окна  */
-  width: 579px;
+  width: 335px;
+  
   /*  Центрируем и задаем z-index */
   position: fixed;
   top: 50%;
@@ -59,7 +61,10 @@
   /*  Побочные стили   */
   box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
   text-align: center;
-  padding: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
   background-color: #fff;
   transition: 0.3s all;
   border-radius: 18px;
@@ -70,9 +75,10 @@
 /* стили внутри модалки */
 
 .modal-image {
-  width: 192px;
-  height: 281px;
+  width: 287px;
+  height: ;
   border-radius: 8px;
+  padding-bottom: 14px;
 }
 
 .modal__title {
@@ -116,11 +122,24 @@
 
 .book-links {
   display: flex;
+  gap: 20px;
+  padding-bottom: 44px;
 }
 
 .modal-text-link {
   padding-bottom: 44px;
   display: flex;
+}
+
+.modal-link-amazon {
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+  filter: grayscale(100%);
+}
+
+.modal-link {
+  filter: grayscale(100%);
 }
 
 .modal-icon-amazon {
@@ -129,13 +148,15 @@
 }
 
 .modal-button-add {
-  display: flex;
+  display: block;
   background-color: #fff;
-  width: 499px;
-  padding: 20px 145px;
+  min-width: 211px;
+  min-height: 46px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 18px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   border-radius: 40px;
   border: 2px solid #4f2ee8;
   color: #111;
@@ -184,3 +205,46 @@ body.modal-open {
   overflow: hidden;
   position: fixed;
 }
+
+@media screen and (min-width: 768px) {
+  .modal {
+    max-width: none;
+    width: 579px;
+    margin-top: 85px;
+    padding: 40px;
+    overflow-y: visible;
+    }
+    .book-links {
+      margin-bottom: 0;
+    }
+    .modal-image {
+        min-width: 192px;
+        height: 281px;
+        width: 192px;
+        margin-bottom: 0;
+    }
+    .modal-ipad {
+      gap: 24px;
+      margin-bottom: 40px;
+      display: flex;   
+    }
+    .modal-ipad-overlay-text {
+
+    }
+    .modal__title {
+      /* margin-bottom: 8px;
+      font-size: 24px;
+      line-height: 1.17px; */
+    }
+    .modal-title-name {
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.29;
+      margin: auto;
+    }
+    .modal-title-text {
+      margin-bottom: 20px;
+    }
+  }
+
+
