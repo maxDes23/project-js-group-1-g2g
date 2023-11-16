@@ -1,4 +1,5 @@
 import { getBookById } from './book-api';
+import { booksQtyElement, getSelectedBooksQty } from './header';
 const backdrop = document.querySelector('.backdrop')
 const bodyEl = document.querySelector('body')
 
@@ -59,7 +60,8 @@ buttonAdd.addEventListener('click', () => {
 
     // Обновить кнопку
     buttonAdd.setAttribute('id', '2');
-    buttonAdd.textContent = 'Remove from the shopping list';
+    buttonAdd.textContent = 'Remove from shopping list';
+    getSelectedBooksQty();
   } else if (buttonAdd.getAttribute('id') === '2') {
 
     // Удаляем книгу из localStorage
@@ -67,6 +69,7 @@ buttonAdd.addEventListener('click', () => {
       const existingBooks = JSON.parse(localStorage.getItem('books')) || [];
       const updatedBooks = existingBooks.filter(existingBook => {
       const bookId = existingBook.title; 
+        
       return bookId !== clickedBookId;
 
     });
@@ -74,7 +77,8 @@ buttonAdd.addEventListener('click', () => {
 
     // Обновить кнопку
     buttonAdd.setAttribute('id', '1');
-    buttonAdd.textContent = 'Add to the shopping list';
+    getSelectedBooksQty();
+    buttonAdd.textContent = 'Add to shopping list';
   }
 });
     

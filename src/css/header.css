@@ -28,6 +28,24 @@
     display: none;
 }
 
+.books-quantity {
+    position: relative;
+    top: -15px;
+    left: -22px;
+    /* border: 1px solid var(--header-border-color); */
+    background-color: rgb(196, 8, 8);
+    color: white;
+    font-weight: 400;
+    font-size: 12px;
+    height: 18px;
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+
+}
 
 .toggler {
     background: var(--toggler-gradient);
