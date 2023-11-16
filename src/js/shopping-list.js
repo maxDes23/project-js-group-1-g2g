@@ -1,17 +1,9 @@
-import getRefs from '.shop-refs.js';
-import getShopIconsPaths from '.shop-icons-path';
+import getRefs from './shop-refs.js';
+import getShopIconsPaths from './shop-icons-path.js';
 
-const SHOPPING_LIST_STORAGE_KEY = 'storage-of-books';
+const SHOPPING_LIST_STORAGE_KEY = 'books';
 const shoppingList = JSON.parse(localStorage.getItem(SHOPPING_LIST_STORAGE_KEY)) || [];
 
-
-const obj1 = { _id: 1, title: 'obj1'};
-const obj2 = { _id: 2, list_name: 'obj3'};
-const obj3 = { _id: 3, author: 'obj 3'};
-const obj4 = { _id: 4, description: 'obj 4'};
-const obj5 = { _id: 5, book_image: 'obj 5'};
-
-renderMarkUp([obj1, obj2, obj3, obj4, obj5]);
 
 const { divEl, 
     previousButton, 
@@ -25,7 +17,7 @@ const {
     svgTrashIcon,
   } = getShopIconsPaths();
 
-  const blankBasket = document.querySelector('.blank-basket')
+  /* const blankBasket = document.querySelector('.blank-basket') */
 
 
 const pageSize = 3;
@@ -94,10 +86,9 @@ function renderMarkUp(itemsOnPage) {
 
 function isEmpty() {
     if (!shoppingList.length) {
+        divEl.innerHTML = ``;
         return;
     }
-    blankBasket.classList.add('display-none')
-
     divEl.insertAdjacentHTML('beforeend', renderMarkUp(itemsOnPage));
 }
 
@@ -119,7 +110,7 @@ divEl.addEventListener('click', event => {
         );
 
         if (!shoppingList.length) {
-            isEmpty();
+            divEl.innerHTML = ``;
             return;
         } else if (!sliceArrayBooks().length) {
             previousButton.click();
@@ -133,3 +124,53 @@ divEl.addEventListener('click', event => {
     }
 });
 
+/* const book1 = {
+    _id: "1",
+    title: "Book Title 1",
+    author: "Author 1",
+    description: "Description 1",
+    list_name: "List Name 1",
+    book_image: "book-image-url-1",
+    amazon_product_url: "amazon-product-url-1",
+};
+
+const book2 = {
+    _id: "2",
+    title: "Book Title 2",
+    author: "Author 2",
+    description: "Description 2",
+    list_name: "List Name 2",
+    book_image: "book-image-url-2",
+    amazon_product_url: "amazon-product-url-2",
+};
+
+const book3 = {
+    _id: "3",
+    title: "Book Title 3",
+    author: "Author 3",
+    description: "Description 3",
+    list_name: "List Name 3",
+    book_image: "book-image-url-3",
+    amazon_product_url: "amazon-product-url-3",
+};
+
+const book4 = {
+    _id: "4",
+    title: "Book Title 4",
+    author: "Author 4",
+    description: "Description 4",
+    list_name: "List Name 4",
+    book_image: "book-image-url-4",
+    amazon_product_url: "amazon-product-url-4",
+};
+
+const book5 = {
+    _id: "5",
+    title: "Book Title 5",
+    author: "Author 5",
+    description: "Description 5",
+    list_name: "List Name 5",
+    book_image: "book-image-url-5",
+    amazon_product_url: "amazon-product-url-5",
+};
+renderMarkUp([book1, book2, book3, book4, book5]); */
