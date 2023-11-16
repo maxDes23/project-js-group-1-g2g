@@ -22,7 +22,9 @@
     color: var(--category-color);
 }
 
-.categories_item.active_category {
+.categories_item.active_category,
+.categories_item:hover,
+.categories_item:focus {
     text-transform: uppercase;
     font-weight: 700;
     color: var(--category-selected-color);
