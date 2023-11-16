@@ -18,17 +18,14 @@ const bodyEl = document.querySelector('body')
 
 const booksQtyElement = document.querySelector('.books-quantity')
 
-
-
 function getSelectedBooksQty() {
-    const qty = localStorage.getItem('books') || 0
-    if (!qty) {
+    const qty = localStorage.getItem('books') || ''
+    
+    if (!qty || !JSON.parse(qty).length) {
         return booksQtyElement.classList.add('display-none')
     }
-     let quantity = JSON.parse(qty).length 
-    console.log(localStorage.getItem('books'));
     booksQtyElement.classList.remove('display-none')
-    booksQtyElement.innerHTML = quantity
+    booksQtyElement.innerHTML = JSON.parse(qty).length
 }
 
 getSelectedBooksQty();
