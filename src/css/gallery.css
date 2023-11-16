@@ -1,4 +1,4 @@
-.loader {
+/* .loader {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -23,7 +23,9 @@
   height: 20px;
   background-color: rgb(255, 208, 0);
   animation: rotate 2s ease-in infinite, moveY 2s ease-in infinite;
-}
+} */
+
+
 @keyframes moveY {
   0%,
   100% {
