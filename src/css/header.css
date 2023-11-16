@@ -29,9 +29,9 @@
 }
 
 .books-quantity {
-    position: relative;
-    top: -15px;
-    left: -22px;
+    position: absolute;
+    top: 10px;
+    left: 385px;
     /* border: 1px solid var(--header-border-color); */
     background-color: rgb(196, 8, 8);
     color: white;
@@ -349,6 +349,10 @@ body.modal-open {
 @media screen and (min-width:1440px) {
     .header-container {
         width: 1440px;
+    }
+
+    .books-quantity {
+        left: 420px;
     }
 
     .logo {
