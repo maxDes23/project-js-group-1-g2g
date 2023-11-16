@@ -3,7 +3,7 @@
     var button = document.getElementById('scroll-up');
     if (button) {
       button.style.visibility =
-        window.scrollY > window.innerHeight ? 'visible' : 'hidden';
+        window.scrollY > 1000 ? 'visible' : 'hidden';
     }
   });
 

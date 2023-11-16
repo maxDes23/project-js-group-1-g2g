@@ -1,5 +1,6 @@
 .scroll-up {
     border: none;
+    visibility: hidden;
     background-color: transparent;
     position: fixed;
     bottom: 20px;
