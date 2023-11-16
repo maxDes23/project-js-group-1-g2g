@@ -14,8 +14,8 @@
     <!-- Custom styles -->
     
     <script type="module" crossorigin src="/project-js-group-1-g2g/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-js-group-1-g2g/assets/vendor-310c93a9.js">
-    <link rel="modulepreload" crossorigin href="/project-js-group-1-g2g/assets/support-eac90c07.js">
+    <link rel="modulepreload" crossorigin href="/project-js-group-1-g2g/assets/vendor-ddb081ef.js">
+    <link rel="modulepreload" crossorigin href="/project-js-group-1-g2g/assets/support-0cf42b55.js">
     <link rel="stylesheet" href="/project-js-group-1-g2g/assets/vendor-6c527891.css">
     <link rel="stylesheet" href="/project-js-group-1-g2g/assets/support-5bb70b12.css">
   </head>
@@ -110,40 +110,41 @@
 
         <div class="menu__body">
   <div class="mobile-menu-content">
-    <div class="user-block display-none">
-        <img class="user-photo" src="/project-js-group-1-g2g/assets/stephan-9e4ab9dd.png" alt="">
-        <h3 class="user-name">Stephan</h3>
+    <div class="user-block">
+      <img class="user-photo" src="/project-js-group-1-g2g/assets/stephan-9e4ab9dd.png" alt="" />
+      <h3 class="user-name">Stephan</h3>
     </div>
     <button class="sign-up-mobile" type="button">
-        <span class="sign-up-btn-text">Sign up</span>
-        <svg class="sign-up-icon" width="20px" height="20px">
-          <use href="/project-js-group-1-g2g/assets/icons-55a1aa95.svg#sign-up-icon"></use>
+      <span class="sign-up-btn-text">Sign up</span>
+      <svg class="sign-up-icon" width="20px" height="20px">
+        <use href="/project-js-group-1-g2g/assets/icons-55a1aa95.svg#sign-up-icon"></use>
+      </svg>
+    </button>
+    <div class="mobile-nav">
+      <a href="./index.html"><div class="nav-item mob-home">HOME</div></a>
+      <a href="./shop-list.html">
+        <div class="nav-item mob-basket">
+          SHOPPING LIST
+          <svg class="mob-basket-ico" width="20" height="20">
+            <use href="/project-js-group-1-g2g/assets/icons-55a1aa95.svg#uil_cart"></use>
+          </svg>
+        </div>
+      </a>
+    </div>
+
+    <!--  logout btn -->
+    <div class="mobile-logout-div">
+      <button class="log-out-btn" type="button">
+        <span class="log-out-text">Log out</span>
+
+        <svg class="log-out-icon" width="20px" height="20px">
+          <use href="/project-js-group-1-g2g/assets/icons-55a1aa95.svg#icon-arrow-narrow-right"></use>
         </svg>
       </button>
-    <div class="mobile-nav">
-        <a href="./index.html"><div class="nav-item mob-home">HOME</div></a>
-        <a href="./shop-list.html">
-        <div class="nav-item mob-basket">SHOPPING LIST
-            <svg class="mob-basket-ico" width="20" height="20">
-                <use href="/project-js-group-1-g2g/assets/icons-55a1aa95.svg#uil_cart"></use>
-            </svg>
-        </div>
-         </a>
-    </div>
-
-  <!--  logout btn -->
-    <div class="mobile-logout-div">
-        <button class="log-out-btn" type="button">
-          <span class="log-out-text">Log out</span>
-
-          <svg class="log-out-icon" width="20px" height="20px">
-            <use href="/project-js-group-1-g2g/assets/icons-55a1aa95.svg#icon-arrow-narrow-right"></use>
-          </svg>
-        </button>
     </div>
   </div>
-    
 </div>
+
         <!-- AUTHORIZATION -->
 <div class="backdrop-modal-sign-up display-none" id="authorization">
   <div class="modal-sign-up">
