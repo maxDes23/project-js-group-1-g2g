@@ -55,8 +55,11 @@
                 stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
                 stroke-width="3.2" d="M5.333 16h21.333M26.667 16l-8-8M26.667 16l-8 8"></path>
     </symbol>
-    <symbol id="trash-icon" viewBox="0 0 32 32"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4h8M4 8h24m-2.667 0-.935 14.026c-.14 2.104-.21 3.156-.665 3.954a4.007 4.007 0 0 1-1.731 1.62c-.826.4-1.881.4-3.99.4h-4.025c-2.109 0-3.163 0-3.99-.4a4.001 4.001 0 0 1-1.731-1.62c-.455-.798-.525-1.85-.665-3.954L6.666 8m6.667 6v6.667M18.667 14v6.667" style="stroke:var(--color1, #fff)"/></symbol>
- 
+    <symbol id="trash-icon" viewBox="0 0 32 32">
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
+                stroke-width="2.9091"
+                d="M12 4h8M4 8h24M25.334 8l-0.935 14.026c-0.141 2.103-0.211 3.156-0.665 3.953-0.405 0.703-0.997 1.259-1.707 1.61l-0.023 0.010c-0.828 0.4-1.881 0.4-3.99 0.4h-4.026c-2.109 0-3.162 0-3.99-0.4-0.734-0.361-1.326-0.917-1.721-1.601l-0.010-0.019c-0.454-0.797-0.524-1.85-0.665-3.953l-0.935-14.026M13.334 14v6.666M18.666 14v6.666"></path>
+    </symbol>
    
     
   </defs>
