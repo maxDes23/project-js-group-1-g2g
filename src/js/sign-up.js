@@ -1,3 +1,4 @@
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { initializeApp } from 'firebase/app';
 import {
   getAuth,
@@ -6,7 +7,6 @@ import {
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const app = initializeApp({
   apiKey: 'AIzaSyDQugW-CaYBrWSvO2DN6FwPpw05I7D6tAM',
@@ -24,28 +24,47 @@ const app = initializeApp({
 const auth = getAuth(app);
 
 const userName = document.querySelector('#name');
-// const userEmail = document.querySelector('#email');
-// const userPassword = document.querySelector('#password');
 const authForm = document.querySelector('.sign-up-form');
 const signUpButton = document.querySelector('.sign-up-btn');
 const signInButton = document.querySelector('.sign-in-btn');
 const logOutButton = document.querySelector('.log-out-btn');
-const headerSignUpBtn = document.querySelector('.sign-up-btn-text');
 const authModal = document.querySelector('#authorization');
-console.log(authModal);
+
+const headerSignUpBtn = document.querySelector('.sign-up-btn-text');
+const headerBtnText = document.querySelector('.sign-up-btn-text');
+
+const mobileSignUp = document.querySelector('.sign-up-mobile');
+const mobileMenuContent = document.querySelector('.mobile-nav');
+const mobileLogOutBtn = document.querySelector('.mobile-logout-div');
+const mobileUserStephen = document.querySelector('.user-block');
+
+authForm.reset();
 
 authForm.addEventListener('submit', onClickSignUp);
 signInButton.addEventListener('click', onClickSignIn);
 headerSignUpBtn.addEventListener('click', onClickHeaderSignUp);
 logOutButton.addEventListener('click', onClickLogOut);
+mobileSignUp.addEventListener('click', onClickMobileSignUp);
 
 if (!userName.hasAttribute('required')) userName.setAttribute('required');
 signUpButton.textContent = 'SIGN UP';
 signInButton.textContent = 'SIGN IN';
 
+mobileSignUp.classList.add('display-none');
+
 // -------HEADER SIGN UP BTN
 
 function onClickHeaderSignUp(evt) {
+  evt.preventDefault();
+  if (headerBtnText.textContent === 'Log out') {
+    onClickLogOut();
+    return;
+  }
+
+  authModal.classList.remove('display-none');
+}
+
+function onClickMobileSignUp(evt) {
   evt.preventDefault();
   authModal.classList.remove('display-none');
 }
@@ -60,7 +79,7 @@ async function onClickSignUp(evt) {
     const signUpPassword = form.elements.password.value;
 
     if (signUpPassword.length < 6) {
-      Notify.failure('Password should be at least 6 characters!');
+      alert('Password should be at least 6 characters!');
       return;
     }
 
@@ -68,12 +87,12 @@ async function onClickSignUp(evt) {
       .then(userData => {
         const user = userData.user;
         console.log(user);
-        Notify.success('Your account has been created!');
-        // authModal.classList.add('display-none');
+        alert('Your account has been created!');
+        form.reset();
       })
       .catch(error => {
         console.log(error.code + error.message);
-        Notify.warning(
+        alert(
           'This email address is already in use on Bookshelf. Please sign in!'
         );
         form.reset();
@@ -88,14 +107,13 @@ async function onClickSignUp(evt) {
     signInWithEmailAndPassword(auth, signInEmail, signInPassword)
       .then(userData => {
         const user = userData.user;
-        Notify.success('You have signed in successfully!');
+        alert('You have signed in successfully!');
         authModal.classList.add('display-none');
+        form.reset();
       })
       .catch(error => {
         console.log(error.code + error.message);
-        Notify.failure(
-          'The email address or password is incorrect. Try again!'
-        );
+        alert('The email address or password is incorrect. Try again!');
         form.reset();
       });
   }
@@ -127,11 +145,19 @@ async function checkAuthState() {
   onAuthStateChanged(auth, user => {
     if (user) {
       authModal.classList.add('display-none');
+      headerBtnText.textContent = 'Log out';
+      mobileSignUp.classList.add('display-none');
+      mobileMenuContent.classList.remove('display-none');
+      mobileLogOutBtn.classList.remove('display-none');
+      mobileUserStephen.classList.remove('display-none');
       //Якщо зареєстровані/залогінені - пишемо сюди який контент маємо показати:
       // // secretContent.style.display = 'block';
     } else {
-      // Відповідно якщо не залогінені:
-      // secretContent.style.display = 'none';
+      headerBtnText.textContent = 'Sign up';
+      mobileSignUp.classList.remove('display-none');
+      mobileMenuContent.classList.add('display-none');
+      mobileLogOutBtn.classList.add('display-none');
+      mobileUserStephen.classList.add('display-none');
     }
   });
 }
@@ -141,7 +167,7 @@ async function checkAuthState() {
 async function onClickLogOut() {
   await signOut(auth);
   // Пишемо сюди який контент маємо приховати, коли натискаємо лог аут
-  Notify.success('You have successfully logged out!');
+  alert('You have successfully logged out!');
 }
 
 checkAuthState();
