@@ -74,12 +74,12 @@
     align-items: center;
     gap: 120px;
 }
-
+/* 
 @media screen and (min-width: 780px) {
     .shop_container {
         gap: 40px;
     }
-}
+} */
 
 @media screen and (min-width: 1280px) {
     .shop_container {
@@ -95,6 +95,7 @@
     line-height: 1.18;
     letter-spacing: -0.04em;
     margin-right: auto;
+    margin-bottom: -120px;
 }
 
 @media screen and (min-width: 768px) {
@@ -306,7 +307,6 @@
     grid-row-gap: 0px;
     
     position: relative;
-    
     background-color: var(--secondary-background-color);
     width: 336px;
     height: auto;
@@ -314,7 +314,6 @@
     margin-right: auto;
     margin-bottom: 20px;
     padding: 20px;
-    
     border: 2px solid rgba(79, 46, 232, 0.4);
     border-radius: 16px;
 }
@@ -329,10 +328,11 @@
     grid-template-columns: 116px repeat(2, 1fr);
     grid-template-rows: 50px 85px 30px;
     grid-column-gap: 24px;
-
-    width: 100%;
+    right: 150px;
+    width: 173%;
     height: 213px;
     padding: 24px;
+    
    }
 }
 
@@ -340,6 +340,7 @@
 .shop_card{
     width: 996px;
     height: 213px;
+    right: auto;
    }
 }
 
