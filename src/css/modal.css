@@ -25,12 +25,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--secondary-background-color);
 }
 
 /* иконка внутри кнопки закрытия */
 .modal__cross {
   fill: black;
   cursor: pointer;
+  fill: var(--main-text-color);
 }
 
 .js-open-modal {
@@ -70,6 +72,7 @@
   border-radius: 18px;
   border-color: #111111;
   border: 2px solid #111;
+  background: var(--secondary-background-color);
 }
 
 /* стили внутри модалки */
@@ -90,6 +93,7 @@
   line-height: 18px;
   letter-spacing: -0.64px;
   margin-bottom: 4px;
+  color: var(--main-text-color);
 }
 
 .modal-title-name {
@@ -117,6 +121,7 @@
   line-height: 18px;
   letter-spacing: -0.56px;
   margin-bottom: 14px;
+  color: var(--main-text-color);
 }
 
 .book-links {
@@ -135,6 +140,7 @@
   align-content: space-around;
   flex-wrap: wrap;
   filter: grayscale(100%);
+  background-color: var(--main-text-color);
 }
 
 .modal-link {
@@ -144,6 +150,7 @@
 .modal-icon-amazon {
   text-align: left;
   background-color: #fff;
+  
 }
 
 .modal-button-add {
@@ -159,7 +166,7 @@
   border-radius: 40px;
   border: 2px solid #4f2ee8;
   color: #111;
-
+  color: var(--main-text-color);
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -167,6 +174,7 @@
   line-height: 18px;
   letter-spacing: -0.14px;
   text-transform: uppercase;
+  background: var(--secondary-background-color);
 }
 
 .modal-button-remove {
@@ -261,7 +269,7 @@ body.modal-open {
     border-radius: 40px;
     border: 2px solid #4f2ee8;
     color: #111;
-
+    color: var(--main-text-color);
     font-family: DM Sans;
     font-size: 18px;
     font-style: normal;
@@ -269,6 +277,7 @@ body.modal-open {
     line-height: 24px;
     letter-spacing: -0.18px;
     text-transform: uppercase;
+    background: var(--secondary-background-color);
   }
 }
 
