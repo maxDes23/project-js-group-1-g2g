@@ -75,7 +75,7 @@ function renderMarkUp(storageArr) {
                             </li>
                         </ul>
                     </div>
-                    <button class="shop_card-btn" type="button" data-book-id="${_id}" aria-label="Remove book from shopping list">
+                    <button class="delete-btn" type="button" data-book-id="${_id}" aria-label="Remove book from shopping list">
                         <svg class="trash-icon" data-book-id="${_id}" width="18" height="18">
                             <use href="${icons}#trash-icon"></use>
                         </svg>
@@ -97,7 +97,7 @@ divEl.insertAdjacentHTML('beforeend', renderMarkUp(itemsOnPage));
 isEmpty();
 
 divEl.addEventListener('click', event => {
-    if (event.target.closest('.shop_card-btn')) {
+    if (event.target.closest('.delete-btn')) {
         const BookID = event.target.getAttribute('data-book-id');
 
         const bookIndex = shoppingList.findIndex(
