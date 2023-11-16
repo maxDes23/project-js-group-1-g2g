@@ -2,10 +2,12 @@ import { getBookById } from './book-api';
 import { booksQtyElement, getSelectedBooksQty } from './header';
 const backdrop = document.querySelector('.backdrop')
 const bodyEl = document.querySelector('body')
+// const modalTheme = document.querySelector('.theme-light')
+
 
 async function showBookInfo(bookInfo) {
   try {
-    const { book_image, title, author, list_name, amazon_product_url, buy_links: [bookshop] } =
+    const { book_image, title, author, description, amazon_product_url, buy_links: [bookshop] } =
       bookInfo;
     const modal = document.querySelector('.modal');
     backdrop.style.display = 'inline'
@@ -22,18 +24,25 @@ async function showBookInfo(bookInfo) {
       d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
     />
   </svg></button>`,
+      `<div class="modal-ipad">`,
       `<img src="${book_image}" class="modal-image">`,
+      
+      `<div class="modal-ipad-overlay-text">`,
       `<h2 class="modal__title">${title}</h2>`,
       `<p class="modal-title-name">Author: ${author}</p>`,
-      `<p class="modal-title-text">List Name: ${list_name}</p>`,
+      `<p class="modal-title-text"> ${description} </p>`,
+      
+        
       `<div class="book-links">
-        <a href="${amazon_product_url}" class="modal-link">
+        <a href="${amazon_product_url}" class="modal-link-amazon">
           <img src="../img/modal/amazon.png" alt="">
         </a>
         <a href="${bookshop}" class="modal-link">
           <img src="../img/modal/book.png" alt="">
         </a>
         </div>`,
+      `</div>`,
+      `</div>`,
       `<button class="modal-button-add">Add to shopping list</button>`,
     ];
     modal.innerHTML = elements.join('');
@@ -47,7 +56,7 @@ buttonAdd.addEventListener('click', () => {
     book_image,
     title,
     author,
-    list_name,
+    description,
     amazon_product_url,
     buy_links: [bookshop]
   };
@@ -134,5 +143,5 @@ async function onBookClick(event) {
   showBookInfo(bookData.data);
 }
 
-export { showBookInfo, connectModal };
 
+export { showBookInfo, connectModal };
