@@ -7,9 +7,6 @@
     padding-top: 104px;
 }
 
-<<<<<<< Updated upstream
-=======
-
  .shop_card-btn {
     background-color: blue;
     width: 50px;
@@ -17,9 +14,8 @@
     flex-shrink: 0;
     border-radius: 50%;
     border: none;
-    
-    
 
+ 
  }
  
  .trash-icon {
@@ -31,10 +27,6 @@
  }
 
 
-
-
-
->>>>>>> Stashed changes
 @media screen and (min-width: 780px) {
     .shop_content_container {
         padding-top: 112px;

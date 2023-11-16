@@ -76,7 +76,7 @@ function renderMarkUp(storageArr) {
                         </ul>
                     </div>
                     <button class="shop_card-btn" type="button" data-book-id="${_id}" aria-label="Remove book from shopping list">
-                        <svg class="trash-icon" data-book-id="${_id}" width="17" height="17">
+                        <svg class="trash-icon" data-book-id="${_id}" width="18" height="18">
                             <use href="${icons}#trash-icon"></use>
                         </svg>
                     </button>
