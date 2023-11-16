@@ -25,8 +25,14 @@ async function showBookInfo(bookInfo) {
       `<h2 class="modal__title">${title}</h2>`,
       `<p class="modal-title-name">Author: ${author}</p>`,
       `<p class="modal-title-text">List Name: ${list_name}</p>`,
-      `<a href="${amazon_product_url}" class="modal-link">Amazon</a>  `,
-      `<a href="${bookshop}" class="modal-link">BOOK</a>`,
+      `<div class="book-links">
+        <a href="${amazon_product_url}" class="modal-link">
+          <img src="../img/modal/amazon.png" alt="">
+        </a>
+        <a href="${bookshop}" class="modal-link">
+          <img src="../img/modal/book.png" alt="">
+        </a>
+        </div>`,
       `<button class="modal-button-add">Add to shopping list</button>`,
     ];
     modal.innerHTML = elements.join('');
@@ -69,6 +75,26 @@ buttonAdd.addEventListener('click', () => {
     // Обновить кнопку
     buttonAdd.setAttribute('id', '1');
     buttonAdd.textContent = 'Add to the shopping list';
+  }
+});
+    
+    document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    const modal = document.querySelector('.modal');
+    if (modal.classList.contains('active')) {
+      modal.classList.remove('active');
+      backdrop.style.display = 'none';
+      bodyEl.classList.remove('modal-open');
+    }
+  }
+});
+
+backdrop.addEventListener('click', (event) => {
+  const modal = document.querySelector('.modal');
+  if (!modal.contains(event.target)) {
+    modal.classList.remove('active');
+    backdrop.style.display = 'none';
+    bodyEl.classList.remove('modal-open');
   }
 });
     
