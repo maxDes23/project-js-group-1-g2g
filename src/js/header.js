@@ -21,13 +21,14 @@ const booksQtyElement = document.querySelector('.books-quantity')
 
 
 function getSelectedBooksQty() {
-    const qty = JSON.parse(localStorage.getItem('books')).length || 0
+    const qty = localStorage.getItem('books') || 0
     if (!qty) {
         return booksQtyElement.classList.add('display-none')
     }
+     let quantity = JSON.parse(qty).length 
     console.log(localStorage.getItem('books'));
     booksQtyElement.classList.remove('display-none')
-    booksQtyElement.innerHTML = qty
+    booksQtyElement.innerHTML = quantity
 }
 
 getSelectedBooksQty();
