@@ -38,8 +38,6 @@ const mobileMenuContent = document.querySelector('.mobile-nav');
 const mobileLogOutBtn = document.querySelector('.mobile-logout-div');
 const mobileUserStephen = document.querySelector('.user-block');
 
-authForm.reset();
-
 authForm.addEventListener('submit', onClickSignUp);
 signInButton.addEventListener('click', onClickSignIn);
 headerSignUpBtn.addEventListener('click', onClickHeaderSignUp);

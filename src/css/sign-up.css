@@ -32,7 +32,7 @@
   border: 2px solid #111;
 }
 
-/* .modal-close-btn {
+.modal-close-btn {
   position: absolute;
   padding: 0;
   line-height: 0;
@@ -40,9 +40,11 @@
   right: 20px;
   background-color: transparent;
   border: none;
-  fill: #111111;
-  transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-} */
+}
+
+.modal-close-btn-icon {
+  stroke: var(--main-text-color);
+}
 
 .sign-up-form {
   display: flex;
