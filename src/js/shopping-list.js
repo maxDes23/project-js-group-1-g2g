@@ -23,7 +23,7 @@ const {
   /* const blankBasket = document.querySelector('.blank-basket') */
 
 
-const pageSize = 3;
+const pageSize = 6;
 let currentPage = 1;
 let startIndex = (currentPage - 1) * pageSize;
 let endIndex = startIndex + pageSize;
