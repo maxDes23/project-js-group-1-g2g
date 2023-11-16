@@ -6,8 +6,6 @@ const SHOPPING_LIST_STORAGE_KEY = 'books';
 const shoppingList = JSON.parse(localStorage.getItem(SHOPPING_LIST_STORAGE_KEY)) || [];
 const blankBasket = document.querySelector('.blank-basket')
 
-
-
 const { divEl, 
     previousButton, 
     paginationPagesStart,  
@@ -96,6 +94,21 @@ divEl.insertAdjacentHTML('beforeend', renderMarkUp(itemsOnPage));
 }
 isEmpty();
 
+function sliceArrayBooks() {
+    startIndex = (currentPage - 1) * pageSize;
+    endIndex = startIndex + pageSize;
+    itemsOnPage = shoppingList.slice(startIndex, endIndex);
+    return itemsOnPage;
+}
+
+function destroyChildElement(parent) {
+    if (parent) {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
+}
+
 divEl.addEventListener('click', event => {
     if (event.target.closest('.delete-btn')) {
         const BookID = event.target.getAttribute('data-book-id');
@@ -122,95 +135,7 @@ divEl.addEventListener('click', event => {
             console.log(sliceArrayBooks());
             destroyChildElement(paginationPagesStart);
         }
-        checkingArrayBooks();
+
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const arrBasketBooks = [ 
-//     {
-//     _id: "1",
-//     title: "Book Title 1",
-//     author: "Author 1",
-//     description: "Description 1",
-//     list_name: "List Name 1",
-//     book_image: "book-image-url-1",
-//     amazon_product_url: "amazon-product-url-1",
-// },
-
-// {
-//     _id: "2",
-//     title: "Book Title 2",
-//     author: "Author 2",
-//     description: "Description 2",
-//     list_name: "List Name 2",
-//     book_image: "book-image-url-2",
-//     amazon_product_url: "amazon-product-url-2",
-// },
-
-// {
-//     _id: "3",
-//     title: "Book Title 3",
-//     author: "Author 3",
-//     description: "Description 3",
-//     list_name: "List Name 3",
-//     book_image: "book-image-url-3",
-//     amazon_product_url: "amazon-product-url-3",
-// },
-
-// {
-//     _id: "4",
-//     title: "Book Title 4",
-//     author: "Author 4",
-//     description: "Description 4",
-//     list_name: "List Name 4",
-//     book_image: "book-image-url-4",
-//     amazon_product_url: "amazon-product-url-4",
-// },
-// {
-//     _id: "5",
-//     title: "Book Title 5",
-//     author: "Author 5",
-//     description: "Description 5",
-//     list_name: "List Name 5",
-//     book_image: "book-image-url-5",
-//     amazon_product_url: "amazon-product-url-5",
-// }
-// ];
-// renderMarkUp(arrBasketBooks)
-
-//  _id,
-//                 title,
-//                 author,
-//                 description,
-//                 list_name,
-//                 book_image,
-//                 amazon_product_url,
-//     buy_links: [bookshop],
-                    
-//         {
-//   "book_image": "https://storage.googleapis.com/du-prd/books/images/9780063226050.jpg",
-//   "title": "THE LOVE STORIES OF THE BIBLE SPEAK",
-//   "author": "Shannon Bream",
-//   "list_name": "Advice How-To and Miscellaneous",
-//   "amazon_product_url": "https://www.amazon.com/dp/0063226057?tag=NYTBSREV-20",
-//   "buy_links": [
-//     {
-//       "name": "Amazon",
-//       "url": "https://www.amazon.com/dp/0063226057?tag=NYTBSREV-20"
-//     }
-//   ]
-// }
