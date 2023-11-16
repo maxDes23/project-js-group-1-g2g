@@ -94,6 +94,7 @@
   letter-spacing: -0.64px;
   margin-bottom: 4px;
   color: var(--main-text-color);
+  padding-top: 14px;
 }
 
 .modal-title-name {
@@ -201,6 +202,8 @@
   box-sizing: inherit;
 }
 
+
+
 /* Стили для активных классов подложки и окна */
 
 .modal.active,
@@ -216,7 +219,7 @@ body.modal-open {
 
 .modal-button-add:hover,
 .modal-button-add:focus {
-  background: #4f2ee8;
+  background-color: #4f2ee8;
 
   box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
   color: #fff;
