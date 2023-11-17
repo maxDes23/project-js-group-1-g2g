@@ -55,15 +55,24 @@ async function showBookInfo(bookInfo, id) {
     buy_links: [bookshop]
   }
   
+  function isBookAvailable(checkId) {
+    const books = JSON.parse(localStorage.getItem('books')) || [];
+
+    if (!books.length) {
+      return false
+    }
+    return books.some(book => book.id == checkId);
+  }
+
   function buttonSwitcher() {
     if (isBookAvailable(id)) {
       buttonAdd.setAttribute('id', '1')
-      buttonAdd.textContent = 'Add to shopping list';
+      buttonAdd.textContent = 'Remove from shopping list';
     }
 
     else {
       buttonAdd.setAttribute('id', '2');
-      buttonAdd.textContent = 'Remove from shopping list';
+      buttonAdd.textContent = 'Add to shopping list';
     }
   }
   buttonSwitcher()
@@ -71,8 +80,9 @@ async function showBookInfo(bookInfo, id) {
   buttonAdd.addEventListener('click', onAddButtonClick)
 
   function onAddButtonClick() {
+    const isBookAvailableValue = isBookAvailable(id);
 
-    if (!isBookAvailable) {
+    if (!isBookAvailableValue) {
       existingBooks.push(bookObj);
       localStorage.setItem('books', JSON.stringify(existingBooks));
       getSelectedBooksQty();
@@ -83,6 +93,7 @@ async function showBookInfo(bookInfo, id) {
       existingBooks = existingBooks.filter(book => book.id !== id)
       localStorage.setItem('books', JSON.stringify(existingBooks));
       getSelectedBooksQty();
+      buttonSwitcher()
     }
        
         
@@ -112,20 +123,11 @@ async function showBookInfo(bookInfo, id) {
       backdrop.style.display = 'none'
       bodyEl.classList.remove('modal-open')
     });
-    modal.classList.add('active');
-  }
-
   
-
-}
-
-function isBookAvailable(checkId) {
-  const books = JSON.parse(localStorage.getItem('books')) || [];
-
-  if (!books.length) {
-    return false
   }
-  return books.some(book => book.id == checkId);
+
+  modal.classList.add('active');
+
 }
 
 async function onBookClick(event) {
@@ -146,3 +148,4 @@ function connectModal() {
 }
 
 export { showBookInfo, connectModal }
+
