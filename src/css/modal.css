@@ -140,12 +140,11 @@
   display: flex;
   align-content: space-around;
   flex-wrap: wrap;
-  filter: grayscale(100%);
-  background-color: var(--main-text-color);
+  
 }
 
 .modal-link {
-  filter: grayscale(100%);
+  
 }
 
 .modal-icon-amazon {
