@@ -7,7 +7,7 @@ const bodyEl = document.querySelector('body')
 
 async function showBookInfo(bookInfo) {
   try {
-    const { book_image, title, author, description, amazon_product_url, buy_links: [bookshop] } =
+    const { book_image, title, author, description, list_name, amazon_product_url, buy_links: [bookshop] } =
       bookInfo;
     const modal = document.querySelector('.modal');
     backdrop.style.display = 'inline'
@@ -51,6 +51,7 @@ buttonAdd.addEventListener('click', () => {
     title,
     author,
     description,
+    list_name,
     amazon_product_url,
     buy_links: [bookshop]
   };
