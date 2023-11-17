@@ -29,6 +29,7 @@ const signUpButton = document.querySelector('.sign-up-btn');
 const signInButton = document.querySelector('.sign-in-btn');
 const logOutButton = document.querySelector('.log-out-btn');
 const authModal = document.querySelector('#authorization');
+const authFormCloseBtn = document.querySelector('.modal-close-btn');
 
 const headerSignUpBtn = document.querySelector('.sign-up-btn-text');
 const headerBtnText = document.querySelector('.sign-up-btn-text');
@@ -38,11 +39,20 @@ const mobileMenuContent = document.querySelector('.mobile-nav');
 const mobileLogOutBtn = document.querySelector('.mobile-logout-div');
 const mobileUserStephen = document.querySelector('.user-block');
 
+
+
+authFormCloseBtn.addEventListener('click', onClickClose);
 authForm.addEventListener('submit', onClickSignUp);
 signInButton.addEventListener('click', onClickSignIn);
 headerSignUpBtn.addEventListener('click', onClickHeaderSignUp);
 logOutButton.addEventListener('click', onClickLogOut);
 mobileSignUp.addEventListener('click', onClickMobileSignUp);
+
+
+function onClickClose() {
+  authModal.classList.add('display-none')
+}
+
 
 if (!userName.hasAttribute('required')) userName.setAttribute('required');
 signUpButton.textContent = 'SIGN UP';
