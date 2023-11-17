@@ -1,4 +1,7 @@
 import { getBookById } from './book-api';
+import icons from "../img/icons.svg"
+import amazon from "../img/modal/amazon.png"
+import book from "../img/modal/book.png"
 import { booksQtyElement, getSelectedBooksQty } from './header';
 const backdrop = document.querySelector('.backdrop')
 const bodyEl = document.querySelector('body')
@@ -29,10 +32,10 @@ async function showBookInfo(bookInfo) {
       `<p class="modal-title-text"> ${description} </p>`,
       `<div class="book-links">
         <a href="${amazon_product_url}" class="modal-link-amazon">
-          <img src="../img/modal/amazon.png" alt="">
+          <img src="${amazon}" alt="">
         </a>
         <a href="${bookshop}" class="modal-link">
-          <img src="../img/modal/book.png" alt="">
+          <img src="${book}" alt="">
         </a>
         </div>`,
       `</div>`,
