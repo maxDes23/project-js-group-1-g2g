@@ -9,11 +9,11 @@ import{g as w}from"./assets/support-9d530c92.js";import{a as p,i as j,g as Q,n a
       d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
     />
   </svg></button>`,'<div class="modal-ipad">',`<img src="${n}" class="modal-image">`,'<div class="modal-ipad-overlay-text">',`<h2 class="modal__title">${s}</h2>`,`<p class="modal-title-name">Author: ${o}</p>`,`<p class="modal-title-text"> ${a} </p>`,`<div class="book-links">
-        <a href="${A}" class="modal-link-amazon">
+        <a href="${A}" class="modal-link-amazon amazon">
           <img src="${Z}" alt="">
         </a>
-        <a href="${B}" class="modal-link">
-          <img src="${_}" alt="">
+        <a href="${B}" class="modal-link book">
+          <img class="book-shop" src="${_}" alt="">
         </a>
         </div>`,"</div>","</div>",'<button class="modal-button-add"></button>'].join("");d.innerHTML=D;const r=document.querySelector(".modal-button-add"),x={id:t,book_image:n,title:s,author:o,description:a,list_name:i,amazon_product_url:A,buy_links:[B]};function S(b){const k=JSON.parse(localStorage.getItem("books"))||[];return k.length?k.some(Y=>Y.id==b):!1}function h(){S(t)?(r.setAttribute("id","1"),r.textContent="Remove from shopping list"):(r.setAttribute("id","2"),r.textContent="Add to shopping list")}h(),r.addEventListener("click",P);function P(){S(t)?(u=u.filter(k=>k.id!==t),localStorage.setItem("books",JSON.stringify(u)),w(),h()):(u.push(x),localStorage.setItem("books",JSON.stringify(u)),w(),h())}d.classList.add("active"),document.querySelector(".modal-close-button").addEventListener("click",()=>{d.classList.remove("active"),m.style.display="none",f.classList.remove("modal-open")}),document.addEventListener("keydown",W);function W(b){b.key==="Escape"&&(d.classList.remove("active"),m.style.display="none",f.classList.remove("modal-open"))}}m.addEventListener("click",e=>{const t=document.querySelector(".modal");t.contains(e.target)||(t.classList.remove("active"),m.style.display="none",f.classList.remove("modal-open"))});async function ee(e){const t=e.target.closest(".book");if(!t)return;const n=t.id;f.classList.add("modal-open");const s=await H(n);$(s.data,n)}function te(){document.querySelector(".category-container").addEventListener("click",ee)}document.addEventListener("DOMContentLoaded",N);async function N(){const e=await K(),{data:t}=e;await oe(t),se(),te()}function T(e){return document.querySelector(".books-container"),e.map(n=>{const{_id:s,book_image:o,title:a,author:i}=n;return`
       <li class="book" id="${s}">
