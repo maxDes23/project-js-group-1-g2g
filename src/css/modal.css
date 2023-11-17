@@ -71,7 +71,7 @@
   transition: 0.3s all;
   border-radius: 18px;
   border-color: var(--header-border-color);
-  border: 2px solid #111;
+  border: 2px solid var(--header-border-color);
   background: var(--primary-background-color);
 }
 
@@ -148,7 +148,7 @@
 
 .modal-icon-amazon {
   text-align: left;
-  background-color: #fff;
+
   
 }
 
