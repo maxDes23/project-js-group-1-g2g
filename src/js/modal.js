@@ -2,8 +2,6 @@ import { getBookById } from './book-api';
 import { booksQtyElement, getSelectedBooksQty } from './header';
 const backdrop = document.querySelector('.backdrop')
 const bodyEl = document.querySelector('body')
-// const modalTheme = document.querySelector('.theme-light')
-
 
 async function showBookInfo(bookInfo) {
   try {
@@ -12,7 +10,6 @@ async function showBookInfo(bookInfo) {
     const modal = document.querySelector('.modal');
     backdrop.style.display = 'inline'
     modal.innerHTML = '';
-
     // разметка
     const elements = [
       `<button class="modal-close-button"><svg
@@ -26,13 +23,10 @@ async function showBookInfo(bookInfo) {
   </svg></button>`,
       `<div class="modal-ipad">`,
       `<img src="${book_image}" class="modal-image">`,
-      
       `<div class="modal-ipad-overlay-text">`,
       `<h2 class="modal__title">${title}</h2>`,
       `<p class="modal-title-name">Author: ${author}</p>`,
       `<p class="modal-title-text"> ${description} </p>`,
-      
-        
       `<div class="book-links">
         <a href="${amazon_product_url}" class="modal-link-amazon">
           <img src="../img/modal/amazon.png" alt="">
@@ -46,10 +40,8 @@ async function showBookInfo(bookInfo) {
       `<button class="modal-button-add">Add to shopping list</button>`,
     ];
     modal.innerHTML = elements.join('');
-    
     const buttonAdd = document.querySelector('.modal-button-add');
     buttonAdd.setAttribute('id', '1')
-    
     // кнопка добавить в корзину
 buttonAdd.addEventListener('click', () => {
   const bookObj = {
@@ -66,31 +58,30 @@ buttonAdd.addEventListener('click', () => {
     const existingBooks = JSON.parse(localStorage.getItem('books')) || [];
     existingBooks.push(bookObj);
     localStorage.setItem('books', JSON.stringify(existingBooks));
-
     // Обновить кнопку
     buttonAdd.setAttribute('id', '2');
     buttonAdd.textContent = 'Remove from shopping list';
     getSelectedBooksQty();
-  } else if (buttonAdd.getAttribute('id') === '2') {
-
+  }
+  
+  else if (buttonAdd.getAttribute('id') === '2') {
     // Удаляем книгу из localStorage
       const clickedBookId = bookObj.title; 
-      const existingBooks = JSON.parse(localStorage.getItem('books')) || [];
+    const existingBooks = JSON.parse(localStorage.getItem('books')) || [];
+    
       const updatedBooks = existingBooks.filter(existingBook => {
       const bookId = existingBook.title; 
-        
       return bookId !== clickedBookId;
-
-    });
+      });
+    
     localStorage.setItem('books', JSON.stringify(updatedBooks));
-
     // Обновить кнопку
     buttonAdd.setAttribute('id', '1');
     getSelectedBooksQty();
     buttonAdd.textContent = 'Add to shopping list';
-  }
+  } 
+
 });
-    
     document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     const modal = document.querySelector('.modal');
@@ -101,7 +92,6 @@ buttonAdd.addEventListener('click', () => {
     }
   }
 });
-
 backdrop.addEventListener('click', (event) => {
   const modal = document.querySelector('.modal');
   if (!modal.contains(event.target)) {
@@ -110,18 +100,14 @@ backdrop.addEventListener('click', (event) => {
     bodyEl.classList.remove('modal-open');
   }
 });
-    
     // close button
     const closeButton = document.querySelector('.modal-close-button');
     closeButton.addEventListener('click', () => {
-
       modal.classList.remove('active');
       backdrop.style.display = 'none'
       bodyEl.classList.remove('modal-open')
     });
-
     modal.classList.add('active');
-
   } catch (error) {
     console.log(error);
   }
@@ -142,6 +128,5 @@ async function onBookClick(event) {
   const bookData = await getBookById(bookId);
   showBookInfo(bookData.data);
 }
-
 
 export { showBookInfo, connectModal };
