@@ -33,8 +33,8 @@ async function showBookInfo(bookInfo, id) {
         <a href="${amazon_product_url}" class="modal-link-amazon amazon">
           <img src="${amazon}" alt="">
         </a>
-        <a href="${bookshop}" class="modal-link book">
-          <img class="book-shop" src="${book}" alt="">
+        <a href="${bookshop}" class="modal-link book-shop">
+          <img src="${book}" alt="">
         </a>
         </div>`,
     `</div>`,
