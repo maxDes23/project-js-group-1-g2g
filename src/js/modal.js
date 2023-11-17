@@ -97,38 +97,42 @@ async function showBookInfo(bookInfo, id) {
     }
        
         
-    document.addEventListener('keydown', onEscPressed)
-    function onEscPressed(event) {
-      if (event.key !== 'Escape') {
-        return
-      }
-      modal.classList.remove('active');
-      backdrop.style.display = 'none';
-      bodyEl.classList.remove('modal-open');
-    }
-
-    backdrop.addEventListener('click', (event) => {
-      const modal = document.querySelector('.modal');
-      if (!modal.contains(event.target)) {
-        modal.classList.remove('active');
-        backdrop.style.display = 'none';
-        bodyEl.classList.remove('modal-open');
-      }
-    });
+    
     
     // close button
-    const closeButton = document.querySelector('.modal-close-button');
-    closeButton.addEventListener('click', () => {
-      modal.classList.remove('active');
-      backdrop.style.display = 'none'
-      bodyEl.classList.remove('modal-open')
-    });
-  
+    
   }
-
   modal.classList.add('active');
-
+  const closeButton = document.querySelector('.modal-close-button');
+  closeButton.addEventListener('click', () => {
+    modal.classList.remove('active');
+    backdrop.style.display = 'none'
+    bodyEl.classList.remove('modal-open')
+  });
+  document.addEventListener('keydown', onEscPressed)
+  function onEscPressed(event) {
+    if (event.key !== 'Escape') {
+      return
+    }
+    modal.classList.remove('active');
+    backdrop.style.display = 'none';
+    bodyEl.classList.remove('modal-open');
+  }
+  
 }
+
+
+backdrop.addEventListener('click', (event) => {
+  const modal = document.querySelector('.modal');
+  if (!modal.contains(event.target)) {
+    modal.classList.remove('active');
+    backdrop.style.display = 'none';
+    bodyEl.classList.remove('modal-open');
+  }
+});
+
+
+
 
 async function onBookClick(event) {
   const clickedBook = event.target.closest('.book');
