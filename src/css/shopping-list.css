@@ -522,3 +522,10 @@
 }
 
 
+.amazon {
+    filter: var(--amazon-img-color);
+}
+
+.book-shop {
+    filter: var(--book-img-color);
+}
