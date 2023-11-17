@@ -12,8 +12,8 @@ import{g as w}from"./assets/support-9d530c92.js";import{a as p,i as j,g as Q,n a
         <a href="${A}" class="modal-link-amazon amazon">
           <img src="${Z}" alt="">
         </a>
-        <a href="${B}" class="modal-link book">
-          <img class="book-shop" src="${_}" alt="">
+        <a href="${B}" class="modal-link book-shop">
+          <img src="${_}" alt="">
         </a>
         </div>`,"</div>","</div>",'<button class="modal-button-add"></button>'].join("");d.innerHTML=D;const r=document.querySelector(".modal-button-add"),x={id:t,book_image:n,title:s,author:o,description:a,list_name:i,amazon_product_url:A,buy_links:[B]};function S(b){const k=JSON.parse(localStorage.getItem("books"))||[];return k.length?k.some(Y=>Y.id==b):!1}function h(){S(t)?(r.setAttribute("id","1"),r.textContent="Remove from shopping list"):(r.setAttribute("id","2"),r.textContent="Add to shopping list")}h(),r.addEventListener("click",P);function P(){S(t)?(u=u.filter(k=>k.id!==t),localStorage.setItem("books",JSON.stringify(u)),w(),h()):(u.push(x),localStorage.setItem("books",JSON.stringify(u)),w(),h())}d.classList.add("active"),document.querySelector(".modal-close-button").addEventListener("click",()=>{d.classList.remove("active"),m.style.display="none",f.classList.remove("modal-open")}),document.addEventListener("keydown",W);function W(b){b.key==="Escape"&&(d.classList.remove("active"),m.style.display="none",f.classList.remove("modal-open"))}}m.addEventListener("click",e=>{const t=document.querySelector(".modal");t.contains(e.target)||(t.classList.remove("active"),m.style.display="none",f.classList.remove("modal-open"))});async function ee(e){const t=e.target.closest(".book");if(!t)return;const n=t.id;f.classList.add("modal-open");const s=await H(n);$(s.data,n)}function te(){document.querySelector(".category-container").addEventListener("click",ee)}document.addEventListener("DOMContentLoaded",N);async function N(){const e=await K(),{data:t}=e;await oe(t),se(),te()}function T(e){return document.querySelector(".books-container"),e.map(n=>{const{_id:s,book_image:o,title:a,author:i}=n;return`
       <li class="book" id="${s}">
