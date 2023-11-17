@@ -30,11 +30,11 @@ async function showBookInfo(bookInfo, id) {
     `<p class="modal-title-name">Author: ${author}</p>`,
     `<p class="modal-title-text"> ${description} </p>`,
     `<div class="book-links">
-        <a href="${amazon_product_url}" class="modal-link-amazon">
+        <a href="${amazon_product_url}" class="modal-link-amazon amazon">
           <img src="${amazon}" alt="">
         </a>
-        <a href="${bookshop}" class="modal-link">
-          <img src="${book}" alt="">
+        <a href="${bookshop}" class="modal-link book">
+          <img class="book-shop" src="${book}" alt="">
         </a>
         </div>`,
     `</div>`,
