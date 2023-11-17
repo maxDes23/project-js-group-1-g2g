@@ -1,4 +1,6 @@
+import { Notify } from "notiflix"
 import icons from "../img/icons.svg"
+
 
 
 const themeSwitcher = document.querySelector('.switcher-block')
@@ -75,7 +77,9 @@ themeSwitcher.addEventListener('click', onTriggerClick)
 
 
 function onTriggerClick() {
+    
     toggleTheme();
+    Notify.failure('Theme triggered')
 }
 
 // function to set a given theme/color-scheme

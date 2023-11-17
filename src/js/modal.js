@@ -1,5 +1,4 @@
 import { getBookById } from './book-api';
-import icons from "../img/icons.svg"
 import amazon from "../img/modal/amazon.png"
 import book from "../img/modal/book.png"
 import { booksQtyElement, getSelectedBooksQty } from './header';

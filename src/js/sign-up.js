@@ -1,4 +1,3 @@
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { initializeApp } from 'firebase/app';
 import {
   getAuth,
@@ -7,6 +6,7 @@ import {
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth';
+import { Notify } from 'notiflix';
 
 const app = initializeApp({
   apiKey: 'AIzaSyDQugW-CaYBrWSvO2DN6FwPpw05I7D6tAM',
@@ -77,7 +77,7 @@ async function onClickSignUp(evt) {
     const signUpPassword = form.elements.password.value;
 
     if (signUpPassword.length < 6) {
-      alert('Password should be at least 6 characters!');
+      Notify.failure('Password should be at least 6 characters!');
       return;
     }
 
@@ -85,14 +85,12 @@ async function onClickSignUp(evt) {
       .then(userData => {
         const user = userData.user;
         console.log(user);
-        alert('Your account has been created!');
+        Notify.success('Your account has been created!');
         form.reset();
       })
       .catch(error => {
         console.log(error.code + error.message);
-        alert(
-          'This email address is already in use on Bookshelf. Please sign in!'
-        );
+        Notify.failure('This email address is already in use on Bookshelf. Please sign in!');
         form.reset();
       });
   }
@@ -105,13 +103,13 @@ async function onClickSignUp(evt) {
     signInWithEmailAndPassword(auth, signInEmail, signInPassword)
       .then(userData => {
         const user = userData.user;
-        alert('You have signed in successfully!');
+        Notify.success('You have signed in successfully!');
         authModal.classList.add('display-none');
         form.reset();
       })
       .catch(error => {
         console.log(error.code + error.message);
-        alert('The email address or password is incorrect. Try again!');
+        Notify.failure('The email address or password is incorrect. Try again!');
         form.reset();
       });
   }
@@ -165,7 +163,7 @@ async function checkAuthState() {
 async function onClickLogOut() {
   await signOut(auth);
   // Пишемо сюди який контент маємо приховати, коли натискаємо лог аут
-  alert('You have successfully logged out!');
+  Notify.success('You have successfully logged out!');
 }
 
 checkAuthState();
