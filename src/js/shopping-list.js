@@ -45,7 +45,7 @@ function renderMarkUp(storageArr) {
 
                     <div class="card-title">
                         <h3 class="shop__book-title">${title}</h3>
-                        <p class="shop__book-category">${list_name}</p>
+                        <p class="shop__book-category"></p>
                     </div>
 
                     <div class="card-description">

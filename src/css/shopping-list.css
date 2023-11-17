@@ -7,6 +7,7 @@
     padding-top: 104px;
 }
 
+
  .delete-btn {
     background-color: blue;
     width: 50px;
@@ -21,7 +22,7 @@
     fill: blue;
     width: 25px;
     height: 25px;
-
+    transition: opacity .3s ease-in,visibility .3s ease-in,scale 1s;  
  }
 
 
@@ -29,7 +30,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 40px;
+    margin-top: -80px;
+    transition: opacity .3s ease-in,visibility .3s ease-in,scale 1s;  
 }
  
 .shop_card {
@@ -72,7 +74,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 120px;
+   /*  gap: 120px; */
 }
 /* 
 @media screen and (min-width: 780px) {
@@ -95,7 +97,7 @@
     line-height: 1.18;
     letter-spacing: -0.04em;
     margin-right: auto;
-    margin-bottom: -120px;
+    margin-bottom: 120px;
 }
 
 @media screen and (min-width: 768px) {
@@ -328,8 +330,7 @@
     grid-template-columns: 116px repeat(2, 1fr);
     grid-template-rows: 50px 85px 30px;
     grid-column-gap: 24px;
-    right: 150px;
-    width: 173%;
+    width: 100%;
     height: 213px;
     padding: 24px;
     
