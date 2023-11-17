@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--secondary-background-color);
+  background: var(--primary-background-color);
 }
 
 /* иконка внутри кнопки закрытия */
@@ -70,9 +70,9 @@
   background-color: #fff;
   transition: 0.3s all;
   border-radius: 18px;
-  border-color: #111111;
+  border-color: var(--header-border-color);
   border: 2px solid #111;
-  background: var(--secondary-background-color);
+  background: var(--primary-background-color);
 }
 
 /* стили внутри модалки */
@@ -173,7 +173,7 @@
   line-height: 18px;
   letter-spacing: -0.14px;
   text-transform: uppercase;
-  background: var(--secondary-background-color);
+  background: var(--primary-background-color);
 }
 
 .modal-button-remove {
@@ -278,7 +278,7 @@ body.modal-open {
     line-height: 24px;
     letter-spacing: -0.18px;
     text-transform: uppercase;
-    background: var(--secondary-background-color);
+    background: var(--primary-background-color);
   }
 }
 
