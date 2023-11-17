@@ -44,6 +44,8 @@ body {
   --logo-text-color: #000;
   --category-color: rgba(17, 17, 17, 0.6);
   --shop-text-color: #0009;
+  --amazon-img-color: none;
+  --book-img-color: none;
 }
 
 .theme-dark {
@@ -56,6 +58,8 @@ body {
   --logo-text-color: #f3f3f3;
   --category-color: rgba(255, 255, 255, 0.6);
   --shop-text-color: #fff9;
+  --amazon-img-color: brightness(0) invert(1);
+  --book-img-color: grayscale(100%);
 }
 
 .theme-light body,
