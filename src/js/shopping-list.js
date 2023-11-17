@@ -25,6 +25,7 @@ let endIndex = startIndex + pageSize;
 let itemsOnPage = shoppingList.slice(startIndex, endIndex);
 
 function renderMarkUp(storageArr) {
+    console.log('whole array for rendering: ', storageArr);
     return storageArr
         .map(
             ({
@@ -45,7 +46,7 @@ function renderMarkUp(storageArr) {
 
                     <div class="card-title">
                         <h3 class="shop__book-title">${title}</h3>
-                        <p class="shop__book-category"></p>
+                        <p class="shop__book-category">${list_name}</p>
                     </div>
 
                     <div class="card-description">
