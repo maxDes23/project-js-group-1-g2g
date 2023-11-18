@@ -130,9 +130,6 @@ function connectModal() {
 }
 
 
-
-
-
 function addModalMarkup(book_image, title, author, description, amazon_product_url, buy_links) {
   backdrop.style.display = 'inline'
   modal.innerHTML = `
@@ -161,17 +158,6 @@ function addModalMarkup(book_image, title, author, description, amazon_product_u
       </div>
     <button class="modal-button-add"></button>`
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 export { showBookInfo, connectModal }
