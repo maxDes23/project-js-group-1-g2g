@@ -73,7 +73,7 @@ function renderMarkUp(storageArr) {
                     </div>
                     <button class="delete-btn" type="button" data-book-id="${id}" aria-label="Remove book from shopping list">
                         <svg class="trash-icon" data-book-id="${id}" width="18" height="18">
-                            <use href="${icons}#trash-icon"></use>
+                            <use class="t-ico" data-book-id="${id}" href="${icons}#trash-icon"></use>
                         </svg>
                     </button>
                 </article>
@@ -112,7 +112,9 @@ divEl.addEventListener('click', onDivElClick)
 
 function onDivElClick(event) {
     
-    if (event.target.closest('.delete-btn')) {
+    if (event.target.closest('.delete-btn')
+        || event.target.closest('.trash-icon')
+        || event.target.closest('.t-ico') ) {
         console.log(storedBooksArray);
         storedBooksArray = storedBooksArray.filter(book => book.id != event.target.getAttribute('data-book-id'))
         console.log(storedBooksArray);
