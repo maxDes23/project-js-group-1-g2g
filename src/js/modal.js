@@ -12,7 +12,7 @@ let bookId = 0;
 let bookObj = {};
 let closeButton = ''
 
-let existingBooks = JSON.parse(localStorage.getItem('books')) || [];
+let storedBooksArray = JSON.parse(localStorage.getItem('books')) || [];
 
 async function showBookInfo(bookInfo, id) {
   bookId = id;
@@ -124,13 +124,13 @@ function connectModal() {
 function onAddButtonClick() {
 
   if (!isBookAvailable(bookId)) {
-    existingBooks.push(bookObj);
-    localStorage.setItem('books', JSON.stringify(existingBooks));
+    storedBooksArray.push(bookObj);
+    localStorage.setItem('books', JSON.stringify(storedBooksArray));
     getSelectedBooksQty();
     buttonSwitcher()
   } else {
-    existingBooks = existingBooks.filter(book => book.id !== bookId)
-    localStorage.setItem('books', JSON.stringify(existingBooks));
+    storedBooksArray = storedBooksArray.filter(book => book.id !== bookId)
+    localStorage.setItem('books', JSON.stringify(storedBooksArray));
     getSelectedBooksQty();
     buttonSwitcher()
   }
@@ -174,5 +174,5 @@ function addModalMarkup(book_image, title, author, description, amazon_product_u
 }
 
 
-export { showBookInfo, connectModal }
+export { showBookInfo, connectModal, storedBooksArray }
 

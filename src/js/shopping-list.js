@@ -1,9 +1,11 @@
 import icons from "../img/icons.svg"
 import getRefs from './shop-refs.js';
 import getShopIconsPaths from './shop-icons-path.js';
+// import { storedBooksArray } from "./modal.js";
+
 
 const SHOPPING_LIST_STORAGE_KEY = 'books';
-let shoppingList = Array.from(new Set(JSON.parse(localStorage.getItem(SHOPPING_LIST_STORAGE_KEY)) || []));
+let storedBooksArray = JSON.parse(localStorage.getItem(SHOPPING_LIST_STORAGE_KEY)) || []
 const blankBasket = document.querySelector('.blank-basket')
 
 const { divEl, 
@@ -22,21 +24,19 @@ const pageSize = 6;
 let currentPage = 1;
 let startIndex = (currentPage - 1) * pageSize;
 let endIndex = startIndex + pageSize;
-let itemsOnPage = shoppingList.slice(startIndex, endIndex);
+let itemsOnPage = storedBooksArray.slice(startIndex, endIndex);
 
 function renderMarkUp(storageArr) {
-    console.log('whole array for rendering: ', storageArr);
-    return storageArr
-        .map(
+
+    divEl.innerHTML = storageArr.map(
             ({
-                _id,
+                id,
                 title,
                 author,
                 description,
                 list_name,
                 book_image,
-                amazon_product_url,
-                // buy_links,
+                amazon_product_url
             }) => {
                 return `
                 <article class="shop_card">
@@ -71,8 +71,8 @@ function renderMarkUp(storageArr) {
                             </li>
                         </ul>
                     </div>
-                    <button class="delete-btn" type="button" data-book-id="${_id}" aria-label="Remove book from shopping list">
-                        <svg class="trash-icon" data-book-id="${_id}" width="18" height="18">
+                    <button class="delete-btn" type="button" data-book-id="${id}" aria-label="Remove book from shopping list">
+                        <svg class="trash-icon" data-book-id="${id}" width="18" height="18">
                             <use href="${icons}#trash-icon"></use>
                         </svg>
                     </button>
@@ -84,70 +84,67 @@ function renderMarkUp(storageArr) {
 }
 
 function isEmpty() {
-    if (!shoppingList.length) {
-        blankBasket.classList.remove('display-none');
-    return;
+    if (!storedBooksArray.length) {
+        divEl.innerHTML = ''
+        return blankBasket.classList.remove('display-none');
     }
-divEl.insertAdjacentHTML('beforeend', renderMarkUp(itemsOnPage));
+   return renderMarkUp(storedBooksArray)
 }
+
 isEmpty();
 
-function sliceArrayBooks() {
-    startIndex = (currentPage - 1) * pageSize;
-    endIndex = startIndex + pageSize;
-    itemsOnPage = shoppingList.slice(startIndex, endIndex);
-    return itemsOnPage;
-}
+// function sliceArrayBooks() {
+//     startIndex = (currentPage - 1) * pageSize;
+//     endIndex = startIndex + pageSize;
+//     itemsOnPage = storedBooksArray.slice(startIndex, endIndex);
+//     return itemsOnPage;
+// }
 
-function destroyChildElement(parent) {
-    if (parent) {
-        while (parent.firstChild) {
-            parent.removeChild(parent.firstChild);
-        }
-    }
-}
+// function destroyChildElement(parent) {
+//     if (parent) {
+//         while (parent.firstChild) {
+//             parent.removeChild(parent.firstChild);
+//         }
+//     }
+// }
 
-divEl.addEventListener('click', event => {
+divEl.addEventListener('click', onDivElClick)
+
+function onDivElClick(event) {
+    
     if (event.target.closest('.delete-btn')) {
-        const BookID = event.target.getAttribute('data-book-id');
-
-        const bookIndex = shoppingList.findIndex(
-            bookInStorage => bookInStorage._id === BookID
-        );
-
-        shoppingList.splice(bookIndex, 1);
-
-        localStorage.setItem(
-            SHOPPING_LIST_STORAGE_KEY,
-            JSON.stringify(shoppingList)
-        );
-
-        if (!shoppingList.length) {
-            divEl.innerHTML = ``;
-            return isEmpty();
-        } else if (!sliceArrayBooks().length) {
-            previousButton.click();
-            destroyChildElement(paginationPagesStart);
-        } else {
-            divEl.innerHTML = renderMarkUp(sliceArrayBooks());
-            console.log(sliceArrayBooks());
-            destroyChildElement(paginationPagesStart);
-        }
-
+        console.log(storedBooksArray);
+        storedBooksArray = storedBooksArray.filter(book => book.id != event.target.getAttribute('data-book-id'))
+        console.log(storedBooksArray);
+        localStorage.setItem('books', JSON.stringify(storedBooksArray));
+        isEmpty();
     }
-});
+    isEmpty()
+}
+//         if (!storedBooksArray.length) {
+//             divEl.innerHTML = ``;
+//             return isEmpty();
+//         } else if (!sliceArrayBooks().length) {
+//             previousButton.click();
+//             destroyChildElement(paginationPagesStart);
+//         } else {
+//             divEl.innerHTML = renderMarkUp(sliceArrayBooks());
+//             destroyChildElement(paginationPagesStart);
+//         }
+
+
 
 // Add a function to check if the book is already in the shopping list
 function isBookInShoppingList(bookId) {
-    return shoppingList.some(book => book._id === bookId);
+    return storedBooksArray.some(book => book.id === bookId);
 }
 
 // Add an event listener to the document to listen for the 'add-to-cart' event
 document.addEventListener('add-to-cart', event => {
     const book = event.detail.book;
-    if (!isBookInShoppingList(book._id)) {
-        shoppingList.push(book);
-        localStorage.setItem(SHOPPING_LIST_STORAGE_KEY, JSON.stringify(shoppingList));
+    if (!isBookInShoppingList(book.id)) {
+        storedBooksArray.push(book);
+        localStorage.setItem(SHOPPING_LIST_STORAGE_KEY, JSON.stringify(storedBooksArray));
     }
 });
 
