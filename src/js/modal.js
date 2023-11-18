@@ -55,28 +55,17 @@ async function showBookInfo(bookInfo, id) {
     buy_links
   }
   
-  function isBookAvailable(checkId) {
-    const books = JSON.parse(localStorage.getItem('books')) || [];
-
-    if (!books.length) {
-      return false
-    }
-    return books.some(book => book.id == checkId);
-  }
-
   function buttonSwitcher() {
     if (isBookAvailable(id)) {
       buttonAdd.setAttribute('id', '1')
       buttonAdd.textContent = 'Remove from shopping list';
-    }
-
-    else {
+    }else {
       buttonAdd.setAttribute('id', '2');
       buttonAdd.textContent = 'Add to shopping list';
     }
   }
-  buttonSwitcher()
-      
+  
+  buttonSwitcher()    
   buttonAdd.addEventListener('click', onAddButtonClick)
 
   function onAddButtonClick() {
@@ -95,43 +84,45 @@ async function showBookInfo(bookInfo, id) {
       getSelectedBooksQty();
       buttonSwitcher()
     }
-       
-        
-    
-    
-    // close button
-    
   }
+
+  function modalCloseFunc() {
+      document.removeEventListener('keydown', onEscPressed)
+      closeButton.removeEventListener('click', onCloseClick)
+      backdrop.removeEventListener('click', onBackdropClick)
+      buttonAdd.removeEventListener('click', onAddButtonClick)
+    
+      modal.classList.remove('active');
+      backdrop.style.display = 'none';
+      bodyEl.classList.remove('modal-open');
+  }
+
   modal.classList.add('active');
   const closeButton = document.querySelector('.modal-close-button');
-  closeButton.addEventListener('click', () => {
-    modal.classList.remove('active');
-    backdrop.style.display = 'none'
-    bodyEl.classList.remove('modal-open')
-  });
+  
   document.addEventListener('keydown', onEscPressed)
+  closeButton.addEventListener('click', onCloseClick)
+  backdrop.addEventListener('click', onBackdropClick)
+  
+
+  function onCloseClick() {
+    return modalCloseFunc()
+  }
+
   function onEscPressed(event) {
     if (event.key !== 'Escape') {
       return
     }
-    modal.classList.remove('active');
-    backdrop.style.display = 'none';
-    bodyEl.classList.remove('modal-open');
+    return modalCloseFunc()
+  }  
+
+  function onBackdropClick(event) {
+    if (!modal.contains(event.target)) {
+        return modalCloseFunc()
+    }
   }
-  
+
 }
-
-
-backdrop.addEventListener('click', (event) => {
-  const modal = document.querySelector('.modal');
-  if (!modal.contains(event.target)) {
-    modal.classList.remove('active');
-    backdrop.style.display = 'none';
-    bodyEl.classList.remove('modal-open');
-  }
-});
-
-
 
 
 async function onBookClick(event) {
@@ -143,6 +134,15 @@ async function onBookClick(event) {
   bodyEl.classList.add('modal-open');
   const bookData = await getBookById(bookId);
   showBookInfo(bookData.data, bookId);
+}
+
+function isBookAvailable(checkId) {
+  const books = JSON.parse(localStorage.getItem('books')) || [];
+
+  if (!books.length) {
+    return false
+  }
+  return books.some(book => book.id == checkId);
 }
 
 
