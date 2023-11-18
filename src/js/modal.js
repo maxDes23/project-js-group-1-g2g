@@ -4,16 +4,18 @@ import book from "../img/modal/book.png"
 import { getSelectedBooksQty } from './header';
 
 
-
 const backdrop = document.querySelector('.backdrop')
 const bodyEl = document.querySelector('body')
 const modal = document.querySelector('.modal');
-
+let buttonAdd = '';
+let bookId = 0;
+let bookObj = {};
+let closeButton = ''
 
 let existingBooks = JSON.parse(localStorage.getItem('books')) || [];
 
 async function showBookInfo(bookInfo, id) {
-
+  bookId = id;
   const {
     book_image,
     title, author,
@@ -21,13 +23,29 @@ async function showBookInfo(bookInfo, id) {
     list_name,
     amazon_product_url,
     buy_links } = bookInfo;
-
-  /////// Make modal markup /////////
+    
+    /////// Make modal markup /////////
   addModalMarkup(book_image, title, author, description, amazon_product_url, buy_links);
   
-  const buttonAdd = document.querySelector('.modal-button-add');
+  ///// Activating modal and backdrop /////////
+  modal.classList.add('active');  
+  backdrop.style.display = 'inline'
+
   
-  const bookObj = {
+  ///// renew global button variables with corresponding data //////
+  buttonAdd = document.querySelector('.modal-button-add');
+  closeButton = document.querySelector('.modal-close-button');  
+
+
+  /////// Adding Event Listeners ////////////
+    buttonAdd.addEventListener('click', onAddButtonClick)
+    document.addEventListener('keydown', onEscPressed)
+    closeButton.addEventListener('click', onCloseClick)
+    backdrop.addEventListener('click', onBackdropClick)
+    
+  
+  ////// renew global book object, for placing in local storage ///////
+  bookObj = {
     id,
     book_image,
     title,
@@ -38,40 +56,10 @@ async function showBookInfo(bookInfo, id) {
     buy_links
   }
   
-  function buttonSwitcher() {
-    if (isBookAvailable(id)) {
-      buttonAdd.textContent = 'Remove from shopping list';
-    }else {
-      buttonAdd.textContent = 'Add to shopping list';
-    }
-  }
-
+  //// switch Add button to Remove button and vise versa
   buttonSwitcher()    
-  
-  modal.classList.add('active');
-  const closeButton = document.querySelector('.modal-close-button');
 
-  buttonAdd.addEventListener('click', onAddButtonClick)
-  document.addEventListener('keydown', onEscPressed)
-  closeButton.addEventListener('click', onCloseClick)
-  backdrop.addEventListener('click', onBackdropClick)
-
-
-  function onAddButtonClick() {
-      
-    if (!isBookAvailable(id)) {
-      existingBooks.push(bookObj);
-      localStorage.setItem('books', JSON.stringify(existingBooks));
-      getSelectedBooksQty();
-      buttonSwitcher()
-    } else {
-      existingBooks = existingBooks.filter(book => book.id !== id)
-      localStorage.setItem('books', JSON.stringify(existingBooks));
-      getSelectedBooksQty();
-      buttonSwitcher()
-    }
-  }
-
+  /////// Closing modal and remove event listeners function ///////////////
   function modalCloseFunc() {
       document.removeEventListener('keydown', onEscPressed)
       closeButton.removeEventListener('click', onCloseClick)
@@ -82,6 +70,7 @@ async function showBookInfo(bookInfo, id) {
       backdrop.style.display = 'none';
       bodyEl.classList.remove('modal-open');
   }
+
 
   function onCloseClick() {
     return modalCloseFunc()
@@ -99,7 +88,6 @@ async function showBookInfo(bookInfo, id) {
         return modalCloseFunc()
     }
   }
-
 }
 
 
@@ -129,9 +117,31 @@ function connectModal() {
   modalGallery.addEventListener('click', onBookClick);
 }
 
+function onAddButtonClick() {
+
+  if (!isBookAvailable(bookId)) {
+    existingBooks.push(bookObj);
+    localStorage.setItem('books', JSON.stringify(existingBooks));
+    getSelectedBooksQty();
+    buttonSwitcher()
+  } else {
+    existingBooks = existingBooks.filter(book => book.id !== bookId)
+    localStorage.setItem('books', JSON.stringify(existingBooks));
+    getSelectedBooksQty();
+    buttonSwitcher()
+  }
+}
+
+
+function buttonSwitcher() {
+    if (isBookAvailable(bookId)) {
+      buttonAdd.textContent = 'Remove from shopping list';
+    }else {
+      buttonAdd.textContent = 'Add to shopping list';
+    }
+  }
 
 function addModalMarkup(book_image, title, author, description, amazon_product_url, buy_links) {
-  backdrop.style.display = 'inline'
   modal.innerHTML = `
     <button class="modal-close-button">
       <svg  class="modal__cross"
