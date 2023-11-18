@@ -23,28 +23,8 @@ async function showBookInfo(bookInfo, id) {
     list_name,
     amazon_product_url,
     buy_links } = bookInfo;
-    
-    /////// Make modal markup /////////
-  addModalMarkup(book_image, title, author, description, amazon_product_url, buy_links);
   
-  ///// Activating modal and backdrop /////////
-  modal.classList.add('active');  
-  backdrop.style.display = 'inline'
-
-  
-  ///// renew global button variables with corresponding data //////
-  buttonAdd = document.querySelector('.modal-button-add');
-  closeButton = document.querySelector('.modal-close-button');  
-
-
-  /////// Adding Event Listeners ////////////
-    buttonAdd.addEventListener('click', onAddButtonClick)
-    document.addEventListener('keydown', onEscPressed)
-    closeButton.addEventListener('click', onCloseClick)
-    backdrop.addEventListener('click', onBackdropClick)
-    
-  
-  ////// renew global book object, for placing in local storage ///////
+  ////// renew global book object, for placing it in local storage ///////
   bookObj = {
     id,
     book_image,
@@ -55,41 +35,65 @@ async function showBookInfo(bookInfo, id) {
     amazon_product_url,
     buy_links
   }
-  
-  //// switch Add button to Remove button and vise versa
+    
+    /////// Make modal markup /////////
+  addModalMarkup(book_image, title, author, description, amazon_product_url, buy_links);
+  //// activate modal add listeners renew global vars ///////
+  makeModalActive();
+  //// Add button <=? SWITCHER ?=> Remove button 
   buttonSwitcher()    
-
-  /////// Closing modal and remove event listeners function ///////////////
-  function modalCloseFunc() {
-      document.removeEventListener('keydown', onEscPressed)
-      closeButton.removeEventListener('click', onCloseClick)
-      backdrop.removeEventListener('click', onBackdropClick)
-      buttonAdd.removeEventListener('click', onAddButtonClick)
-
-      modal.classList.remove('active');
-      backdrop.style.display = 'none';
-      bodyEl.classList.remove('modal-open');
-  }
-
-
-  function onCloseClick() {
-    return modalCloseFunc()
-  }
-
-  function onEscPressed(event) {
-    if (event.key !== 'Escape') {
-      return
-    }
-    return modalCloseFunc()
-  }  
-
-  function onBackdropClick(event) {
-    if (!modal.contains(event.target)) {
-        return modalCloseFunc()
-    }
-  }
 }
 
+
+
+function makeModalActive() {
+  ///// Activating modal and backdrop /////////
+  modal.classList.add('active');
+  backdrop.style.display = 'inline'
+
+
+  ///// renew global button variables with corresponding data //////
+  buttonAdd = document.querySelector('.modal-button-add');
+  closeButton = document.querySelector('.modal-close-button');
+
+  /////// Adding Event Listeners ////////////
+  buttonAdd.addEventListener('click', onAddButtonClick)
+  document.addEventListener('keydown', onEscPressed)
+  closeButton.addEventListener('click', onCloseClick)
+  backdrop.addEventListener('click', onBackdropClick)
+
+}
+
+
+
+/////// Closing modal and remove event listeners function ///////////////
+function modalCloseFunc() {
+  document.removeEventListener('keydown', onEscPressed)
+  closeButton.removeEventListener('click', onCloseClick)
+  backdrop.removeEventListener('click', onBackdropClick)
+  buttonAdd.removeEventListener('click', onAddButtonClick)
+
+  modal.classList.remove('active');
+  backdrop.style.display = 'none';
+  bodyEl.classList.remove('modal-open');
+}
+
+function onCloseClick() {
+  return modalCloseFunc()
+}
+
+function onEscPressed(event) {
+  if (event.key !== 'Escape') {
+    return
+  }
+  return modalCloseFunc()
+}
+
+function onBackdropClick(event) {
+  if (!modal.contains(event.target)) {
+    return modalCloseFunc()
+  }
+}
 
 async function onBookClick(event) {
   const clickedBook = event.target.closest('.book');
