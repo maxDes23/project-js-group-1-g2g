@@ -9,7 +9,7 @@ let existingBooks = JSON.parse(localStorage.getItem('books')) || [];
 
 async function showBookInfo(bookInfo, id) {
 
-  const { book_image, title, author, description, list_name, amazon_product_url, buy_links: [bookshop] } = bookInfo;
+  const { book_image, title, author, description, list_name, amazon_product_url, buy_links } = bookInfo;
   backdrop.style.display = 'inline'
   modal.innerHTML = '';
   // разметка
@@ -30,10 +30,10 @@ async function showBookInfo(bookInfo, id) {
     `<p class="modal-title-name">Author: ${author}</p>`,
     `<p class="modal-title-text"> ${description} </p>`,
     `<div class="book-links">
-        <a href="${amazon_product_url}" class="modal-link-amazon amazon">
-          <img src="${amazon}" alt="">
+    <a href="${amazon_product_url}" class="modal-link-amazon amazon" target="_blank" rel="noopener noreferrer nofollow" aria-label="Amazon link">
+    <img src="${amazon}" alt="">
         </a>
-        <a href="${bookshop}" class="modal-link book-shop">
+        <a href="${buy_links.url}" class="modal-link book-shop" target="_blank" rel="noopener noreferrer nofollow" aria-label="BookShop link">
           <img src="${book}" alt="">
         </a>
         </div>`,
@@ -52,7 +52,7 @@ async function showBookInfo(bookInfo, id) {
     description,
     list_name,
     amazon_product_url,
-    buy_links: [bookshop]
+    buy_links
   }
   
   function isBookAvailable(checkId) {
