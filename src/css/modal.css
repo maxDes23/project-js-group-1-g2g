@@ -285,6 +285,13 @@ body.modal-open {
     text-transform: uppercase;
     background: var(--primary-background-color);
   }
+
+    .congratulations-text {
+      width: 324px;
+      font-size: 12px;      
+      line-height: 14px;
+      letter-spacing: -0.48px;
+    }
 }
 
 @media screen and (min-width: 1440px) {
