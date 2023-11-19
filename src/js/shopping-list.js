@@ -1,3 +1,4 @@
+import amazonImg from "../img/shopping/amazon.png"
 import icons from "../img/icons.svg"
 import getRefs from './shop-refs.js';
 import getShopIconsPaths from './shop-icons-path.js';
@@ -61,7 +62,7 @@ function renderMarkUp(storageArr) {
                         <ul class="shop__book-shoplist">
                             <li class="store">
                                 <a href="${amazon_product_url}" target="_blank" rel="noopener noreferrer nofollow" aria-label="Amazon link">
-                                    <img class="amazon" src="${amazonIconPath}" alt="Amazon link" alt="Amazon live page"/>
+                                    <img class="amazon" src="${amazonImg}" alt="Amazon link" alt="Amazon live page"/>
                                 </a>
                             </li>
                             <li class="store">

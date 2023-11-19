@@ -523,6 +523,7 @@
 
 .amazon {
     filter: var(--amazon-img-color);
+    background-color: transparent;
 }
 
 .book-shop {

@@ -44,8 +44,8 @@ body {
   --logo-text-color: #000;
   --category-color: rgba(17, 17, 17, 0.6);
   --shop-text-color: #0009;
-  --amazon-img-color: none;
-  --book-img-color: none;
+  --amazon-img-color: brightness(0) invert(0);
+  --book-img-color: grayscale(100%);
   --congratulations-text-color: rgba(17, 17, 17, 0.50);
 }
 
