@@ -1,3 +1,4 @@
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { getBooksByCategory } from './book-api';
 import { getTopBooks } from './book-api';
 import { connectModal } from './modal';
@@ -25,9 +26,9 @@ import { connectModal } from './modal';
 document.addEventListener('DOMContentLoaded', renderHomePage);
 
 async function renderHomePage() {
+  Loading.arrows();
   const getDataTopBooks = await getTopBooks();
   const { data } = getDataTopBooks;
-
   await renderСategoryList(data);
   getCategory();
   connectModal();
@@ -77,6 +78,7 @@ async function renderСategoryList(categories) {
     .join('');
   categoryList.insertAdjacentHTML('beforeend', markup);
   getCategoryOnLoadMore();
+  Loading.remove(500);
 }
 
 // BTN SEE MORE
@@ -100,6 +102,7 @@ function getCategory() {
 }
 
 async function onClickCategory(event) {
+  Loading.arrows();
   event.preventDefault();
   // console.log(1);
   const removeBooks = document.querySelector('.category-container');
@@ -136,6 +139,7 @@ async function onClickCategory(event) {
   } catch (error) {
     console.log(error);
   }
+  Loading.remove(500);
 }
 
 async function renderСategory(nameSelectedCategory) {
