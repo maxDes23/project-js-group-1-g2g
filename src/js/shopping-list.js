@@ -61,12 +61,12 @@ function renderMarkUp(storageArr) {
                         <ul class="shop__book-shoplist">
                             <li class="store">
                                 <a href="${amazon_product_url}" target="_blank" rel="noopener noreferrer nofollow" aria-label="Amazon link">
-                                    <img class="modal-shop-img shopping-shopimg amazon" src="${amazonIconPath}" alt="Amazon link" alt="Amazon live page"/>
+                                    <img class="amazon" src="${amazonIconPath}" alt="Amazon link" alt="Amazon live page"/>
                                 </a>
                             </li>
                             <li class="store">
                                 <a href="${amazon_product_url}" target="_blank" rel="noopener noreferrer nofollow" aria-label="BookShop link">
-                                    <img class="modal-shop-img shopping-shopimg book-shop" src="${bookShopIconPath}" alt="BookShop link" />
+                                    <img class="book-shop" src="${bookShopIconPath}" alt="BookShop link" />
                                 </a>
                             </li>
                         </ul>

@@ -340,7 +340,6 @@
 @media screen and (min-width: 1440px) {
 .shop_card{
     width: 996px;
-    height: 213px;
     right: auto;
    }
 }
@@ -528,4 +527,10 @@
 
 .book-shop {
     filter: var(--book-img-color);
+}
+
+.amazon:hover, .book-shop:hover {
+    background-color: transparent;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
+    
 }
