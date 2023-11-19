@@ -18,6 +18,28 @@ import { connectModal } from './modal';
   //    });
   //  });
 
+function getRundomLoader() {
+  switch (Math.floor(Math.random() * 6) + 1) {
+    case 1:
+      Loading.standard();
+      break;
+    case 2:
+      Loading.hourglass();
+      break;
+    case 3:
+      Loading.circle();
+      break;
+    case 4:
+      Loading.arrows();
+      break;
+    case 5:
+      Loading.dots();
+      break;
+    case 6:
+      Loading.pulse();
+      break;
+  }
+}
 
 
 
@@ -26,7 +48,7 @@ import { connectModal } from './modal';
 document.addEventListener('DOMContentLoaded', renderHomePage);
 
 async function renderHomePage() {
-  Loading.arrows();
+  getRundomLoader();
   const getDataTopBooks = await getTopBooks();
   const { data } = getDataTopBooks;
   await renderСategoryList(data);
@@ -102,7 +124,7 @@ function getCategory() {
 }
 
 async function onClickCategory(event) {
-  Loading.arrows();
+  getRundomLoader();
   event.preventDefault();
   // console.log(1);
   const removeBooks = document.querySelector('.category-container');
