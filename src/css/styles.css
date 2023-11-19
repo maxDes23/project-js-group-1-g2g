@@ -46,6 +46,7 @@ body {
   --shop-text-color: #0009;
   --amazon-img-color: none;
   --book-img-color: none;
+  --congratulations-text-color: rgba(17, 17, 17, 0.50);
 }
 
 .theme-dark {
@@ -60,6 +61,7 @@ body {
   --shop-text-color: #fff9;
   --amazon-img-color: brightness(0) invert(1);
   --book-img-color: grayscale(100%);
+  --congratulations-text-color: rgba(255, 255, 255, 0.50);
 }
 
 .theme-light body,

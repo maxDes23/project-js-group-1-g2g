@@ -11,6 +11,7 @@ let buttonAdd = '';
 let bookId = 0;
 let bookObj = {};
 let closeButton = ''
+let congratText = ''
 
 let storedBooksArray = JSON.parse(localStorage.getItem('books')) || [];
 
@@ -37,24 +38,26 @@ async function showBookInfo(bookInfo, id) {
   }
     
     /////// Make modal markup /////////
-  addModalMarkup(book_image, title, author, description, amazon_product_url, buy_links);
+  addModalMarkup(book_image, title, author, description, amazon_product_url, buy_links);    
   //// activate modal add listeners renew global vars ///////
   makeModalActive();
-  //// Add button <=? SWITCHER ?=> Remove button 
-  buttonSwitcher()    
 }
 
 
 
 function makeModalActive() {
-  ///// Activating modal and backdrop /////////
-  modal.classList.add('active');
-  backdrop.style.display = 'inline'
-
 
   ///// renew global button variables with corresponding data //////
   buttonAdd = document.querySelector('.modal-button-add');
   closeButton = document.querySelector('.modal-close-button');
+  congratText = document.querySelector('.congratulations-text')
+  
+  //// Add button <=? SWITCHER ?=> Remove button
+  buttonSwitcher()
+
+  ///// Activating modal and backdrop /////////
+  modal.classList.add('active');
+  backdrop.style.display = 'inline'
 
   /////// Adding Event Listeners ////////////
   buttonAdd.addEventListener('click', onAddButtonClick)
@@ -138,10 +141,15 @@ function onAddButtonClick() {
 
 
 function buttonSwitcher() {
-    if (isBookAvailable(bookId)) {
-      buttonAdd.textContent = 'Remove from shopping list';
+  if (isBookAvailable(bookId)) {
+    buttonAdd.textContent = 'Remove from shopping list';
+    buttonAdd.classList.add('modal-button-remove')
+    congratText.classList.remove('display-none')
+
     }else {
-      buttonAdd.textContent = 'Add to shopping list';
+    buttonAdd.textContent = 'Add to shopping list';
+    congratText.classList.add('display-none')
+    buttonAdd.classList.remove('modal-button-remove')
     }
   }
 
@@ -170,7 +178,10 @@ function addModalMarkup(book_image, title, author, description, amazon_product_u
           </div>
         </div>
       </div>
-    <button class="modal-button-add"></button>`
+    <button class="modal-button-add"></button>
+    <p class="congratulations-text">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
+    `
+  
 }
 
 

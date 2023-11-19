@@ -21,7 +21,6 @@
   right: 12px;
   width: 24px;
   height: 24px;
-  padding-bottom: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +29,6 @@
 
 /* иконка внутри кнопки закрытия */
 .modal__cross {
-  fill: black;
   cursor: pointer;
   fill: var(--main-text-color);
 }
@@ -46,21 +44,15 @@
 }
 
 .modal {
-  /* Скрываем окна  */
   display: inline;
   opacity: 0;
   visibility: hidden;
-  /*  Установаем ширину окна  */
   width: 335px;
-
-  /*  Центрируем и задаем z-index */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 30;
-  /* Должен быть выше чем у подложки*/
-  /*  Побочные стили   */
   box-shadow: 0 3px 10px -0.5px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding-top: 40px;
@@ -74,12 +66,11 @@
   background: var(--primary-background-color);
 }
 
-/* стили внутри модалки */
-
 .modal-image {
   width: 287px;
   height: 408px;
   border-radius: 8px;
+  margin-bottom: 14px;
 }
 
 .modal__title {
@@ -93,7 +84,6 @@
   letter-spacing: -0.64px;
   margin-bottom: 4px;
   color: var(--main-text-color);
-  padding-top: 14px;
 }
 
 .modal-title-name {
@@ -105,7 +95,7 @@
   font-weight: 400;
   line-height: 14px;
   letter-spacing: -0.48px;
-  padding-bottom: 18px;
+  margin-bottom: 18px;
 }
 
 .modal-title-text {
@@ -127,7 +117,8 @@
 .book-links {
   display: flex;
   gap: 20px;
-  padding-bottom: 44px;
+  align-items: center;
+  margin-bottom: 44px;
 }
 
 .modal-text-link {
@@ -171,15 +162,27 @@
 
 .modal-button-remove {
   border-radius: 40px;
-  background: #fff;
   border: 2px solid #4f2ee8;
   display: inline-flex;
-  padding: 14px 28px;
+  padding: 14px 23px;
   align-items: flex-start;
   gap: 10px;
-  box-sizing: inherit;
+  margin-bottom: 8px;
 }
+.congratulations-text {
+  width: 242px;
+  color: var(--congratulations-text-color);
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: -0.4px;
+  margin: 0 auto;
 
+}
+/* 
 .modal-text-button-remove {
   color: #111;
   display: block;
@@ -191,7 +194,7 @@
   letter-spacing: -0.14px;
   text-transform: uppercase;
   box-sizing: inherit;
-}
+} */
 
 
 
@@ -217,10 +220,13 @@ body.modal-open {
 }
 
 @media screen and (min-width: 768px) {
+  .book-links {
+    padding: 0;
+  }
+
   .modal {
     max-width: none;
     width: 579px;
-    height: 501px;
     margin-top: 85px;
     padding: 40px;
     overflow-y: visible;
@@ -238,6 +244,7 @@ body.modal-open {
     gap: 24px;
     margin-bottom: 40px;
     display: flex;
+    
   }
 
   .modal-title-name {
@@ -248,6 +255,7 @@ body.modal-open {
   }
   .modal-title-text {
     margin-bottom: 20px;
+    width: 279px;
   }
 
   .modal-button-add {
@@ -279,9 +287,7 @@ body.modal-open {
   .modal {
     max-width: none;
     width: 579px;
-    height: 465px;
     margin-top: 85px;
-    padding: 40px;
     overflow-y: visible;
   }
 }
