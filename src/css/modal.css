@@ -283,7 +283,6 @@ body.modal-open {
     line-height: 24px;
     letter-spacing: -0.18px;
     text-transform: uppercase;
-    background: var(--primary-background-color);
   }
 
     .congratulations-text {

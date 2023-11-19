@@ -19,6 +19,7 @@ import { connectModal } from './modal';
   //  });
 
 function getRundomLoader() {
+  try {
   switch (Math.floor(Math.random() * 6) + 1) {
     case 1:
       Loading.standard();
@@ -39,9 +40,10 @@ function getRundomLoader() {
       Loading.pulse();
       break;
   }
+  } catch (error) {
+    console.log(error);
+  }
 }
-
-
 
 // ------------КОД ДЛЯ РЕНДЕРА СТОРІНКИ ХОУМ
 
@@ -100,7 +102,12 @@ async function renderСategoryList(categories) {
     .join('');
   categoryList.insertAdjacentHTML('beforeend', markup);
   getCategoryOnLoadMore();
-  Loading.remove(500);
+  try {
+    Loading.remove(500)
+  }
+  catch (error) {
+    console.log(error)  
+  }
 }
 
 // BTN SEE MORE
@@ -161,7 +168,12 @@ async function onClickCategory(event) {
   } catch (error) {
     console.log(error);
   }
-  Loading.remove(500);
+  try {
+    Loading.remove(500)
+  }
+  catch (error) {
+    console.log(error)
+  }
 }
 
 async function renderСategory(nameSelectedCategory) {
