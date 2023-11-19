@@ -115,14 +115,13 @@ function onDivElClick(event) {
     if (event.target.closest('.delete-btn')
         || event.target.closest('.trash-icon')
         || event.target.closest('.t-ico') ) {
-        console.log(storedBooksArray);
         storedBooksArray = storedBooksArray.filter(book => book.id != event.target.getAttribute('data-book-id'))
-        console.log(storedBooksArray);
         localStorage.setItem('books', JSON.stringify(storedBooksArray));
-        isEmpty();
     }
     isEmpty()
 }
+
+
 //         if (!storedBooksArray.length) {
 //             divEl.innerHTML = ``;
 //             return isEmpty();
@@ -137,17 +136,17 @@ function onDivElClick(event) {
 
 
 // Add a function to check if the book is already in the shopping list
-function isBookInShoppingList(bookId) {
-    return storedBooksArray.some(book => book.id === bookId);
-}
+// function isBookInShoppingList(bookId) {
+//     return storedBooksArray.some(book => book.id === bookId);
+// }
 
 // Add an event listener to the document to listen for the 'add-to-cart' event
-document.addEventListener('add-to-cart', event => {
-    const book = event.detail.book;
-    if (!isBookInShoppingList(book.id)) {
-        storedBooksArray.push(book);
-        localStorage.setItem(SHOPPING_LIST_STORAGE_KEY, JSON.stringify(storedBooksArray));
-    }
-});
+// document.addEventListener('add-to-cart', event => {
+//     const book = event.detail.book;
+//     if (!isBookInShoppingList(book.id)) {
+//         storedBooksArray.push(book);
+//         localStorage.setItem(SHOPPING_LIST_STORAGE_KEY, JSON.stringify(storedBooksArray));
+//     }
+// });
 
 

@@ -164,7 +164,7 @@ function addModalMarkup(book_image, title, author, description, amazon_product_u
             <a href="${amazon_product_url}" class="modal-link-amazon amazon" target="_blank" rel="noopener noreferrer nofollow" aria-label="Amazon link">
               <img src="${amazon}" alt="">
             </a>
-            <a href="${buy_links.url}" class="modal-link book-shop" target="_blank" rel="noopener noreferrer nofollow" aria-label="BookShop link">
+            <a href="${amazon_product_url}" class="modal-link book-shop" target="_blank" rel="noopener noreferrer nofollow" aria-label="BookShop link">
               <img src="${book}" alt="">
             </a>
           </div>
