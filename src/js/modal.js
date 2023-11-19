@@ -12,6 +12,7 @@ let bookId = 0;
 let bookObj = {};
 let closeButton = ''
 let congratText = ''
+let modalTitleText = ''
 
 let storedBooksArray = JSON.parse(localStorage.getItem('books')) || [];
 
@@ -41,6 +42,10 @@ async function showBookInfo(bookInfo, id) {
   addModalMarkup(book_image, title, author, description, amazon_product_url, buy_links);    
   //// activate modal add listeners renew global vars ///////
   makeModalActive();
+  if (!description) {
+    modalTitleText.classList.add('display-none')
+  }
+  else modalTitleText.classList.remove('display-none')
 }
 
 
@@ -51,6 +56,7 @@ function makeModalActive() {
   buttonAdd = document.querySelector('.modal-button-add');
   closeButton = document.querySelector('.modal-close-button');
   congratText = document.querySelector('.congratulations-text')
+  modalTitleText = document.querySelector('.modal-title-text')
   
   //// Add button <=? SWITCHER ?=> Remove button
   buttonSwitcher()
@@ -181,7 +187,6 @@ function addModalMarkup(book_image, title, author, description, amazon_product_u
     <button class="modal-button-add"></button>
     <p class="congratulations-text">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
     `
-  
 }
 
 

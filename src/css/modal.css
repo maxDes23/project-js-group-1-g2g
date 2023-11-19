@@ -58,7 +58,6 @@
   padding-bottom: 40px;
   padding-left: 24px;
   padding-right: 24px;
-  background-color: #fff;
   transition: 0.3s all;
   border-radius: 18px;
   border: 2px solid var(--header-border-color);
@@ -137,7 +136,6 @@
 
 .modal-button-add {
   display: block;
-  background-color: #fff;
   min-width: 211px;
   min-height: 46px;
   margin-left: auto;
@@ -147,7 +145,6 @@
   align-items: center;
   border-radius: 40px;
   border: 2px solid #4f2ee8;
-  color: #111;
   color: var(--main-text-color);
   font-family: DM Sans;
   font-size: 14px;
@@ -156,7 +153,6 @@
   line-height: 18px;
   letter-spacing: -0.14px;
   text-transform: uppercase;
-  background: var(--primary-background-color);
 }
 
 .modal-button-remove {
@@ -210,13 +206,12 @@ body.modal-open {
   position: fixed;
 }
 
-.modal-button-add:hover,
-.modal-button-add:focus {
+.modal-button-add:hover {
   background-color: #4f2ee8;
-
   box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
   color: #fff;
 }
+
 
 @media screen and (min-width: 768px) {
   
@@ -274,7 +269,6 @@ body.modal-open {
     align-items: center;
     border-radius: 40px;
     border: 2px solid #4f2ee8;
-    color: #111;
     color: var(--main-text-color);
     font-family: DM Sans;
     font-size: 18px;
