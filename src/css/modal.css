@@ -98,7 +98,6 @@
 .modal-title-text {
   text-align: left;
   width: 287px;
-  height: 70px;
   flex-shrink: 0;
   font-family: DM Sans;
   font-size: 14px;
@@ -115,21 +114,6 @@
   gap: 20px;
   align-items: center;
   margin-bottom: 44px;
-}
-
-.modal-text-link {
-  padding-bottom: 44px;
-  display: flex;
-}
-
-.modal-link-amazon {
-  display: flex;
-  align-content: space-around;
-  flex-wrap: wrap;
-}
-
-.modal-icon-amazon {
-  text-align: left;
 }
 
 .modal-button-add {
@@ -163,6 +147,7 @@
   gap: 10px;
   margin-bottom: 8px;
 }
+
 .congratulations-text {
   width: 242px;
   color: var(--congratulations-text-color);
@@ -174,25 +159,7 @@
   line-height: 12px;
   letter-spacing: -0.4px;
   margin: 0 auto;
-
 }
-/* 
-.modal-text-button-remove {
-  color: #111;
-  display: block;
-  font-family: DM Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: -0.14px;
-  text-transform: uppercase;
-  box-sizing: inherit;
-} */
-
-
-
-/* Стили для активных классов подложки и окна */
 
 .modal.active,
 .overlay.active {
