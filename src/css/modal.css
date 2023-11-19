@@ -73,7 +73,6 @@
 
 .modal__title {
   text-align: left;
-  color: #111;
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -101,7 +100,6 @@
   width: 287px;
   height: 70px;
   flex-shrink: 0;
-  color: #111;
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -149,6 +147,7 @@
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
+  background: var(--primary-background-color);
   font-weight: 700;
   line-height: 18px;
   letter-spacing: -0.14px;
