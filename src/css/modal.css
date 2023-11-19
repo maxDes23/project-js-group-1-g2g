@@ -15,10 +15,9 @@
 /* кнопка закрытия */
 .modal-close-button {
   border: none;
-  background-color: rgba(255, 255, 255, 0.5);
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 11px;
+  right: 14px;
   width: 24px;
   height: 24px;
   display: flex;
@@ -220,39 +219,45 @@ body.modal-open {
 }
 
 @media screen and (min-width: 768px) {
+  
+  .modal__title {
+    margin-bottom: 8px;
+  }
+
   .book-links {
     padding: 0;
   }
 
   .modal {
-    max-width: none;
     width: 579px;
-    margin-top: 85px;
     padding: 40px;
     overflow-y: visible;
   }
+
   .book-links {
     margin-bottom: 0;
   }
+
   .modal-image {
     min-width: 192px;
     height: 281px;
     width: 192px;
     margin-bottom: 0;
   }
+
   .modal-ipad {
     gap: 24px;
     margin-bottom: 40px;
     display: flex;
-    
   }
 
   .modal-title-name {
     margin-bottom: 20px;
     font-size: 14px;
     line-height: 1.29;
-    margin: auto;
+    margin-bottom: 20px;
   }
+
   .modal-title-text {
     margin-bottom: 20px;
     width: 279px;
@@ -260,7 +265,6 @@ body.modal-open {
 
   .modal-button-add {
     display: block;
-    background-color: #fff;
     min-width: 211px;
     min-height: 46px;
     margin-left: auto;
@@ -284,10 +288,5 @@ body.modal-open {
 }
 
 @media screen and (min-width: 1440px) {
-  .modal {
-    max-width: none;
-    width: 579px;
-    margin-top: 85px;
-    overflow-y: visible;
-  }
+
 }
