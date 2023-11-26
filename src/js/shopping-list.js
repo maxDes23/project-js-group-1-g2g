@@ -1,5 +1,5 @@
 
-import icons from "/img/icons.svg"
+import icons from "../img/icons.svg"
 import getRefs from './shop-refs.js';
 import getShopIconsPaths from './shop-icons-path.js';
 
