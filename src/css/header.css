@@ -8,11 +8,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin-left: auto;
-  margin-right: auto; */
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
   max-width: 375px;
   height: 64px;
+  padding: 0 20px;
 
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid var(--header-border-color);
@@ -261,12 +262,11 @@ body.modal-open {
 .log-out-text {
   display: block;
   color: #111;
-  font-family: DM Sans;
+  font-family: var(--font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.28;
-  /* 128.571% */
   letter-spacing: -0.56px;
   margin-right: 4px;
 }
@@ -282,7 +282,6 @@ body.modal-open {
   }
 
   .header-container {
-    width: 768px;
     height: 72px;
     gap: 0px;
     margin: 0 auto;
