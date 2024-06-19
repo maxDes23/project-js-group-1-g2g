@@ -1,31 +1,3 @@
-/* .loader {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.loader::before,
-.loader::after {
-  content: '';
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  background-color: rgb(18, 40, 167);
-  left: 50%;
-  top: 50%;
-  z-index: 0;
-  animation: rotate 1s ease-in infinite;
-}
-.loader::after {
-  width: 20px;
-  height: 20px;
-  background-color: rgb(255, 208, 0);
-  animation: rotate 2s ease-in infinite, moveY 2s ease-in infinite;
-} */
-
-
 @keyframes moveY {
   0%,
   100% {
@@ -61,13 +33,12 @@
   }
 }
 
-.container-gallary {
-  font-family: DM Sans;
+.container-gallery {
+  font-family: var(--font-family);
   padding-top: 40px;
 }
 
 .category-title {
-  /* text-transform: capitalize; */
   font-size: 32px;
   font-weight: 700;
   line-height: 38px;
@@ -106,7 +77,7 @@
   .category-description {
     line-height: 24px;
   }
-  .container-gallary {
+  .container-gallery {
     padding-top: 100px;
   }
 }
@@ -143,7 +114,6 @@
   display: flex;
 }
 
-/* вставити меді квері для таблета */
 @media screen and (min-width: 768px) {
   .books-container .book:nth-child(-n + 3) {
     display: flex;
@@ -164,7 +134,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
   }
-  .container-gallary {
+  .container-gallery {
     padding-top: 0;
   }
 }
@@ -237,7 +207,6 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 8px;
-  /* Звірити розмір з макетом */
 }
 
 @media screen and (min-width: 768px) {
@@ -251,6 +220,7 @@
   font-weight: 700;
   line-height: 18px;
   letter-spacing: -0.14px;
+  font-family: var(--font-family);
 
   border-radius: 40px;
   padding: 14px 28px;
