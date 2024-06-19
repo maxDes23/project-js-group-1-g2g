@@ -8,24 +8,18 @@
 .main-content {
   margin: 0 auto;
   padding-top: 104px;
-}
-
-@media only screen and (max-width: 340px) {
-  .container {
-    padding: 0 20px;
-  }
+  box-sizing: border-box;
 }
 
 @media only screen and (min-width: 768px) {
   .container {
     width: 768px;
-    max-width: 767px;
+    max-width: 768px;
     padding: 0 32px;
   }
   .main-content {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
     padding-top: 112px;
   }
 }

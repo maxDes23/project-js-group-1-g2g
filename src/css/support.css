@@ -1,4 +1,9 @@
+.splide {
+  /* margin: 0 auto; */
+}
+
 .sup-container {
+  position: relative;
   max-width: 335px;
   height: 460px;
   border-radius: 16px;
@@ -8,7 +13,6 @@
     #fff 100%
   );
   box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
-  position: relative;
 }
 
 .trident {
