@@ -21,6 +21,12 @@
   --font-family: 'DM Sans';
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -84,7 +90,7 @@ body {
   .left-container {
     display: flex;
     flex-direction: row;
-    gap: 32px;
+    justify-content: space-between;
   }
 }
 
@@ -92,6 +98,7 @@ body {
   .left-container {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 86px;
   }
 }

@@ -1,13 +1,11 @@
 .categories_container {
   overflow: auto;
-  min-width: 335px;
   height: 228px;
   font-family: var(--font-family);
 }
 
 .categories {
   display: flex;
-  min-width: 307px;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
@@ -34,10 +32,10 @@
 @media screen and (min-width: 768px) {
   .categories_container {
     height: 472px;
+    width: 337px;
   }
 
   .categories {
-    min-width: 309px;
     gap: 32px;
     font-size: 18px;
     line-height: 1.333em;

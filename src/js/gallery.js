@@ -3,63 +3,46 @@ import { getBooksByCategory } from './book-api';
 import { getTopBooks } from './book-api';
 import { connectModal } from './modal';
 
-
-
-
-// /////////////////  loader ////////////////
-  //  document.addEventListener('DOMContentLoaded', function () {
-  //    const loader = document.querySelector('.loader');
-    
-  //    loader.style.display = 'block';
-
-  //    window.addEventListener('load', function () {
-      
-  //      loader.style.display = 'none';
-  //    });
-  //  });
-
-function getRundomLoader() {
+function getRandomLoader() {
   try {
-  switch (Math.floor(Math.random() * 6) + 1) {
-    case 1:
-      Loading.standard();
-      break;
-    case 2:
-      Loading.hourglass();
-      break;
-    case 3:
-      Loading.circle();
-      break;
-    case 4:
-      Loading.arrows();
-      break;
-    case 5:
-      Loading.dots();
-      break;
-    case 6:
-      Loading.pulse();
-      break;
-  }
+    switch (Math.floor(Math.random() * 6) + 1) {
+      case 1:
+        Loading.standard();
+        break;
+      case 2:
+        Loading.hourglass();
+        break;
+      case 3:
+        Loading.circle();
+        break;
+      case 4:
+        Loading.arrows();
+        break;
+      case 5:
+        Loading.dots();
+        break;
+      case 6:
+        Loading.pulse();
+        break;
+    }
   } catch (error) {
     console.log(error);
   }
 }
 
-// ------------КОД ДЛЯ РЕНДЕРА СТОРІНКИ ХОУМ
-
+//Homepage render
 document.addEventListener('DOMContentLoaded', renderHomePage);
 
 async function renderHomePage() {
-  getRundomLoader();
+  getRandomLoader();
   const getDataTopBooks = await getTopBooks();
   const { data } = getDataTopBooks;
-  await renderСategoryList(data);
+  await renderCategoryList(data);
   getCategory();
   connectModal();
 }
 
-//Рендеринг картки КНИГИ
-
+//Book card render
 function renderGallery(books) {
   const gallery = document.querySelector('.books-container');
   const markup = books
@@ -79,8 +62,8 @@ function renderGallery(books) {
   return markup;
 }
 
-//Рендеринг КАТЕГОРІЇ
-async function renderСategoryList(categories) {
+//Category render
+async function renderCategoryList(categories) {
   const categoryList = document.querySelector('.category-container');
   const markup = categories
     .map(category => {
@@ -103,15 +86,13 @@ async function renderСategoryList(categories) {
   categoryList.insertAdjacentHTML('beforeend', markup);
   getCategoryOnLoadMore();
   try {
-    Loading.remove(500)
-  }
-  catch (error) {
-    console.log(error)  
+    Loading.remove(500);
+  } catch (error) {
+    console.log(error);
   }
 }
 
 // BTN SEE MORE
-
 function getCategoryOnLoadMore() {
   const loadMoreButtons = document.querySelectorAll('.btn-load-more');
 
@@ -120,39 +101,34 @@ function getCategoryOnLoadMore() {
   });
 }
 
-//Функція по кліку на категоріям яка буде вібирати назву категорії
-
+//Choose category by click
 function getCategory() {
-  const categoryiesName = document.querySelectorAll('.categories_item');
+  const categoriesName = document.querySelectorAll('.categories_item');
 
-  categoryiesName.forEach(categoryName => {
+  categoriesName.forEach(categoryName => {
     categoryName.addEventListener('click', onClickCategory);
   });
 }
 
 async function onClickCategory(event) {
-  getRundomLoader();
+  getRandomLoader();
   event.preventDefault();
-  // console.log(1);
   const removeBooks = document.querySelector('.category-container');
-  // console.log(removeBooks);
   removeBooks.innerHTML = '';
 
-  // const selectCategory = event.target.innerText;
   let categoryId = event.target.id;
   if (categoryId[0] === '_') {
     categoryId = categoryId.substring(1);
   }
 
   let arrString = categoryId.split(' ');
-  let lastWord = ''
-  let headString = ''
-   
+  let lastWord = '';
+  let headString = '';
+
   if (arrString.length > 1) {
-    lastWord = arrString.pop()
+    lastWord = arrString.pop();
     headString = arrString.join(' ');
-  }
-  else headString = categoryId;
+  } else headString = categoryId;
 
   const newNameCategory = document.querySelector('.category-title');
   event.target.innerHTML == 'All Categories'
@@ -163,21 +139,19 @@ async function onClickCategory(event) {
     if (categoryId === '') {
       await renderHomePage();
     } else {
-      await renderСategory(categoryId);
+      await renderCategory(categoryId);
     }
   } catch (error) {
     console.log(error);
   }
   try {
-    Loading.remove(500)
-  }
-  catch (error) {
-    console.log(error)
+    Loading.remove(500);
+  } catch (error) {
+    console.log(error);
   }
 }
 
-async function renderСategory(nameSelectedCategory) {
-  // console.log(2);
+async function renderCategory(nameSelectedCategory) {
   const categoryItem = document.querySelector('.category-container');
   const category = await getBooksByCategory(nameSelectedCategory);
   const renderGalleryAfterBtnClick = renderGallery(category.data);
