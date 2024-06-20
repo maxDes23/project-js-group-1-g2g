@@ -5,12 +5,12 @@
   left: 50%;
   transform: translateX(-50%);
 
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  width: 320px;
+  margin: 0 auto;
+  width: 100%;
   max-width: 375px;
   height: 64px;
   padding: 0 20px;
@@ -198,6 +198,7 @@ body.modal-open {
 }
 
 .nav-item {
+  position: relative;
   padding: 8px 16px;
   width: fit-content;
   color: #fff;
@@ -271,7 +272,6 @@ body.modal-open {
   margin-right: 4px;
 }
 
-/* Tablet */
 @media screen and (min-width: 768px) {
   .mobile-logout-div {
     display: none;
@@ -283,8 +283,8 @@ body.modal-open {
 
   .header-container {
     height: 72px;
-    gap: 0px;
-    margin: 0 auto;
+    width: 768px;
+    max-width: 768px;
   }
 
   .logo {
@@ -371,10 +371,10 @@ body.modal-open {
   }
 }
 
-/* Desctop */
 @media screen and (min-width: 1440px) {
   .header-container {
     width: 1440px;
+    max-width: 1440px;
   }
 
   .books-quantity {

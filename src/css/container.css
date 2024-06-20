@@ -3,12 +3,13 @@
   max-width: 375px;
   padding: 0 20px;
   margin: 0 auto;
+  font-family: var(--font-family);
 }
 
 .main-content {
+  font-family: var(--font-family);
   margin: 0 auto;
   padding-top: 104px;
-  box-sizing: border-box;
 }
 
 @media only screen and (min-width: 768px) {
