@@ -39,8 +39,6 @@ const mobileMenuContent = document.querySelector('.mobile-nav');
 const mobileLogOutBtn = document.querySelector('.mobile-logout-div');
 const mobileUserStephen = document.querySelector('.user-block');
 
-
-
 authFormCloseBtn.addEventListener('click', onClickClose);
 authForm.addEventListener('submit', onClickSignUp);
 signInButton.addEventListener('click', onClickSignIn);
@@ -48,11 +46,9 @@ headerSignUpBtn.addEventListener('click', onClickHeaderSignUp);
 logOutButton.addEventListener('click', onClickLogOut);
 mobileSignUp.addEventListener('click', onClickMobileSignUp);
 
-
 function onClickClose() {
-  authModal.classList.add('display-none')
+  authModal.classList.add('display-none');
 }
-
 
 if (!userName.hasAttribute('required')) userName.setAttribute('required');
 signUpButton.textContent = 'SIGN UP';
@@ -94,13 +90,13 @@ async function onClickSignUp(evt) {
     createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
       .then(userData => {
         const user = userData.user;
-        console.log(user);
         Notify.success('Your account has been created!');
         form.reset();
       })
       .catch(error => {
-        console.log(error.code + error.message);
-        Notify.failure('This email address is already in use on Bookshelf. Please sign in!');
+        Notify.failure(
+          'This email address is already in use on Bookshelf. Please sign in!'
+        );
         form.reset();
       });
   }
@@ -118,8 +114,9 @@ async function onClickSignUp(evt) {
         form.reset();
       })
       .catch(error => {
-        console.log(error.code + error.message);
-        Notify.failure('The email address or password is incorrect. Try again!');
+        Notify.failure(
+          'The email address or password is incorrect. Try again!'
+        );
         form.reset();
       });
   }

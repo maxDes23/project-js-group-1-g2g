@@ -5,28 +5,18 @@ import { connectModal } from './modal';
 
 function getRandomLoader() {
   try {
-    switch (Math.floor(Math.random() * 6) + 1) {
-      case 1:
-        Loading.standard();
-        break;
-      case 2:
-        Loading.hourglass();
-        break;
-      case 3:
-        Loading.circle();
-        break;
-      case 4:
-        Loading.arrows();
-        break;
-      case 5:
-        Loading.dots();
-        break;
-      case 6:
-        Loading.pulse();
-        break;
-    }
+    const loaders = [
+      Loading.standard,
+      Loading.hourglass,
+      Loading.circle,
+      Loading.arrows,
+      Loading.dots,
+      Loading.pulse,
+    ];
+    const randomLoader = loaders[Math.floor(Math.random() * loaders.length)];
+    randomLoader();
   } catch (error) {
-    console.log(error);
+    console.error('Error in getRandomLoader:', error);
   }
 }
 
@@ -34,12 +24,21 @@ function getRandomLoader() {
 document.addEventListener('DOMContentLoaded', renderHomePage);
 
 async function renderHomePage() {
-  getRandomLoader();
-  const getDataTopBooks = await getTopBooks();
-  const { data } = getDataTopBooks;
-  await renderCategoryList(data);
-  getCategory();
-  connectModal();
+  try {
+    getRandomLoader();
+    const { data } = await getTopBooks();
+    await renderCategoryList(data);
+    getCategory();
+    connectModal();
+  } catch (error) {
+    console.error('Error rendering home page:', error);
+  } finally {
+    try {
+      Loading.remove(500);
+    } catch (error) {
+      console.error('Error removing loader:', error);
+    }
+  }
 }
 
 //Book card render
@@ -88,7 +87,7 @@ async function renderCategoryList(categories) {
   try {
     Loading.remove(500);
   } catch (error) {
-    console.log(error);
+    return error;
   }
 }
 
@@ -142,12 +141,12 @@ async function onClickCategory(event) {
       await renderCategory(categoryId);
     }
   } catch (error) {
-    console.log(error);
+    return error;
   }
   try {
     Loading.remove(500);
   } catch (error) {
-    console.log(error);
+    return error;
   }
 }
 
